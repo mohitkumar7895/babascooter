@@ -1,0 +1,779 @@
+[
+  {
+    "setNum": 1,
+    "name": "FRENDO Prime B-1",
+    "modelNumber": "FR-B1",
+    "slug": "fr-b1",
+    "category": "City Scooters",
+    "description": "Sleek aerodynamic urban commuter featuring digital meter and central locking.",
+    "images": [
+      {
+        "url": "/models/set-1/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Prime B-1 view 1"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 2,
+    "name": "FRENDO Ultra Sport",
+    "modelNumber": "FR-US",
+    "slug": "fr-us",
+    "category": "Sport Series",
+    "description": "High-torque BLDC motor with front disc brake and dual-tone sport styling.",
+    "images": [
+      {
+        "url": "/models/set-2/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Ultra Sport view 1"
+      },
+      {
+        "url": "/models/set-2/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Ultra Sport view 2"
+      },
+      {
+        "url": "/models/set-2/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Ultra Sport view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 3,
+    "name": "FRENDO Falcon ZL",
+    "modelNumber": "FR-ZL",
+    "slug": "fr-zl",
+    "category": "Performance",
+    "description": "Heavy-duty steel chassis with extended dickey storage and copper motor wiring.",
+    "images": [
+      {
+        "url": "/models/set-3/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Falcon ZL view 1"
+      },
+      {
+        "url": "/models/set-3/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Falcon ZL view 2"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 4,
+    "name": "FRENDO Cruiser V8",
+    "modelNumber": "FR-V8",
+    "slug": "fr-v8",
+    "category": "City Scooters",
+    "description": "Plush ergonomic seating, reverse parking assist, and smooth dual suspension.",
+    "images": [
+      {
+        "url": "/models/set-4/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Cruiser V8 view 1"
+      },
+      {
+        "url": "/models/set-4/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Cruiser V8 view 2"
+      },
+      {
+        "url": "/models/set-4/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Cruiser V8 view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 5,
+    "name": "FRENDO Turbo ACT",
+    "modelNumber": "FR-ACT",
+    "slug": "fr-act",
+    "category": "Performance",
+    "description": "Enhanced ground clearance with 12-inch wheels and multi-stage controller.",
+    "images": [
+      {
+        "url": "/models/set-5/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Turbo ACT view 1"
+      },
+      {
+        "url": "/models/set-5/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Turbo ACT view 2"
+      },
+      {
+        "url": "/models/set-5/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Turbo ACT view 3"
+      },
+      {
+        "url": "/models/set-5/thumb-3.jpg",
+        "isPrimary": false,
+        "sortOrder": 3,
+        "alt": "FRENDO Turbo ACT view 4"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 6,
+    "name": "FRENDO Apex OL",
+    "modelNumber": "FR-OL",
+    "slug": "fr-ol",
+    "category": "Sport Series",
+    "description": "Futuristic LED projector headlamp, anti-theft alarm, and instant pick-up.",
+    "images": [
+      {
+        "url": "/models/set-6/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Apex OL view 1"
+      },
+      {
+        "url": "/models/set-6/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Apex OL view 2"
+      },
+      {
+        "url": "/models/set-6/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Apex OL view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 7,
+    "name": "FRENDO Elegance UL",
+    "modelNumber": "FR-UL",
+    "slug": "fr-ul",
+    "category": "City Scooters",
+    "description": "Ultra-refined city ride engineered for comfortable daily office and family travel.",
+    "images": [
+      {
+        "url": "/models/set-7/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Elegance UL view 1"
+      },
+      {
+        "url": "/models/set-7/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Elegance UL view 2"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 8,
+    "name": "FRENDO Stealth JL",
+    "modelNumber": "FR-JL",
+    "slug": "fr-jl",
+    "category": "Sport Series",
+    "description": "Aggressive sport profile with wide alloy rims and precision hydraulic disc.",
+    "images": [
+      {
+        "url": "/models/set-8/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Stealth JL view 1"
+      },
+      {
+        "url": "/models/set-8/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Stealth JL view 2"
+      },
+      {
+        "url": "/models/set-8/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Stealth JL view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 9,
+    "name": "FRENDO Dynamic F5",
+    "modelNumber": "FR-F5",
+    "slug": "fr-f5",
+    "category": "Performance",
+    "description": "Track-inspired electric scooter engineered for rapid acceleration.",
+    "images": [
+      {
+        "url": "/models/set-9/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Dynamic F5 view 1"
+      },
+      {
+        "url": "/models/set-9/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Dynamic F5 view 2"
+      },
+      {
+        "url": "/models/set-9/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Dynamic F5 view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 10,
+    "name": "FRENDO Royale PRM",
+    "modelNumber": "FR-PRM",
+    "slug": "fr-prm",
+    "category": "City Scooters",
+    "description": "Premium chrome accents, spacious floorboard, and USB mobile charging port.",
+    "images": [
+      {
+        "url": "/models/set-10/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Royale PRM view 1"
+      },
+      {
+        "url": "/models/set-10/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Royale PRM view 2"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 11,
+    "name": "FRENDO Storm RBT",
+    "modelNumber": "FR-RBT",
+    "slug": "fr-rbt",
+    "category": "Sport Series",
+    "description": "All-weather durable composite panels with heavy-duty shock absorbers.",
+    "images": [
+      {
+        "url": "/models/set-11/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Storm RBT view 1"
+      },
+      {
+        "url": "/models/set-11/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Storm RBT view 2"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 12,
+    "name": "FRENDO Sprint VNC",
+    "modelNumber": "FR-VNC",
+    "slug": "fr-vnc",
+    "category": "City Scooters",
+    "description": "Agile lightweight urban commuter with low seat height and effortless handling.",
+    "images": [
+      {
+        "url": "/models/set-12/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Sprint VNC view 1"
+      },
+      {
+        "url": "/models/set-12/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Sprint VNC view 2"
+      },
+      {
+        "url": "/models/set-12/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Sprint VNC view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 13,
+    "name": "FRENDO Velocity F1",
+    "modelNumber": "FR-F1",
+    "slug": "fr-f1",
+    "category": "Sport Series",
+    "description": "Signature sport edition with LED daytime running lights and regenerative braking.",
+    "images": [
+      {
+        "url": "/models/set-13/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Velocity F1 view 1"
+      },
+      {
+        "url": "/models/set-13/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Velocity F1 view 2"
+      },
+      {
+        "url": "/models/set-13/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Velocity F1 view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 14,
+    "name": "FRENDO Pro Max",
+    "modelNumber": "FR-PMAX",
+    "slug": "fr-pmax",
+    "category": "Performance",
+    "description": "High-capacity dual battery bay supporting up to 300 KM extended range.",
+    "images": [
+      {
+        "url": "/models/set-14/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Pro Max view 1"
+      },
+      {
+        "url": "/models/set-14/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Pro Max view 2"
+      },
+      {
+        "url": "/models/set-14/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Pro Max view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 15,
+    "name": "FRENDO Eco Rider",
+    "modelNumber": "FR-ECO",
+    "slug": "fr-eco",
+    "category": "City Scooters",
+    "description": "Maximum energy efficiency delivering ultra-low running cost of 15p per km.",
+    "images": [
+      {
+        "url": "/models/set-15/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Eco Rider view 1"
+      },
+      {
+        "url": "/models/set-15/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Eco Rider view 2"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 16,
+    "name": "FRENDO Glide Special",
+    "modelNumber": "FR-GLIDE",
+    "slug": "fr-glide",
+    "category": "City Scooters",
+    "description": "Smooth whisper-quiet electric drive with front glove box and bag hook.",
+    "images": [
+      {
+        "url": "/models/set-16/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Glide Special view 1"
+      },
+      {
+        "url": "/models/set-16/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Glide Special view 2"
+      },
+      {
+        "url": "/models/set-16/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Glide Special view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 17,
+    "name": "FRENDO Thunder GT",
+    "modelNumber": "FR-GT",
+    "slug": "fr-gt",
+    "category": "Sport Series",
+    "description": "High-power output engineered for steep flyovers and dual passenger comfort.",
+    "images": [
+      {
+        "url": "/models/set-17/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Thunder GT view 1"
+      },
+      {
+        "url": "/models/set-17/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Thunder GT view 2"
+      },
+      {
+        "url": "/models/set-17/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Thunder GT view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 18,
+    "name": "FRENDO Classic Neo",
+    "modelNumber": "FR-NEO",
+    "slug": "fr-neo",
+    "category": "City Scooters",
+    "description": "Retro modern styling paired with advanced digital console and remote key.",
+    "images": [
+      {
+        "url": "/models/set-18/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Classic Neo view 1"
+      },
+      {
+        "url": "/models/set-18/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Classic Neo view 2"
+      },
+      {
+        "url": "/models/set-18/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Classic Neo view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 19,
+    "name": "FRENDO Spark City",
+    "modelNumber": "FR-SPK",
+    "slug": "fr-spk",
+    "category": "City Scooters",
+    "description": "Compact footprint perfect for dense city traffic and narrow parking lanes.",
+    "images": [
+      {
+        "url": "/models/set-19/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Spark City view 1"
+      },
+      {
+        "url": "/models/set-19/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Spark City view 2"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 20,
+    "name": "FRENDO Horizon Tour",
+    "modelNumber": "FR-HZN",
+    "slug": "fr-hzn",
+    "category": "Performance",
+    "description": "Long-range cruiser with cushioned pillion backrest and wide tubeless tyres.",
+    "images": [
+      {
+        "url": "/models/set-20/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Horizon Tour view 1"
+      },
+      {
+        "url": "/models/set-20/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Horizon Tour view 2"
+      },
+      {
+        "url": "/models/set-20/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Horizon Tour view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 21,
+    "name": "FRENDO Matrix DX",
+    "modelNumber": "FR-MTX",
+    "slug": "fr-mtx",
+    "category": "Sport Series",
+    "description": "Sharp sharp body angles, front disc brake, and high-efficiency copper motor.",
+    "images": [
+      {
+        "url": "/models/set-21/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Matrix DX view 1"
+      },
+      {
+        "url": "/models/set-21/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Matrix DX view 2"
+      },
+      {
+        "url": "/models/set-21/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Matrix DX view 3"
+      },
+      {
+        "url": "/models/set-21/thumb-3.jpg",
+        "isPrimary": false,
+        "sortOrder": 3,
+        "alt": "FRENDO Matrix DX view 4"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 22,
+    "name": "FRENDO Accessible Trike",
+    "modelNumber": "FR-ACC",
+    "slug": "fr-acc",
+    "category": "Special Mobility",
+    "description": "Dedicated self-balancing mobility scooter for senior citizens and differently-abled riders.",
+    "images": [
+      {
+        "url": "/models/set-22/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Accessible Trike view 1"
+      },
+      {
+        "url": "/models/set-22/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Accessible Trike view 2"
+      },
+      {
+        "url": "/models/set-22/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO Accessible Trike view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 23,
+    "name": "FRENDO 2-Wheel Cargo",
+    "modelNumber": "FR-C2W",
+    "slug": "fr-c2w",
+    "category": "Commercial Loaders",
+    "description": "Reinforced rear carrier designed for delivery executives and commercial parcels.",
+    "images": [
+      {
+        "url": "/models/set-23/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO 2-Wheel Cargo view 1"
+      },
+      {
+        "url": "/models/set-23/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO 2-Wheel Cargo view 2"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 24,
+    "name": "FRENDO 3-Wheel Delivery Loader",
+    "modelNumber": "FR-L3W",
+    "slug": "fr-l3w",
+    "category": "Commercial Loaders",
+    "description": "Heavy payload 300kg commercial 3-wheel electric loader with hydraulic brakes.",
+    "images": [
+      {
+        "url": "/models/set-24/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO 3-Wheel Delivery Loader view 1"
+      },
+      {
+        "url": "/models/set-24/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO 3-Wheel Delivery Loader view 2"
+      },
+      {
+        "url": "/models/set-24/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO 3-Wheel Delivery Loader view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 25,
+    "name": "FRENDO 3-Wheel Jali Cargo Loader",
+    "modelNumber": "FR-JAL",
+    "slug": "fr-jal",
+    "category": "Commercial Loaders",
+    "description": "High-volume mesh cage cargo loader designed for logistics, e-commerce, and milk crates.",
+    "images": [
+      {
+        "url": "/models/set-25/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO 3-Wheel Jali Cargo Loader view 1"
+      },
+      {
+        "url": "/models/set-25/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO 3-Wheel Jali Cargo Loader view 2"
+      },
+      {
+        "url": "/models/set-25/thumb-2.jpg",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "alt": "FRENDO 3-Wheel Jali Cargo Loader view 3"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 26,
+    "name": "FRENDO Heavy Hauler Trike",
+    "modelNumber": "FR-HHL",
+    "slug": "fr-hhl",
+    "category": "Commercial Loaders",
+    "description": "Industrial electric trike with extra-torque differential gear and steel bed.",
+    "images": [
+      {
+        "url": "/models/set-26/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Heavy Hauler Trike view 1"
+      },
+      {
+        "url": "/models/set-26/thumb-1.jpg",
+        "isPrimary": false,
+        "sortOrder": 1,
+        "alt": "FRENDO Heavy Hauler Trike view 2"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  },
+  {
+    "setNum": 27,
+    "name": "FRENDO Express Fleet",
+    "modelNumber": "FR-EXP",
+    "slug": "fr-exp",
+    "category": "Commercial Loaders",
+    "description": "Fleet-ready electric scooter with reinforced chassis for rapid last-mile delivery.",
+    "images": [
+      {
+        "url": "/models/set-27/main.jpg",
+        "isPrimary": true,
+        "sortOrder": 0,
+        "alt": "FRENDO Express Fleet view 1"
+      }
+    ],
+    "price": 15000,
+    "priceLabel": "Starting ₹15,000/-",
+    "availability": "Showroom In Stock"
+  }
+]

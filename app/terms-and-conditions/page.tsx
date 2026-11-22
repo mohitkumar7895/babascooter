@@ -1,0 +1,74 @@
+import React from 'react';
+import Link from 'next/link';
+import { ArrowLeft, Sparkles } from 'lucide-react';
+
+export const metadata = {
+  title: 'Terms & Conditions | FRENDO E-SCOOTY Baba Marketing',
+  description: 'Terms of use and showroom purchase guidelines for Baba Marketing FRENDO electric scooters.',
+};
+
+export default function TermsPage() {
+  return (
+    <div className="min-h-screen bg-navy-950 text-white py-16 selection:bg-amber-500 selection:text-navy-950 relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-amber-500/10 blur-[130px] pointer-events-none rounded-full" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
+        <div>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-400 uppercase tracking-widest shadow-glow mb-3">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Official Terms</span>
+          </div>
+          <h1 className="font-serif text-3xl sm:text-4xl font-black text-white tracking-tight uppercase">
+            Terms and <span className="text-gradient-gold">Conditions</span>
+          </h1>
+          <p className="text-xs text-slate-400 mt-2">Effective Date: November 2026</p>
+        </div>
+
+        <div className="space-y-6 text-sm text-slate-300 leading-relaxed bg-navy-900/80 p-8 sm:p-10 rounded-3xl border border-amber-500/20 shadow-2xl backdrop-blur-md">
+          <section className="space-y-2">
+            <h2 className="font-serif text-lg font-bold text-gradient-gold">1. Official Catalogue & Dealership Portal</h2>
+            <p>
+              This website serves as the official digital showcase and B2B enquiry portal for BABA MARKETING (FRENDO E-SCOOTY).
+              All final dealership agreements, wholesale orders (including purchase of 40 scooties scheme), vehicle inspections, invoicing, and handover take place in accordance with company policies.
+            </p>
+          </section>
+
+          <section className="space-y-2">
+            <h2 className="font-serif text-lg font-bold text-gradient-gold">2. Product Specifications & Pricing</h2>
+            <p>
+              Features including starting prices (₹15,000/- All Taxes Included), heavy-duty chassis, 100% pure copper motor & wiring, disc brakes, controller options (48V / 60V / 72V), LFP battery capacities (20Ah to 75Ah), and range options (50 KM to 300 KM) reflect authentic manufacturer specifications. Actual range per charge may vary according to payload, riding conditions, tyre pressure, and gradient.
+            </p>
+          </section>
+
+          <section className="space-y-2">
+            <h2 className="font-serif text-lg font-bold text-gradient-gold">3. 5-Year Warranty Terms</h2>
+            <p>
+              FRENDO E-SCOOTY offers a standard 5-Year Warranty as per applicable company warranty terms and conditions. Warranty covers certified manufacturing components and battery pack terms specified at the time of purchase.
+            </p>
+          </section>
+
+          <section className="space-y-2">
+            <h2 className="font-serif text-lg font-bold text-gradient-gold">4. B2B Dealership & Special Offers</h2>
+            <p>
+              All promotional benefits (such as free transportation across India, free demo scooty, demo battery, demo charger, dealer shop rent support, electrician salary support, ₹1 Crore insurance, and NETRAX certificate) are subject to official terms on the purchase of 40 scooties.
+            </p>
+          </section>
+
+          <section className="space-y-2">
+            <h2 className="font-serif text-lg font-bold text-gradient-gold">5. Contact & Jurisdiction</h2>
+            <p>
+              For any queries, please contact BABA MARKETING via Call/WhatsApp at <strong className="text-amber-400">9953564151</strong> or visit our showroom at 33 Futa Road, Kaili, Ballabhgarh. Any disputes are subject to the exclusive jurisdiction of the competent courts of Faridabad, Haryana, India.
+            </p>
+          </section>
+
+          <div className="pt-4 border-t border-white/10">
+            <Link href="/" className="inline-flex items-center gap-1.5 text-xs text-amber-400 font-bold hover:text-amber-300 transition-colors">
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>Back to Home</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
