@@ -60,7 +60,7 @@ export default async function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white overflow-x-hidden">
-      {/* 1. Hero Section - Dynamic from Admin or Luxury Gold Defaults */}
+      {/* 1. Hero Section - Dynamic from Admin or Official FRENDO Defaults */}
       <HeroSection
         primaryPhone={phone}
         whatsappNumber={whatsapp}
@@ -70,25 +70,25 @@ export default async function HomePage() {
         heroImage={heroContent?.hero_image || '/models/set-1/main.jpg'}
       />
 
-      {/* 2. Electric Scooty Features (10 Core Highlights) */}
-      <ScootyFeaturesSection />
-
-      {/* 3. LFP Battery Options (20Ah to 75Ah) & Running Range (50 KM to 300 KM) */}
-      <BatteryRangeSection />
-
-      {/* 4. Real Showroom Sets Showcase (27 Models from public/models) */}
-      <ModelsGallerySection />
-
-      {/* 5. B2B Dealership & Franchise Offers (Special benefits on 40 scooties & 7 dealer support pillars) */}
-      <DealershipOffersSection />
-
-      {/* 6. Promotional / Showroom Offer Banner */}
+      {/* 2. Official FRENDO Rate Card & 40 + 20 FREE Special Distributor Offer Banner */}
       <PromotionalBanner
         banner={promoBanner}
         whatsappNumber={whatsapp}
       />
 
-      {/* 8. Quick Enquiry & Showroom Location */}
+      {/* 3. Electric Scooty Features (10 Core Highlights) */}
+      <ScootyFeaturesSection />
+
+      {/* 4. LFP Battery Options (20Ah to 75Ah) & Running Range (50 KM to 300 KM) */}
+      <BatteryRangeSection />
+
+      {/* 5. Real Showroom Sets Showcase (27 Models from public/models) */}
+      <ModelsGallerySection />
+
+      {/* 6. B2B Dealership & Franchise Offers (40 + 20 FREE & 14 dealer benefits) */}
+      <DealershipOffersSection />
+
+      {/* 7. Quick Enquiry & Showroom Location */}
       <QuickEnquirySection
         primaryPhone={phone}
         whatsappNumber={whatsapp}

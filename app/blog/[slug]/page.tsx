@@ -324,7 +324,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
             <h3 className="font-serif text-lg font-bold text-slate-900">BABA MARKETING – FRENDO E-SCOOTY Ballabhgarh</h3>
             <p className="text-xs text-slate-700 leading-relaxed">
-              Authorized showroom and service dealership at 33 Futa Road, Kaili, Ballabhgarh. Offering 27 EV models with starting price ₹15,000/- (All Taxes Included), 5-Year Warranty, and all-India dealership opportunities.
+              Authorized showroom and service dealership at Plot No. 4, Kaili, Ballabhgarh, Faridabad. Offering 27 EV models starting at ₹11,000/- (Single Light &amp; LFP Batteries from ₹15,000/-), 60 Month Warranty, and 40 + 20 FREE all-India distributor opportunities.
             </p>
           </div>
           <a

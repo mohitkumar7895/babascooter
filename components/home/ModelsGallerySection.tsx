@@ -116,7 +116,7 @@ export default function ModelsGallerySection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {displayList.map((m) => {
             const mainImg = m.images[0]?.url || `/models/set-${m.setNum}/main.jpg`;
-            const waMsg = `Hello Baba Marketing, I am interested in ${m.name} (${m.modelNumber}) starting at ₹15,000/-. Please share showroom availability and best offers.`;
+            const waMsg = `Hello Baba Marketing, I am interested in ${m.name} (${m.modelNumber} - ${m.priceLabel}). Please share showroom availability and best offers.`;
 
             return (
               <div

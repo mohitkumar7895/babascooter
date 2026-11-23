@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { query } from '@/lib/db';
 import { getCachedContact } from '@/lib/data';
+import { getProductRate } from '@/lib/pricing';
 import { Product, ProductImage, ProductSpecification } from '@/types';
 import ProductLightbox from '@/components/gallery/ProductLightbox';
 import ProductCard from '@/components/products/ProductCard';
@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: Props) {
         description: p.meta_description || p.short_description || `Specifications and showroom price for ${p.name} electric scooter.`,
       };
     }
-  } catch (err) {}
+  } catch (err) { }
   return {
     title: 'FRENDO E-SCOOTY | Baba Marketing',
     description: 'Electric Scooter showroom in Ballabhgarh, Faridabad',
@@ -122,8 +123,9 @@ export default async function ProductDetailPage({ params }: Props) {
 
   const phone = contact?.primary_phone || '9953564151';
   const whatsapp = contact?.whatsapp_number || '9953564151';
+  const rate = getProductRate(product);
 
-  const waMessage = `Hello Baba Marketing, I am interested in ${product.name} (${product.model_number}) starting at ₹15,000/-. Please share showroom availability and best offers.`;
+  const waMessage = `Hello Baba Marketing, I am interested in ${product.name} (${product.model_number} - ${rate.priceDisplay}). Please share showroom availability and best offers.`;
 
   let otherSpecsList: string[] = [
     '100% Pure Copper Motor with High Thermal Durability',
@@ -149,7 +151,7 @@ export default async function ProductDetailPage({ params }: Props) {
     offers: {
       '@type': 'Offer',
       priceCurrency: 'INR',
-      price: product.price || '15000',
+      price: rate.numericPrice || '11000',
       availability: 'https://schema.org/InStock',
       seller: {
         '@type': 'Organization',
@@ -211,18 +213,18 @@ export default async function ProductDetailPage({ params }: Props) {
               </div>
 
               {/* Price Card */}
-              <div className="mt-4 p-4 rounded-2xl bg-white border border-brand-300 shadow-xl flex items-center justify-between gold-border-glow">
+              <div className="mt-4 p-4 rounded-2xl bg-amber-400/20 border-2 border-amber-500 shadow-lg flex items-center justify-between">
                 <div>
-                  <div className="text-[10px] text-brand-800 uppercase tracking-widest font-serif font-bold">
-                    Starting Showroom Price
+                  <div className="text-[10px] text-brand-900 uppercase tracking-widest font-serif font-bold">
+                    {rate.tier} Rate
                   </div>
-                  <div className="text-2xl sm:text-3xl font-black text-slate-900 mt-0.5">
-                    {product.price ? `₹${product.price.toLocaleString('en-IN')}/-` : 'Starting ₹15,000/-'}
+                  <div className="text-2xl sm:text-3xl font-black text-crimson-600 mt-0.5">
+                    {rate.priceDisplay}
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs text-brand-800 font-bold">5-Year Warranty</div>
-                  <div className="text-[10px] text-slate-600">All Taxes Included</div>
+                  <div className="text-xs text-brand-800 font-black">60 Month Warranty</div>
+                  <div className="text-[10px] text-slate-700 font-medium">Battery Starting ₹15,000/-</div>
                 </div>
               </div>
 

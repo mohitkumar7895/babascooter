@@ -63,8 +63,8 @@ export default function DealershipOffersSection() {
     {
       num: 5,
       icon: Award,
-      title: '5-Year Warranty',
-      desc: 'Full 5-year OEM warranty coverage backing every single unit as per company terms and conditions.',
+      title: '60 Month (5-Year) Warranty',
+      desc: 'Full 60-month (5-year) OEM warranty coverage backing every single unit as per company terms and conditions.',
     },
     {
       num: 6,
@@ -134,7 +134,7 @@ export default function DealershipOffersSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const waText = `Hello Baba Marketing, I want to apply for FRENDO E-SCOOTY Dealership (40 Scooties Offer).\nName: ${formData.name}\nPhone: ${formData.phone}\nCity/State: ${formData.city}, ${formData.state}\nBackground: ${formData.experience}`;
+    const waText = `Hello Baba Marketing, I want to apply for FRENDO E-SCOOTY Dealership (40 + 20 FREE Distributor Offer).\nName: ${formData.name}\nPhone: ${formData.phone}\nCity/State: ${formData.city}, ${formData.state}\nBackground: ${formData.experience}`;
     window.open(`https://wa.me/919953564151?text=${encodeURIComponent(waText)}`, '_blank');
     setFormSubmitted(true);
   };
@@ -168,11 +168,14 @@ export default function DealershipOffersSection() {
           <div className="p-4 sm:p-6 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 border-2 border-brand-800/20 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
             <div>
               <div className="inline-block px-2.5 py-0.5 rounded bg-crimson-600 text-white text-[10px] uppercase font-serif tracking-widest font-black mb-1">
-                EXCLUSIVE B2B FRANCHISE PACKAGE
+                SPECIAL DISTRIBUTOR OFFER • 40 + 20 FREE
               </div>
               <h3 className="text-xl sm:text-2xl font-black text-brand-950 mt-0.5">
-                SPECIAL BENEFITS ON THE PURCHASE OF 40 SCOOTIES
+                BUY 40 SCOOTERS & GET 20 SCOOTERS FREE + 14 BENEFITS
               </h3>
+              <p className="text-xs font-bold text-brand-900 mt-1">
+                40 स्कूटर खरीदें और 20 स्कूटर बिल्कुल FREE पाएँ!
+              </p>
             </div>
             <div className="flex flex-wrap items-center gap-2.5">
               <Link
@@ -221,7 +224,7 @@ export default function DealershipOffersSection() {
 
                   <div className="mt-3 pt-2 border-t border-brand-100 text-[10px] text-brand-800 font-semibold flex items-center gap-1">
                     <CheckCircle2 className="w-3 h-3 text-brand-700" />
-                    <span>Included in 40 Scooties Pack</span>
+                    <span>Included in 40 + 20 FREE Offer</span>
                   </div>
                 </div>
               );

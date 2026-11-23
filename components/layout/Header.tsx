@@ -77,7 +77,7 @@ export default function Header({ contact }: HeaderProps) {
               FRENDO E-SCOOTY:
             </span>
             <span className="text-white font-medium truncate">
-              Drive Green, Live Better! • <strong className="text-amber-400">Starting ₹15,000/-</strong>
+              Scooters <strong className="text-amber-400">₹11,000/-</strong> • Single Light &amp; Battery <strong className="text-amber-400">₹15,000/-</strong> • <strong className="text-amber-300">40 + 20 FREE Offer</strong>
             </span>
           </div>
 
@@ -165,7 +165,7 @@ export default function Header({ contact }: HeaderProps) {
               })}
             </nav>
 
-            {/* Right Action CTA (Dealership 40 Units Highlight) */}
+            {/* Right Action CTA (Dealership 40 + 20 FREE Highlight) */}
             <div className="hidden sm:flex items-center gap-2.5 shrink-0">
               <Link
                 href="/dealership"
@@ -173,7 +173,7 @@ export default function Header({ contact }: HeaderProps) {
                 className="px-4 xl:px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-black text-xs uppercase tracking-wider shadow-glow-yellow hover:scale-105 active:scale-95 transition-all flex items-center gap-2 whitespace-nowrap border border-amber-500"
               >
                 <Briefcase className="w-3.5 h-3.5 fill-brand-950" />
-                <span>Dealership (40 Units)</span>
+                <span>Dealership (40+20 FREE)</span>
               </Link>
             </div>
 
@@ -213,7 +213,7 @@ export default function Header({ contact }: HeaderProps) {
                 <div className="text-[10px] text-white/80">Drive Green, Live Better!</div>
               </div>
               <span className="px-2 py-0.5 rounded text-[10px] font-black bg-amber-400 text-brand-950">
-                Starting ₹15,000/-
+                Starting ₹11,000/-
               </span>
             </div>
 
@@ -245,7 +245,7 @@ export default function Header({ contact }: HeaderProps) {
                 className="w-full py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow"
               >
                 <Briefcase className="w-4 h-4 fill-brand-950" />
-                <span>B2B Franchise & Dealership (40 Scooties)</span>
+                <span>B2B Franchise &amp; Dealership (40 + 20 FREE)</span>
               </Link>
 
               <div className="grid grid-cols-2 gap-2">

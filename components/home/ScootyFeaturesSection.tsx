@@ -27,9 +27,9 @@ export default function ScootyFeaturesSection() {
   const features = [
     {
       icon: Tag,
-      title: 'Starting Price: ₹15,000/-',
-      subtitle: 'All Taxes Included',
-      desc: 'Most accessible, competitive starting price for an electric vehicle in India with zero hidden charges.',
+      title: 'Starting Price: ₹11,000/-',
+      subtitle: 'Single Light ₹15,000/- • Battery ₹15,000/-',
+      desc: 'Transparent 3-tier FRENDO rate card: Electric Scooters starting ₹11,000/-, Single Light Models ₹15,000/-, and LFP Batteries from ₹15,000/-.',
       highlight: true,
     },
     {
@@ -88,9 +88,9 @@ export default function ScootyFeaturesSection() {
     },
     {
       icon: Award,
-      title: '5-Year Warranty',
+      title: '60 Month (5-Year) Warranty',
       subtitle: 'Company Terms & Peace of Mind',
-      desc: 'Comprehensive 5-Year Warranty coverage as per applicable company warranty terms and conditions.',
+      desc: 'Comprehensive 60 Month (5-Year) Warranty coverage as per applicable company warranty terms and conditions.',
       highlight: true,
     },
   ];

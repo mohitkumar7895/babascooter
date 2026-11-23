@@ -38,7 +38,7 @@ export default function HeroSection({
   const displayTitle = title || 'DISCOVER YOUR FUTURE WITH FRENDO E-SCOOTY';
   const displaySubtitle =
     subtitle ||
-    'Electric scooters with advanced LFP batteries (50–300 KM range), starting at ₹15,000/- with lucrative dealership opportunities across India.';
+    'Electric scooters starting from ₹11,000/-, Single Light Models from ₹15,000/-, LFP Batteries from ₹15,000/- with 60 Month Warranty & 40 + 20 FREE Distributor Offer.';
 
   return (
     <section className="relative bg-gradient-to-b from-brand-50 via-white to-white text-slate-900 pt-6 pb-12 sm:pt-10 sm:pb-16 overflow-hidden border-b border-brand-200">
@@ -85,30 +85,34 @@ export default function HeroSection({
               {displaySubtitle}
             </p>
 
-            {/* 4 Pillars Highlight Badges (Banner Green + Yellow + Crimson Style) */}
+            {/* 4 Pillars Official Rate Card & Warranty Badges */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
               <div className="p-3 rounded-xl bg-amber-400/25 border-2 border-amber-500 text-left hover:shadow-md transition-all">
                 <Zap className="w-4 h-4 text-brand-800 mb-1" />
-                <div className="text-xs font-black text-crimson-600">Starting ₹15,000/-</div>
-                <div className="text-[10px] text-brand-900 font-bold">All Taxes Included</div>
+                <div className="text-[10px] text-brand-900 font-bold uppercase leading-tight">Electric Scooter</div>
+                <div className="text-sm font-black text-crimson-600 mt-0.5">₹11,000/-</div>
+                <div className="text-[10px] text-brand-900 font-bold">से शुरू (Starting)</div>
               </div>
 
-              <div className="p-3 rounded-xl bg-white border border-brand-200 text-left hover:border-brand-600 transition-colors shadow-sm">
-                <BatteryCharging className="w-4 h-4 text-brand-700 mb-1" />
-                <div className="text-xs font-extrabold text-slate-900">LFP Battery</div>
-                <div className="text-[10px] text-slate-600 font-medium">60V 20Ah to 75Ah</div>
+              <div className="p-3 rounded-xl bg-amber-400/20 border-2 border-brand-700/30 text-left hover:border-brand-700 transition-colors shadow-sm">
+                <Sparkles className="w-4 h-4 text-brand-800 mb-1" />
+                <div className="text-[10px] text-brand-900 font-bold uppercase leading-tight">Single Light Model</div>
+                <div className="text-sm font-black text-crimson-600 mt-0.5">₹15,000/-</div>
+                <div className="text-[10px] text-slate-700 font-bold">से शुरू (Starting)</div>
               </div>
 
-              <div className="p-3 rounded-xl bg-white border border-royal-200 text-left hover:border-royal-700 transition-colors shadow-sm">
-                <Gauge className="w-4 h-4 text-royal-800 mb-1" />
-                <div className="text-xs font-extrabold text-royal-800">50 KM – 300 KM</div>
-                <div className="text-[10px] text-slate-600 font-medium">Running Range</div>
+              <div className="p-3 rounded-xl bg-amber-400/20 border-2 border-royal-700/30 text-left hover:border-royal-700 transition-colors shadow-sm">
+                <BatteryCharging className="w-4 h-4 text-royal-800 mb-1" />
+                <div className="text-[10px] text-royal-800 font-bold uppercase leading-tight">Battery Starting</div>
+                <div className="text-sm font-black text-crimson-600 mt-0.5">₹15,000/-</div>
+                <div className="text-[10px] text-slate-700 font-bold">LFP 50–300 KM</div>
               </div>
 
-              <div className="p-3 rounded-xl bg-crimson-50 border border-crimson-500/30 text-left hover:border-crimson-600 transition-colors shadow-sm">
+              <div className="p-3 rounded-xl bg-crimson-50 border-2 border-crimson-500/40 text-left hover:border-crimson-600 transition-colors shadow-sm">
                 <Award className="w-4 h-4 text-crimson-600 mb-1" />
-                <div className="text-xs font-extrabold text-crimson-600">5-Year Warranty</div>
-                <div className="text-[10px] text-slate-700 font-medium">Company Backed</div>
+                <div className="text-[10px] text-crimson-700 font-bold uppercase leading-tight">Company Backed</div>
+                <div className="text-sm font-black text-crimson-600 mt-0.5">60 Months</div>
+                <div className="text-[10px] text-slate-700 font-bold">5-Year Warranty</div>
               </div>
             </div>
 
@@ -119,7 +123,7 @@ export default function HeroSection({
                 className="w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-black text-xs uppercase tracking-wider transition-all shadow-glow-yellow hover:scale-105 active:scale-95 flex items-center justify-center gap-2 border-2 border-brand-800/15"
               >
                 <Briefcase className="w-4 h-4 fill-brand-950" />
-                <span>Join Dealer Network (40 Scooties)</span>
+                <span>40 + 20 FREE Distributor Offer</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
@@ -178,7 +182,7 @@ export default function HeroSection({
 
               {/* Bottom Price Badge */}
               <div className="absolute bottom-4 right-4 z-10 px-3.5 py-1.5 rounded-xl bg-amber-400 border border-brand-900/20 text-crimson-600 font-black text-xs uppercase tracking-wider shadow-lg">
-                Starting ₹15,000/-
+                Starting ₹11,000/-
               </div>
             </div>
 

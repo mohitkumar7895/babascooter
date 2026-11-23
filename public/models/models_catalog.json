@@ -14,9 +14,10 @@
         "alt": "FRENDO Prime B-1 view 1"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": 11000,
+    "priceLabel": "Starting ₹11,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Electric Scooter"
   },
   {
     "setNum": 2,
@@ -46,8 +47,9 @@
       }
     ],
     "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "priceLabel": "Single Light • ₹15,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Single Light Model"
   },
   {
     "setNum": 3,
@@ -71,8 +73,9 @@
       }
     ],
     "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "priceLabel": "Single Light • ₹15,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Single Light Model"
   },
   {
     "setNum": 4,
@@ -101,9 +104,10 @@
         "alt": "FRENDO Cruiser V8 view 3"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": 11000,
+    "priceLabel": "Starting ₹11,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Electric Scooter"
   },
   {
     "setNum": 5,
@@ -139,8 +143,9 @@
       }
     ],
     "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "priceLabel": "Single Light • ₹15,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Single Light Model"
   },
   {
     "setNum": 6,
@@ -170,8 +175,9 @@
       }
     ],
     "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "priceLabel": "Single Light • ₹15,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Single Light Model"
   },
   {
     "setNum": 7,
@@ -194,9 +200,10 @@
         "alt": "FRENDO Elegance UL view 2"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": 11000,
+    "priceLabel": "Starting ₹11,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Electric Scooter"
   },
   {
     "setNum": 8,
@@ -226,8 +233,9 @@
       }
     ],
     "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "priceLabel": "Single Light • ₹15,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Single Light Model"
   },
   {
     "setNum": 9,
@@ -257,8 +265,9 @@
       }
     ],
     "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "priceLabel": "Single Light • ₹15,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Single Light Model"
   },
   {
     "setNum": 10,
@@ -281,9 +290,10 @@
         "alt": "FRENDO Royale PRM view 2"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": 11000,
+    "priceLabel": "Starting ₹11,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Electric Scooter"
   },
   {
     "setNum": 11,
@@ -307,8 +317,9 @@
       }
     ],
     "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "priceLabel": "Single Light • ₹15,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Single Light Model"
   },
   {
     "setNum": 12,
@@ -337,9 +348,10 @@
         "alt": "FRENDO Sprint VNC view 3"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": 11000,
+    "priceLabel": "Starting ₹11,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Electric Scooter"
   },
   {
     "setNum": 13,
@@ -369,8 +381,9 @@
       }
     ],
     "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "priceLabel": "Single Light • ₹15,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Single Light Model"
   },
   {
     "setNum": 14,
@@ -400,8 +413,9 @@
       }
     ],
     "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "priceLabel": "Single Light • ₹15,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Single Light Model"
   },
   {
     "setNum": 15,
@@ -424,9 +438,10 @@
         "alt": "FRENDO Eco Rider view 2"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": 11000,
+    "priceLabel": "Starting ₹11,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Electric Scooter"
   },
   {
     "setNum": 16,
@@ -455,9 +470,10 @@
         "alt": "FRENDO Glide Special view 3"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": 11000,
+    "priceLabel": "Starting ₹11,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Electric Scooter"
   },
   {
     "setNum": 17,
@@ -487,8 +503,9 @@
       }
     ],
     "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "priceLabel": "Single Light • ₹15,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Single Light Model"
   },
   {
     "setNum": 18,
@@ -517,9 +534,10 @@
         "alt": "FRENDO Classic Neo view 3"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": 11000,
+    "priceLabel": "Starting ₹11,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Electric Scooter"
   },
   {
     "setNum": 19,
@@ -542,9 +560,10 @@
         "alt": "FRENDO Spark City view 2"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": 11000,
+    "priceLabel": "Starting ₹11,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Electric Scooter"
   },
   {
     "setNum": 20,
@@ -574,8 +593,9 @@
       }
     ],
     "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "priceLabel": "Single Light • ₹15,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Single Light Model"
   },
   {
     "setNum": 21,
@@ -611,8 +631,9 @@
       }
     ],
     "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "priceLabel": "Single Light • ₹15,000/-",
+    "availability": "Showroom In Stock",
+    "rateTier": "Single Light Model"
   },
   {
     "setNum": 22,
@@ -641,9 +662,10 @@
         "alt": "FRENDO Accessible Trike view 3"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": null,
+    "priceLabel": "Contact for Price",
+    "availability": "Showroom In Stock",
+    "rateTier": "Special Mobility"
   },
   {
     "setNum": 23,
@@ -666,9 +688,10 @@
         "alt": "FRENDO 2-Wheel Cargo view 2"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": null,
+    "priceLabel": "Commercial Rate",
+    "availability": "Showroom In Stock",
+    "rateTier": "Commercial Loader"
   },
   {
     "setNum": 24,
@@ -697,9 +720,10 @@
         "alt": "FRENDO 3-Wheel Delivery Loader view 3"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": null,
+    "priceLabel": "Commercial Rate",
+    "availability": "Showroom In Stock",
+    "rateTier": "Commercial Loader"
   },
   {
     "setNum": 25,
@@ -728,9 +752,10 @@
         "alt": "FRENDO 3-Wheel Jali Cargo Loader view 3"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": null,
+    "priceLabel": "Commercial Rate",
+    "availability": "Showroom In Stock",
+    "rateTier": "Commercial Loader"
   },
   {
     "setNum": 26,
@@ -753,9 +778,10 @@
         "alt": "FRENDO Heavy Hauler Trike view 2"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": null,
+    "priceLabel": "Commercial Rate",
+    "availability": "Showroom In Stock",
+    "rateTier": "Commercial Loader"
   },
   {
     "setNum": 27,
@@ -772,8 +798,9 @@
         "alt": "FRENDO Express Fleet view 1"
       }
     ],
-    "price": 15000,
-    "priceLabel": "Starting ₹15,000/-",
-    "availability": "Showroom In Stock"
+    "price": null,
+    "priceLabel": "Commercial Rate",
+    "availability": "Showroom In Stock",
+    "rateTier": "Commercial Loader"
   }
 ]

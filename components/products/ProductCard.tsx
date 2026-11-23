@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MessageCircle, ArrowRight, Zap, Shield, RotateCcw, Disc, Eye } from 'lucide-react';
 import { Product } from '@/types';
+import { getProductRate } from '@/lib/pricing';
 
 interface ProductCardProps {
   product: Product;
@@ -17,9 +18,10 @@ export default function ProductCard({ product, whatsappNumber = '9953564151' }: 
 
   const motor = specs?.motor_power || (product as any).motor_power || '1000W / 1500W Copper Motor';
   const battery = specs?.battery_voltage || (product as any).battery_voltage || 'LFP 60V (50–300 KM)';
-  const priceDisplay = product.price_label || (product.price ? `₹${product.price.toLocaleString('en-IN')}/-` : 'Starting ₹15,000/-');
+  const rate = getProductRate(product);
+  const priceDisplay = rate.priceDisplay;
 
-  const waMessage = `Hello Baba Marketing, I am interested in ${product.name} (${product.model_number}) starting at ₹15,000/-. Please share showroom availability and best offers.`;
+  const waMessage = `Hello Baba Marketing, I am interested in ${product.name} (${product.model_number} - ${priceDisplay}). Please share showroom availability and best offers.`;
 
   return (
     <div className="group rounded-2xl bg-white border border-brand-200 hover:border-brand-700 overflow-hidden shadow-card hover:shadow-glow transition-all duration-300 flex flex-col justify-between">
@@ -54,8 +56,8 @@ export default function ProductCard({ product, whatsappNumber = '9953564151' }: 
       <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
         <div>
           <div className="flex items-center justify-between text-[11px] text-brand-800 font-mono mb-0.5">
-            <span className="font-bold">{product.category_name || 'City Scooter'}</span>
-            <span className="text-crimson-600 font-bold">5-Yr Warranty</span>
+            <span className="font-bold">{product.category_name || rate.tier}</span>
+            <span className="text-crimson-600 font-bold">60 Mo. Warranty</span>
           </div>
 
           <Link href={`/scooters/${product.slug}`} className="block group-hover:text-brand-800 transition-colors">

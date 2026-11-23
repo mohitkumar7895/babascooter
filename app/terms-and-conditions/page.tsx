@@ -29,35 +29,35 @@ export default function TermsPage() {
             <h2 className="font-serif text-lg font-bold text-gradient-gold">1. Official Catalogue & Dealership Portal</h2>
             <p>
               This website serves as the official digital showcase and B2B enquiry portal for BABA MARKETING (FRENDO E-SCOOTY).
-              All final dealership agreements, wholesale orders (including purchase of 40 scooties scheme), vehicle inspections, invoicing, and handover take place in accordance with company policies.
+              All final dealership agreements, wholesale orders (including the 40 + 20 FREE Special Distributor Offer), vehicle inspections, invoicing, and handover take place in accordance with company policies.
             </p>
           </section>
 
           <section className="space-y-2">
             <h2 className="font-serif text-lg font-bold text-gradient-gold">2. Product Specifications & Pricing</h2>
             <p>
-              Features including starting prices (₹15,000/- All Taxes Included), heavy-duty chassis, 100% pure copper motor & wiring, disc brakes, controller options (48V / 60V / 72V), LFP battery capacities (20Ah to 75Ah), and range options (50 KM to 300 KM) reflect authentic manufacturer specifications. Actual range per charge may vary according to payload, riding conditions, tyre pressure, and gradient.
+              Official starting rates include Electric Scooters starting from ₹11,000/-, Single Light Models from ₹15,000/-, and LFP Electric Scooter Batteries from ₹15,000/-. Features including heavy-duty chassis, 100% pure copper motor & wiring, disc brakes, controller options (48V / 60V / 72V), LFP battery capacities (20Ah to 75Ah), and range options (50 KM to 300 KM) reflect authentic manufacturer specifications. Actual range per charge may vary according to payload, riding conditions, tyre pressure, and gradient.
             </p>
           </section>
 
           <section className="space-y-2">
-            <h2 className="font-serif text-lg font-bold text-gradient-gold">3. 5-Year Warranty Terms</h2>
+            <h2 className="font-serif text-lg font-bold text-gradient-gold">3. 60 Month (5-Year) Warranty Terms</h2>
             <p>
-              FRENDO E-SCOOTY offers a standard 5-Year Warranty as per applicable company warranty terms and conditions. Warranty covers certified manufacturing components and battery pack terms specified at the time of purchase.
+              FRENDO E-SCOOTY offers a standard 60 Month (5-Year) Warranty as per applicable company warranty terms and conditions. Warranty covers certified manufacturing components and battery pack terms specified at the time of purchase.
             </p>
           </section>
 
           <section className="space-y-2">
             <h2 className="font-serif text-lg font-bold text-gradient-gold">4. B2B Dealership & Special Offers</h2>
             <p>
-              All promotional benefits (such as free transportation across India, free demo scooty, demo battery, demo charger, dealer shop rent support, electrician salary support, ₹1 Crore insurance, and NETRAX certificate) are subject to official terms on the purchase of 40 scooties.
+              All promotional benefits (including the 40 + 20 FREE distributor offer, free transportation across India, free demo scooty, demo battery, demo charger, dealer shop rent support, electrician salary support, ₹1 Crore insurance, and NETRAX certificate) are subject to official company terms on qualifying wholesale orders.
             </p>
           </section>
 
           <section className="space-y-2">
             <h2 className="font-serif text-lg font-bold text-gradient-gold">5. Contact & Jurisdiction</h2>
             <p>
-              For any queries, please contact BABA MARKETING via Call/WhatsApp at <strong className="text-brand-800">9953564151</strong> or visit our showroom at 33 Futa Road, Kaili, Ballabhgarh. Any disputes are subject to the exclusive jurisdiction of the competent courts of Faridabad, Haryana, India.
+              For any queries, please contact BABA MARKETING via Call/WhatsApp at <strong className="text-brand-800">9953564151</strong> or visit our showroom at Plot No. 4, Kaili, Ballabhgarh, Faridabad, Haryana – 121004. Any disputes are subject to the exclusive jurisdiction of the competent courts of Faridabad, Haryana, India.
             </p>
           </section>
 

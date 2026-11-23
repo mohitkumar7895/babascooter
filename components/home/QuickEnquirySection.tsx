@@ -12,7 +12,7 @@ interface QuickEnquiryProps {
 export default function QuickEnquirySection({
   primaryPhone = '9953564151',
   whatsappNumber = '9953564151',
-  address = '33 Futa Road, Near Deepak Dagar, Kaili, Ballabhgarh, Faridabad, Haryana – 121004',
+  address = 'Plot No. 4, Kaili, Ballabhgarh, Faridabad, Haryana – 121004',
 }: QuickEnquiryProps) {
   const [formData, setFormData] = useState({
     name: '',

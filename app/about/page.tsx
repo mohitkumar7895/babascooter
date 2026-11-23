@@ -90,25 +90,25 @@ export default async function AboutPage() {
               </h2>
 
               <p className="text-sm text-slate-700 leading-relaxed">
-                Located conveniently at 33 Futa Road, Kaili, Ballabhgarh, Baba Marketing showcases 27 distinct electric scooter models with prices starting at just ₹15,000/- (All Taxes Included). From sleek daily commuters to high-torque dual 12-inch cruisers and commercial loaders, our vehicles cater to every lifestyle and commercial need.
+                Located conveniently at Plot No. 4, Kaili, Ballabhgarh, Baba Marketing showcases 27 distinct electric scooter models with Electric Scooters starting at ₹11,000/-, Single Light Models from ₹15,000/-, and LFP Batteries starting at ₹15,000/-. From sleek daily commuters to high-torque dual 12-inch cruisers and commercial loaders, our vehicles cater to every lifestyle and commercial need.
               </p>
 
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <div className="p-3.5 rounded-xl bg-brand-50 border border-brand-200">
-                  <div className="text-lg font-serif font-black text-brand-800">₹15,000/-</div>
-                  <div className="text-xs text-slate-600">Starting Price (Taxes Inc.)</div>
+                  <div className="text-lg font-serif font-black text-crimson-600">₹11,000/-</div>
+                  <div className="text-xs text-slate-600">Scooters Starting (Single Light ₹15,000/-)</div>
                 </div>
                 <div className="p-3.5 rounded-xl bg-brand-50 border border-brand-200">
                   <div className="text-lg font-serif font-black text-brand-800">50 – 300 KM</div>
-                  <div className="text-xs text-slate-600">Running Range Options</div>
+                  <div className="text-xs text-slate-600">LFP Battery Range (From ₹15,000/-)</div>
                 </div>
                 <div className="p-3.5 rounded-xl bg-brand-50 border border-brand-200">
-                  <div className="text-lg font-serif font-black text-brand-800">5-Year Warranty</div>
-                  <div className="text-xs text-slate-600">Comprehensive Peace of Mind</div>
+                  <div className="text-lg font-serif font-black text-brand-800">60 Month Warranty</div>
+                  <div className="text-xs text-slate-600">5-Year Peace of Mind</div>
                 </div>
                 <div className="p-3.5 rounded-xl bg-brand-50 border border-brand-200">
-                  <div className="text-lg font-serif font-black text-brand-800">14 B2B Benefits</div>
-                  <div className="text-xs text-slate-600">On 40 Scooties Dealership</div>
+                  <div className="text-lg font-serif font-black text-crimson-600">40 + 20 FREE</div>
+                  <div className="text-xs text-slate-600">Special Distributor Offer + 14 Benefits</div>
                 </div>
               </div>
 
@@ -143,9 +143,9 @@ export default async function AboutPage() {
                 sizes="(max-width: 1024px) 100vw, 500px"
                 className="object-cover object-center hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute bottom-3 left-3 right-3 bg-black/80 backdrop-blur-md px-3.5 py-2 rounded-xl border border-brand-300 text-center">
+              <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-brand-300 text-center">
                 <div className="font-serif text-xs font-bold text-brand-800">FRENDO Flagship Electric Lineup</div>
-                <div className="text-[10px] text-slate-700">Available in 5 Attractive Colours with 5-Year Warranty</div>
+                <div className="text-[10px] text-slate-700">Available in 5 Attractive Colours with 60 Month Warranty</div>
               </div>
             </div>
           </div>
@@ -202,7 +202,7 @@ export default async function AboutPage() {
               Ready to Upgrade or Join Our Dealer Network?
             </h3>
             <p className="text-xs sm:text-sm text-slate-700">
-              Visit our showroom at 33 Futa Road, Kaili, Ballabhgarh or speak directly with our team.
+              Visit our showroom at Plot No. 4, Kaili, Ballabhgarh, Faridabad or speak directly with our team.
             </p>
           </div>
 

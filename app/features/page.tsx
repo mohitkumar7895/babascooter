@@ -27,7 +27,7 @@ import { getCachedContact } from '@/lib/data';
 export const metadata = {
   title: 'Electric Scooty Features & Specifications | FRENDO E-SCOOTY',
   description:
-    'Explore the complete features of FRENDO electric scooters: Starting ₹15,000/-, Heavy-Duty Chassis, Digital Meter, Central Locking, Front Disc Brake, Copper Motor, and 5-Year Warranty.',
+    'Explore the complete features of FRENDO electric scooters: Starting ₹11,000/-, Single Light Model ₹15,000/-, LFP Battery ₹15,000/-, Heavy-Duty Chassis, Digital Meter, Central Locking, Front Disc Brake, Copper Motor, and 60 Month Warranty.',
 };
 
 export const revalidate = 300;
@@ -41,14 +41,14 @@ export default async function FeaturesPage() {
   const allFeatures = [
     {
       icon: Tag,
-      title: 'Starting Price: ₹15,000/-',
-      subtitle: 'All Taxes Included & Zero Hidden Cost',
-      badge: 'Unbeatable Value',
-      desc: 'Most accessible starting price in India for an electric two-wheeler. Includes GST and standard showroom setup, giving you maximum everyday mobility at minimal initial investment.',
+      title: 'Starting Price: ₹11,000/-',
+      subtitle: 'Single Light ₹15,000/- • LFP Battery ₹15,000/-',
+      badge: 'Official Rate Card',
+      desc: 'Transparent 3-tier manufacturer rate card: Electric Scooters starting from ₹11,000/-, Single Light Models from ₹15,000/-, and LFP Battery packs starting from ₹15,000/-.',
       highlights: [
-        'Complete scooty package from ₹15,000/-',
-        'Transparent manufacturer pricing',
-        'Direct subsidy on bulk dealership packs',
+        'Electric Scooter Starting Price: ₹11,000/- से शुरू',
+        'Single Light Model & Battery: ₹15,000/- से शुरू',
+        'Special Distributor Offer: 40 + 20 FREE',
       ],
       heroHighlight: true,
     },
@@ -163,12 +163,12 @@ export default async function FeaturesPage() {
     },
     {
       icon: Award,
-      title: 'Comprehensive 5-Year Warranty',
+      title: '60 Month (5-Year) Warranty',
       subtitle: 'Official Manufacturer Coverage',
       badge: 'Peace of Mind',
-      desc: 'Backed by FRENDO’s comprehensive 5-Year Warranty as per applicable company terms and conditions. Ensures hassle-free ownership with direct OEM technical and spare parts assistance.',
+      desc: 'Backed by FRENDO’s comprehensive 60 Month (5-Year) Warranty as per applicable company terms and conditions. Ensures hassle-free ownership with direct OEM technical and spare parts assistance.',
       highlights: [
-        '5-Year coverage as per company terms',
+        '60 Month coverage as per company terms',
         'Authorized dealer service support',
         'Genuine original spare parts availability',
       ],
@@ -201,7 +201,7 @@ export default async function FeaturesPage() {
           </h1>
 
           <p className="mt-3.5 text-slate-700 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
-            From our entry ₹15,000/- models to our 300 KM hyper-range scooters, every FRENDO vehicle is engineered with pure copper motor, front hydraulic disc brake, heavy-duty chassis, and 5-Year warranty.
+            From our entry ₹11,000/- electric scooters and ₹15,000/- Single Light Models to our 300 KM hyper-range scooters, every FRENDO vehicle is engineered with pure copper motor, front hydraulic disc brake, heavy-duty chassis, and 60 Month Warranty.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
@@ -316,8 +316,8 @@ export default async function FeaturesPage() {
             </div>
 
             <div className="p-4 rounded-2xl bg-brand-50 border border-brand-200">
-              <div className="text-2xl font-black text-brand-800 font-mono">5-Year</div>
-              <div className="text-xs font-bold text-slate-900 mt-1">Warranty Backing</div>
+              <div className="text-2xl font-black text-brand-800 font-mono">60 Months</div>
+              <div className="text-xs font-bold text-slate-900 mt-1">5-Year Warranty Backing</div>
               <div className="text-[11px] text-slate-600 mt-0.5">Official company terms, reliable parts availability.</div>
             </div>
 

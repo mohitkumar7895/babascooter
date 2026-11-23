@@ -23,7 +23,7 @@ export default async function ContactPage() {
   const brandName = 'FRENDO E-SCOOTY';
   const address =
     contact?.address ||
-    '33 Futa Road, Near Deepak Dagar, Kaili, Ballabhgarh, Faridabad, Haryana – 121004, India.';
+    'Plot No. 4, Kaili, Ballabhgarh, Faridabad, Haryana – 121004, India.';
   const primaryPhone = contact?.primary_phone || '9953564151';
   const whatsapp = contact?.whatsapp_number || '9953564151';
   const email = contact?.email || 'info@frendo.in';
@@ -32,19 +32,19 @@ export default async function ContactPage() {
   const faqs = [
     {
       q: 'What is the starting price of FRENDO E-SCOOTY?',
-      a: 'The starting price is ₹15,000/- (All Taxes Included), making it the most affordable and accessible electric vehicle in India.',
+      a: 'Electric Scooters start from ₹11,000/-, Single Light Models start from ₹15,000/-, and LFP Electric Scooter Batteries start from ₹15,000/-, giving you transparent tier-based manufacturer rates.',
     },
     {
       q: 'What are the available LFP battery and range options?',
-      a: 'We offer 5 LFP 60V battery packs (20Ah, 30Ah, 45Ah, 60Ah, 75Ah) delivering real-world running range from 50 KM up to 300 KM per charge.',
+      a: 'We offer 5 LFP 60V battery packs (20Ah, 30Ah, 45Ah, 60Ah, 75Ah) starting from ₹15,000/- delivering real-world running range from 50 KM up to 300 KM per charge.',
     },
     {
-      q: 'What are the B2B Dealership benefits on purchase of 40 scooties?',
-      a: 'On purchase of 40 scooties, you get Free Transportation Across India, 1 Free Demo Scooty, 1 Free Demo Battery, 1 Free Demo Charger, 5-Year Warranty, Shop Rent Support, Electrician Salary Support, ₹1 Crore Insurance, Branding, NETRAX Certificate, Dealer Certificate, and Free Training.',
+      q: 'What is the 40 + 20 FREE Special Distributor Offer?',
+      a: 'Under our Special Distributor Offer, buy 40 scooters and get 20 scooters absolutely FREE (40 स्कूटर खरीदें और 20 स्कूटर बिल्कुल FREE पाएँ!), plus Free Transportation Across India, Demo Scooty/Battery/Charger, 60 Month Warranty, Shop Rent & Electrician Support, ₹1 Crore Insurance, Branding, NETRAX Certificate, and Free Training.',
     },
     {
       q: 'What warranty is offered on FRENDO scooters?',
-      a: 'FRENDO E-SCOOTY offers a comprehensive 5-Year Warranty as per applicable company warranty terms and conditions.',
+      a: 'FRENDO E-SCOOTY offers a comprehensive 60 Month (5-Year) Warranty as per applicable company warranty terms and conditions.',
     },
   ];
 

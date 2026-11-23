@@ -10,7 +10,7 @@ import { ContactSettings } from '@/types';
 export const metadata: Metadata = {
   title: 'FRENDO E-SCOOTY | Drive Green, Live Better | Baba Marketing',
   description:
-    'Welcome to FRENDO E-SCOOTY. Electric scooters starting at ₹15,000/- with LFP battery, 50 to 300 KM range, 5-year warranty, and exclusive B2B dealership & franchise packages across India.',
+    'Welcome to FRENDO E-SCOOTY by Baba Marketing. Electric scooters starting at ₹11,000/-, Single Light Models from ₹15,000/-, LFP batteries (50 to 300 KM range) from ₹15,000/-, 60-month warranty, and 40 + 20 FREE B2B distributor offer across India.',
   keywords: [
     'FRENDO E-SCOOTY',
     'Baba Marketing',

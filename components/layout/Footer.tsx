@@ -32,7 +32,7 @@ export default function Footer({ contact }: FooterProps) {
   const tagline = contact?.tagline || 'Drive Green, Live Better!';
   const address =
     contact?.address ||
-    '33 Futa Road, Near Deepak Dagar, Kaili, Ballabhgarh, Faridabad, Haryana – 121004, India.';
+    'Plot No. 4, Kaili, Ballabhgarh, Faridabad, Haryana – 121004, India.';
   const primaryPhone = contact?.primary_phone || '9953564151';
   const whatsapp = contact?.whatsapp_number || '9953564151';
   const email = contact?.email || 'info@frendo.in';
@@ -41,7 +41,7 @@ export default function Footer({ contact }: FooterProps) {
     { name: 'Home', href: '/' },
     { name: 'Features & Specs', href: '/features' },
     { name: 'LFP Battery Packs (50–300 KM)', href: '/batteries' },
-    { name: 'B2B Dealership (40 Scooties)', href: '/dealership' },
+    { name: 'B2B Dealership (40 + 20 FREE)', href: '/dealership' },
     { name: 'All 27 Models Catalogue', href: '/scooters' },
     { name: 'EV Guides & Blog', href: '/blog' },
     { name: 'About Baba Marketing', href: '/about' },
@@ -80,18 +80,18 @@ export default function Footer({ contact }: FooterProps) {
             </p>
 
             <p className="text-xs text-white/80 leading-relaxed max-w-md">
-              Electric scooters with advanced LFP batteries (50–300 KM range) starting at ₹15,000/-, backed by 5-Year warranty and all-India dealership network.
+              Electric scooters starting at ₹11,000/-, Single Light Models from ₹15,000/-, and LFP batteries (50–300 KM range) from ₹15,000/-, backed by 60 Month Warranty and 40 + 20 FREE distributor offer across India.
             </p>
 
             <div className="flex flex-wrap gap-2 pt-1">
               <span className="px-2.5 py-1 rounded-md bg-amber-400 text-brand-950 text-[11px] font-black">
-                Starting ₹15,000/-
+                Starting ₹11,000/-
               </span>
               <span className="px-2.5 py-1 rounded-md bg-crimson-600 text-white text-[11px] font-bold">
-                5-Year Warranty
+                60 Month Warranty
               </span>
               <span className="px-2.5 py-1 rounded-md bg-white/15 border border-white/25 text-[11px] font-bold text-white">
-                50 to 300 KM Range
+                40 + 20 FREE Offer
               </span>
             </div>
           </div>
@@ -164,7 +164,7 @@ export default function Footer({ contact }: FooterProps) {
             <div className="pt-2">
               <a
                 href={`https://wa.me/91${whatsapp}?text=${encodeURIComponent(
-                  'Hello Baba Marketing, I am interested in FRENDO B2B Dealership (40 Scooties Offer).'
+                  'Hello Baba Marketing, I am interested in FRENDO B2B Dealership (40 + 20 FREE Offer).'
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"

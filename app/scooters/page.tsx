@@ -76,7 +76,7 @@ export default async function ScootersPage() {
           </h1>
 
           <p className="mt-2 text-slate-700 text-xs sm:text-sm leading-relaxed">
-            Starting Price: <strong className="text-brand-800">₹15,000/- (All Taxes Included)</strong> • LFP Battery (50 KM to 300 KM) • Heavy-Duty Chassis • Front Disc Brake • Digital Meter • 5-Year Warranty.
+            Electric Scooters Starting <strong className="text-crimson-600">₹11,000/-</strong> • Single Light Models <strong className="text-crimson-600">₹15,000/-</strong> • LFP Battery Starting <strong className="text-brand-800">₹15,000/-</strong> • <strong className="text-brand-800">60 Month Warranty</strong>.
           </p>
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-[11px] text-slate-700">
