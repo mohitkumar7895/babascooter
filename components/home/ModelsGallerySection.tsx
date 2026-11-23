@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, MessageCircle, Eye, X, ChevronLeft, ChevronRight, Zap, Shield, Check, Disc, RotateCcw } from 'lucide-react';
+import { ArrowRight, MessageCircle, Eye, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import modelsCatalog from '@/public/models/models_catalog.json';
 
 interface ModelItem {
   setNum: number;
@@ -19,25 +20,18 @@ interface ModelItem {
     sortOrder: number;
     alt: string;
   }[];
-  price: number;
+  price: number | null;
   priceLabel: string;
   availability: string;
 }
 
+const INITIAL_MODELS = modelsCatalog as ModelItem[];
+
 export default function ModelsGallerySection() {
-  const [models, setModels] = useState<ModelItem[]>([]);
+  const [models] = useState<ModelItem[]>(INITIAL_MODELS);
   const [selectedCat, setSelectedCat] = useState<string>('all');
   const [activeModalModel, setActiveModalModel] = useState<ModelItem | null>(null);
   const [modalImgIndex, setModalImgIndex] = useState(0);
-
-  useEffect(() => {
-    fetch('/models/models_catalog.json')
-      .then((res) => res.json())
-      .then((data) => {
-        if (Array.isArray(data)) setModels(data);
-      })
-      .catch((err) => console.error('Failed to load models catalog:', err));
-  }, []);
 
   const categories = [
     'all',
@@ -68,7 +62,7 @@ export default function ModelsGallerySection() {
   };
 
   return (
-    <section id="models" className="py-12 sm:py-16 bg-white text-slate-900 relative border-b border-brand-200 cv-auto">
+    <section id="models" className="py-12 sm:py-16 bg-white text-slate-900 relative border-b border-brand-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
