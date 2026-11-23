@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 import { slugify } from '@/lib/validation';
+import { revalidatePublicSite } from '@/lib/revalidate';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -190,6 +191,7 @@ export async function PUT(req: NextRequest, { params }: { params: { slug: string
       );
     }
 
+    revalidatePublicSite(['/', '/scooters', `/scooters/${finalSlug || currentProduct.slug}`]);
     return NextResponse.json({ success: true, message: 'Product updated successfully', slug: finalSlug || slug });
   } catch (error: any) {
     console.error('Error updating product:', error);
@@ -218,6 +220,7 @@ export async function DELETE(req: NextRequest, { params }: { params: { slug: str
     // Delete product (cascade will delete specs and images)
     await query('DELETE FROM products WHERE id = ?', [productId]);
 
+    revalidatePublicSite(['/', '/scooters']);
     return NextResponse.json({ success: true, message: 'Product deleted successfully' });
   } catch (error: any) {
     console.error('Error deleting product:', error);

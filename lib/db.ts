@@ -16,6 +16,7 @@ const pool =
     waitForConnections: true,
     connectionLimit: 15,
     queueLimit: 0,
+    connectTimeout: 5000,
     enableKeepAlive: true,
     keepAliveInitialDelay: 10000,
   });

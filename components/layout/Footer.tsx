@@ -62,15 +62,15 @@ export default function Footer({ contact }: FooterProps) {
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
-          
+
           {/* Column 1: Brand & Bio */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="relative h-12 w-48 overflow-hidden rounded-lg bg-black border-2 border-amber-400 flex items-center justify-center p-1 shadow-md">
+            <div className="relative h-12 w-48 overflow-hidden rounded-lg bg-white border-2 border-amber-400 flex items-center justify-center px-2.5 py-1 shadow-md">
               <Image
                 src="/logo.jpeg"
                 alt="FRENDO E-SCOOTY"
                 fill
-                className="object-contain"
+                className="object-contain p-1"
                 sizes="200px"
               />
             </div>
@@ -126,7 +126,7 @@ export default function Footer({ contact }: FooterProps) {
 
             <div className="space-y-2.5 text-xs text-white/90">
               <div className="font-bold text-white">{businessName} ({brandName})</div>
-              
+
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                 <span className="leading-relaxed">{address}</span>

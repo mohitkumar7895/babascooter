@@ -4,7 +4,7 @@ import { BlogPost } from '@/types';
 import { Sparkles } from 'lucide-react';
 import BlogListingClient from './BlogListingClient';
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 export async function generateMetadata() {
   return {

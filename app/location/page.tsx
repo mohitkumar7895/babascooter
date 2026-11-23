@@ -4,7 +4,7 @@ import { ContactSettings } from '@/types';
 import { getSeoMetadata } from '@/lib/seo';
 import { MapPin, Phone, MessageCircle, Clock, Navigation, CheckCircle2, Sparkles } from 'lucide-react';
 
-export const revalidate = 0;
+export const revalidate = 300;
 
 export async function generateMetadata() {
   return await getSeoMetadata('/location');

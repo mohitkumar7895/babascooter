@@ -22,8 +22,7 @@ import {
   Sliders,
   Check,
 } from 'lucide-react';
-import { query } from '@/lib/db';
-import { ContactSettings } from '@/types';
+import { getCachedContact } from '@/lib/data';
 
 export const metadata = {
   title: 'Electric Scooty Features & Specifications | FRENDO E-SCOOTY',
@@ -31,14 +30,10 @@ export const metadata = {
     'Explore the complete features of FRENDO electric scooters: Starting ₹15,000/-, Heavy-Duty Chassis, Digital Meter, Central Locking, Front Disc Brake, Copper Motor, and 5-Year Warranty.',
 };
 
-export const revalidate = 0;
+export const revalidate = 300;
 
 export default async function FeaturesPage() {
-  let contact: ContactSettings | null = null;
-  try {
-    const rows = await query<ContactSettings[]>('SELECT * FROM contact_settings LIMIT 1');
-    contact = rows[0] || null;
-  } catch {}
+  const contact = await getCachedContact();
 
   const phone = contact?.primary_phone || '9953564151';
   const whatsapp = contact?.whatsapp_number || '9953564151';

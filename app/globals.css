@@ -114,6 +114,12 @@ body {
     linear-gradient(to bottom, rgba(11, 94, 26, 0.05) 1px, transparent 1px);
 }
 
+/* Off-screen rendering optimization for heavy below-the-fold sections */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
+}
+
 /* Forced Colors Mode support (accessibility) */
 @media (forced-colors: active) {
   :where(a[href], button, input, select, textarea, summary, [role="button"], [tabindex]):focus-visible {

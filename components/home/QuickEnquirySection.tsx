@@ -56,10 +56,10 @@ export default function QuickEnquirySection({
   };
 
   return (
-    <section className="py-12 sm:py-16 bg-brand-50 border-t border-brand-200" id="quick-enquiry">
+    <section className="py-12 sm:py-16 bg-brand-50 border-t border-brand-200 cv-auto" id="quick-enquiry">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
+
           {/* Left Column: Showroom Information */}
           <div className="lg:col-span-6 space-y-5">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-800 text-xs font-bold text-white uppercase tracking-widest font-serif shadow-sm">

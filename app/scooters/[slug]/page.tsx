@@ -2,7 +2,8 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { query } from '@/lib/db';
-import { Product, ProductImage, ProductSpecification, ContactSettings } from '@/types';
+import { getCachedContact } from '@/lib/data';
+import { Product, ProductImage, ProductSpecification } from '@/types';
 import ProductLightbox from '@/components/gallery/ProductLightbox';
 import ProductCard from '@/components/products/ProductCard';
 import {
@@ -26,7 +27,7 @@ interface Props {
   params: { slug: string };
 }
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 export async function generateMetadata({ params }: Props) {
   const slug = params.slug;
@@ -65,43 +66,42 @@ async function getProductDetailData(slug: string) {
 
     const product: Product = pRows[0];
 
-    const images = await query<ProductImage[]>(
-      'SELECT * FROM product_images WHERE product_id = ? ORDER BY is_primary DESC, sort_order ASC, id ASC',
-      [product.id]
-    );
+    const [images, sRows, contact, related] = await Promise.all([
+      query<ProductImage[]>(
+        'SELECT * FROM product_images WHERE product_id = ? ORDER BY is_primary DESC, sort_order ASC, id ASC',
+        [product.id]
+      ),
+      query<ProductSpecification[]>(
+        'SELECT * FROM product_specifications WHERE product_id = ? LIMIT 1',
+        [product.id]
+      ),
+      getCachedContact(),
+      query<Product[]>(
+        `SELECT 
+          p.*,
+          c.name AS category_name,
+          c.slug AS category_slug,
+          ps.motor_power,
+          ps.battery_voltage,
+          (
+            SELECT image_url 
+            FROM product_images 
+            WHERE product_id = p.id 
+            ORDER BY is_primary DESC, sort_order ASC 
+            LIMIT 1
+          ) AS primary_image
+         FROM products p
+         LEFT JOIN categories c ON p.category_id = c.id
+         LEFT JOIN product_specifications ps ON p.id = ps.product_id
+         WHERE p.id != ? AND p.is_published = TRUE
+         ORDER BY (p.category_id = ?) DESC, p.sort_order ASC
+         LIMIT 4`,
+        [product.id, product.category_id || 0]
+      ),
+    ]);
+
     product.images = images || [];
-
-    const sRows = await query<ProductSpecification[]>(
-      'SELECT * FROM product_specifications WHERE product_id = ? LIMIT 1',
-      [product.id]
-    );
     product.specifications = sRows[0] || undefined;
-
-    const contactRows = await query<ContactSettings[]>('SELECT * FROM contact_settings LIMIT 1');
-    const contact = contactRows[0] || null;
-
-    const related = await query<Product[]>(
-      `SELECT 
-        p.*,
-        c.name AS category_name,
-        c.slug AS category_slug,
-        ps.motor_power,
-        ps.battery_voltage,
-        (
-          SELECT image_url 
-          FROM product_images 
-          WHERE product_id = p.id 
-          ORDER BY is_primary DESC, sort_order ASC 
-          LIMIT 1
-        ) AS primary_image
-       FROM products p
-       LEFT JOIN categories c ON p.category_id = c.id
-       LEFT JOIN product_specifications ps ON p.id = ps.product_id
-       WHERE p.id != ? AND p.is_published = TRUE
-       ORDER BY (p.category_id = ?) DESC, p.sort_order ASC
-       LIMIT 4`,
-      [product.id, product.category_id || 0]
-    );
 
     return { product, contact, related: related || [] };
   } catch (err) {

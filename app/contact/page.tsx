@@ -2,22 +2,18 @@ import React from 'react';
 import { query } from '@/lib/db';
 import { ContactSettings } from '@/types';
 import { getSeoMetadata } from '@/lib/seo';
+import { getCachedContact } from '@/lib/data';
 import QuickEnquirySection from '@/components/home/QuickEnquirySection';
 import { Phone, MessageCircle, MapPin, Mail, Clock, Globe, Briefcase, Award } from 'lucide-react';
 
-export const revalidate = 0;
+export const revalidate = 300;
 
 export async function generateMetadata() {
   return await getSeoMetadata('/contact');
 }
 
 async function getContactData() {
-  try {
-    const contactRows = await query<ContactSettings[]>('SELECT * FROM contact_settings LIMIT 1');
-    return contactRows[0] || null;
-  } catch {
-    return null;
-  }
+  return await getCachedContact();
 }
 
 export default async function ContactPage() {

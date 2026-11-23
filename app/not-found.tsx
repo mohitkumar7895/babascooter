@@ -1,13 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
-import { Zap, ArrowLeft, Home } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowLeft, Home } from 'lucide-react';
 
 export default function NotFound() {
   return (
     <div className="min-h-[75vh] bg-brand-50 flex items-center justify-center px-4 py-16">
       <div className="max-w-md w-full text-center space-y-6 bg-white p-8 rounded-3xl border border-brand-200 shadow-card">
-        <div className="w-16 h-16 rounded-2xl bg-brand-800 text-amber-400 flex items-center justify-center mx-auto shadow-glow">
-          <Zap className="w-8 h-8" />
+        <div className="relative h-14 w-48 mx-auto rounded-xl bg-white border border-brand-200 overflow-hidden shadow-sm">
+          <Image
+            src="/logo.jpeg"
+            alt="FRENDO E-SCOOTY"
+            fill
+            className="object-contain p-1.5"
+            sizes="200px"
+          />
         </div>
 
         <div className="space-y-2">

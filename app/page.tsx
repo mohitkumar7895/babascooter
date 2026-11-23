@@ -9,8 +9,9 @@ import PromotionalBanner from '@/components/home/PromotionalBanner';
 import QuickEnquirySection from '@/components/home/QuickEnquirySection';
 import { Banner, ContactSettings, HomepageSection } from '@/types';
 import { getSeoMetadata } from '@/lib/seo';
+import { getCachedContact } from '@/lib/data';
 
-export const revalidate = 0; // Always fresh from MySQL
+export const revalidate = 60; // Fast ISR cache, instantly purged on admin updates
 
 export async function generateMetadata() {
   return await getSeoMetadata('/');
@@ -18,13 +19,13 @@ export async function generateMetadata() {
 
 async function getHomePageData() {
   try {
-    const contactRows = await query<ContactSettings[]>('SELECT * FROM contact_settings LIMIT 1');
-    const contact = contactRows[0] || null;
+    const [contact, banners, sections] = await Promise.all([
+      getCachedContact(),
+      query<Banner[]>('SELECT * FROM banners WHERE is_active = TRUE ORDER BY sort_order ASC'),
+      query<HomepageSection[]>('SELECT * FROM homepage_sections WHERE is_visible = TRUE'),
+    ]);
 
-    const banners = await query<Banner[]>('SELECT * FROM banners WHERE is_active = TRUE ORDER BY sort_order ASC');
     const promoBanner = banners.find((b) => b.banner_type === 'promo') || banners[0] || null;
-
-    const sections = await query<HomepageSection[]>('SELECT * FROM homepage_sections WHERE is_visible = TRUE');
     const heroSection = sections.find((s) => s.section_key === 'hero');
 
     return {

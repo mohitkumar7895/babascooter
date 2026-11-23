@@ -2,9 +2,10 @@ import React from 'react';
 import { query } from '@/lib/db';
 import { Product, Category, ContactSettings } from '@/types';
 import { getSeoMetadata } from '@/lib/seo';
+import { getCachedContact } from '@/lib/data';
 import ScootersCatalogueClient from './ScootersCatalogueClient';
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 export async function generateMetadata() {
   return await getSeoMetadata('/scooters');
@@ -12,14 +13,12 @@ export async function generateMetadata() {
 
 async function getCatalogueData() {
   try {
-    const contactRows = await query<ContactSettings[]>('SELECT * FROM contact_settings LIMIT 1');
-    const contact = contactRows[0] || null;
-
-    const categories = await query<Category[]>(
-      'SELECT c.*, COUNT(p.id) AS product_count FROM categories c LEFT JOIN products p ON c.id = p.category_id AND p.is_published = TRUE GROUP BY c.id ORDER BY c.sort_order ASC'
-    );
-
-    const products = await query<Product[]>(`
+    const [contact, categories, products] = await Promise.all([
+      getCachedContact(),
+      query<Category[]>(
+        'SELECT c.*, COUNT(p.id) AS product_count FROM categories c LEFT JOIN products p ON c.id = p.category_id AND p.is_published = TRUE GROUP BY c.id ORDER BY c.sort_order ASC'
+      ),
+      query<Product[]>(`
       SELECT 
         p.*,
         c.name AS category_name,
@@ -45,7 +44,8 @@ async function getCatalogueData() {
       LEFT JOIN product_specifications ps ON p.id = ps.product_id
       WHERE p.is_published = TRUE
       ORDER BY p.sort_order ASC, p.id ASC
-    `);
+    `),
+    ]);
 
     return {
       contact,

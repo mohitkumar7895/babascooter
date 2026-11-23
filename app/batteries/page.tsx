@@ -17,8 +17,7 @@ import {
   Clock,
   Sparkles,
 } from 'lucide-react';
-import { query } from '@/lib/db';
-import { ContactSettings } from '@/types';
+import { getCachedContact } from '@/lib/data';
 
 export const metadata = {
   title: 'LFP Battery Options & Running Range (50–300 KM) | FRENDO E-SCOOTY',
@@ -26,14 +25,10 @@ export const metadata = {
     'Discover FRENDO LFP (Lithium Iron Phosphate) battery packs: 60V 20Ah to 75Ah with running range from 50 KM to 300 KM. Battery starting price ₹15,000/- with 5-Year warranty.',
 };
 
-export const revalidate = 0;
+export const revalidate = 300;
 
 export default async function BatteriesPage() {
-  let contact: ContactSettings | null = null;
-  try {
-    const rows = await query<ContactSettings[]>('SELECT * FROM contact_settings LIMIT 1');
-    contact = rows[0] || null;
-  } catch {}
+  const contact = await getCachedContact();
 
   const phone = contact?.primary_phone || '9953564151';
   const whatsapp = contact?.whatsapp_number || '9953564151';

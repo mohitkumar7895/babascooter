@@ -140,7 +140,7 @@ export default function DealershipOffersSection() {
   };
 
   return (
-    <section id="dealership" className="py-12 sm:py-16 bg-brand-50 text-slate-900 relative border-b border-brand-200">
+    <section id="dealership" className="py-12 sm:py-16 bg-brand-50 text-slate-900 relative border-b border-brand-200 cv-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

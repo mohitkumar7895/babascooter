@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Zap, Lock, User, AlertCircle, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { Lock, User, AlertCircle, ArrowRight } from 'lucide-react';
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -45,15 +46,19 @@ export default function AdminLoginPage() {
       <div className="max-w-md w-full relative z-10 space-y-8">
         {/* Brand Logo Header */}
         <div className="text-center space-y-3">
-          <Link href="/" className="inline-flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-brand-800 border-2 border-amber-400 flex items-center justify-center text-amber-400 shadow-glow font-black text-2xl">
-              <Zap className="w-7 h-7 fill-amber-400" />
+          <Link href="/" className="inline-flex flex-col items-center gap-2.5 group">
+            <div className="relative h-16 w-56 overflow-hidden rounded-2xl bg-white border-2 border-brand-800/20 shadow-md group-hover:scale-105 transition-transform">
+              <Image
+                src="/logo.jpeg"
+                alt="FRENDO E-SCOOTY - Baba Marketing"
+                fill
+                priority
+                className="object-contain p-2"
+                sizes="240px"
+              />
             </div>
-            <div className="text-left">
-              <div className="font-black text-2xl text-brand-800 tracking-tight leading-none">BABA MARKETING</div>
-              <div className="text-xs text-royal-800 font-bold tracking-widest uppercase mt-1">
-                FRENDO ELECTRIC SCOOTY
-              </div>
+            <div className="text-xs text-brand-800 font-extrabold tracking-widest uppercase">
+              BABA MARKETING • FRENDO E-SCOOTY
             </div>
           </Link>
 

@@ -20,7 +20,7 @@ interface Props {
   params: { slug: string };
 }
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 export async function generateMetadata({ params }: Props) {
   try {

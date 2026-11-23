@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 import { slugify } from '@/lib/validation';
+import { revalidatePublicSite } from '@/lib/revalidate';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -92,6 +93,7 @@ export async function POST(req: NextRequest) {
       ]
     );
 
+    revalidatePublicSite(['/blog', `/blog/${slug}`]);
     return NextResponse.json({
       success: true,
       id: result.insertId,

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import {
   LayoutDashboard,
@@ -73,14 +74,24 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Sidebar for Desktop — FRENDO Eco Forest Green */}
       <aside className="hidden lg:flex flex-col w-64 bg-brand-800 text-white border-r-2 border-amber-400 shrink-0 shadow-xl">
         {/* Brand Header */}
-        <div className="p-6 border-b border-white/15 flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-amber-400 flex items-center justify-center text-brand-950 font-black shadow-md">
-            <Zap className="w-5 h-5 fill-brand-950" />
-          </div>
-          <div>
-            <div className="font-black text-white text-base tracking-tight leading-none">BABA MARKETING</div>
-            <div className="text-[10px] text-amber-400 font-bold tracking-wider uppercase mt-1">
-              FRENDO ADMIN
+        <div className="p-5 border-b border-white/15 space-y-2.5">
+          <Link
+            href="/admin/dashboard"
+            className="relative block h-11 w-full overflow-hidden rounded-xl bg-white border-2 border-amber-400 shadow-md"
+          >
+            <Image
+              src="/logo.jpeg"
+              alt="FRENDO E-SCOOTY"
+              fill
+              priority
+              className="object-contain p-1.5"
+              sizes="220px"
+            />
+          </Link>
+          <div className="flex items-center justify-between px-0.5">
+            <div className="font-black text-white text-xs tracking-tight leading-none">BABA MARKETING</div>
+            <div className="text-[10px] text-amber-400 font-bold tracking-wider uppercase">
+              ADMIN
             </div>
           </div>
         </div>
@@ -177,12 +188,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div className="fixed inset-0 z-50 lg:hidden flex">
           <div className="fixed inset-0 bg-black/60 backdrop-blur-sm cursor-pointer" onClick={() => setSidebarOpen(false)} />
           <div className="relative w-64 bg-brand-800 text-white h-full flex flex-col z-10 border-r-2 border-amber-400">
-            <div className="p-4 border-b border-white/15 flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-amber-400 flex items-center justify-center text-brand-950 font-bold">
-                  <Zap className="w-4 h-4 fill-brand-950" />
-                </div>
-                <span className="font-bold text-white text-sm">BABA MARKETING</span>
+            <div className="p-4 border-b border-white/15 flex items-center justify-between gap-2">
+              <div className="relative h-9 w-36 overflow-hidden rounded-lg bg-white border-2 border-amber-400">
+                <Image
+                  src="/logo.jpeg"
+                  alt="FRENDO E-SCOOTY"
+                  fill
+                  className="object-contain p-1"
+                  sizes="150px"
+                />
               </div>
               <button onClick={() => setSidebarOpen(false)} className="p-1 text-white/80 hover:text-amber-400">
                 <X className="w-5 h-5" />

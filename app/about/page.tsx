@@ -6,7 +6,7 @@ import { ContactSettings } from '@/types';
 import { getSeoMetadata } from '@/lib/seo';
 import { Zap, ShieldCheck, Award, Users, BatteryCharging, ArrowRight, MessageCircle, Sparkles, CheckCircle2, Phone } from 'lucide-react';
 
-export const revalidate = 0;
+export const revalidate = 300;
 
 export async function generateMetadata() {
   return await getSeoMetadata('/about');

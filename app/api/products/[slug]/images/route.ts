@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
+import { revalidatePublicSite } from '@/lib/revalidate';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -44,6 +45,7 @@ export async function POST(req: NextRequest, { params }: { params: { slug: strin
       ]
     );
 
+    revalidatePublicSite(['/', '/scooters']);
     return NextResponse.json({
       success: true,
       message: 'Image added successfully',
@@ -102,6 +104,7 @@ export async function PUT(req: NextRequest, { params }: { params: { slug: string
       ]);
     }
 
+    revalidatePublicSite(['/', '/scooters']);
     return NextResponse.json({ success: true, message: 'Image updated successfully' });
   } catch (error: any) {
     console.error('Error updating image:', error);
@@ -125,6 +128,7 @@ export async function DELETE(req: NextRequest, { params }: { params: { slug: str
 
     await query('DELETE FROM product_images WHERE id = ?', [Number(imageId)]);
 
+    revalidatePublicSite(['/', '/scooters']);
     return NextResponse.json({ success: true, message: 'Image deleted successfully' });
   } catch (error: any) {
     console.error('Error deleting image:', error);

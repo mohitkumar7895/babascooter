@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
+import { revalidatePublicSite } from '@/lib/revalidate';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -83,6 +84,7 @@ export async function PUT(req: NextRequest) {
           ]
         );
       }
+      revalidatePublicSite(['/']);
       return NextResponse.json({ success: true, message: 'Banner updated successfully' });
     }
 
@@ -135,6 +137,7 @@ export async function PUT(req: NextRequest) {
         );
       }
 
+      revalidatePublicSite(['/']);
       return NextResponse.json({ success: true, message: 'Section updated successfully' });
     }
 

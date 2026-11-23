@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 import { slugify } from '@/lib/validation';
+import { revalidatePublicSite } from '@/lib/revalidate';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -177,6 +178,7 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    revalidatePublicSite(['/', '/scooters', `/scooters/${finalSlug}`]);
     return NextResponse.json({ success: true, message: 'Product created successfully', id: productId, slug: finalSlug });
   } catch (error: any) {
     console.error('Error creating product:', error);

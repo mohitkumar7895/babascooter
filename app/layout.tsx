@@ -3,7 +3,8 @@ import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppFloating from '@/components/layout/WhatsAppFloating';
-import { query } from '@/lib/db';
+import NavigationProgress from '@/components/layout/NavigationProgress';
+import { getCachedContact } from '@/lib/data';
 import { ContactSettings } from '@/types';
 
 export const metadata: Metadata = {
@@ -20,16 +21,16 @@ export const metadata: Metadata = {
     'Ballabhgarh EV Showroom',
     '3-Wheel Loader',
   ],
+  icons: {
+    icon: '/logo.jpeg?v=2',
+    shortcut: '/logo.jpeg?v=2',
+    apple: '/logo.jpeg?v=2',
+  },
 };
 
 async function getContactData(): Promise<ContactSettings | undefined> {
-  try {
-    const rows = await query<ContactSettings[]>('SELECT * FROM contact_settings LIMIT 1');
-    return rows && rows.length > 0 ? rows[0] : undefined;
-  } catch (err) {
-    console.error('Failed to load contact settings in layout:', err);
-    return undefined;
-  }
+  const contact = await getCachedContact();
+  return contact || undefined;
 }
 
 export default async function RootLayout({
@@ -42,7 +43,7 @@ export default async function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/logo.jpeg" sizes="any" />
+        <link rel="icon" href="/logo.jpeg?v=2" sizes="any" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -51,6 +52,7 @@ export default async function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-white text-slate-900 antialiased selection:bg-brand-800 selection:text-amber-400">
+        <NavigationProgress />
         <Header contact={contact} />
         <main className="flex-1">{children}</main>
         <Footer contact={contact} />

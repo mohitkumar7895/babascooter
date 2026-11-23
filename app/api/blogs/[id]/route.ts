@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 import { slugify } from '@/lib/validation';
+import { revalidatePublicSite } from '@/lib/revalidate';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -107,6 +108,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
       ]
     );
 
+    revalidatePublicSite(['/blog', `/blog/${slug}`]);
     return NextResponse.json({ success: true, message: 'Blog updated successfully', slug });
   } catch (err: any) {
     console.error('Error updating blog post:', err);
@@ -124,6 +126,7 @@ export async function DELETE(req: NextRequest, { params }: { params: { id: strin
     const id = Number(params.id);
 
     await query('DELETE FROM blogs WHERE id = ?', [id]);
+    revalidatePublicSite(['/blog']);
     return NextResponse.json({ success: true, message: 'Blog deleted successfully' });
   } catch (err: any) {
     console.error('Error deleting blog post:', err);

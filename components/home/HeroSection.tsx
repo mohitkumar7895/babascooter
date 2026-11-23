@@ -48,7 +48,7 @@ export default function HeroSection({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
+
           {/* Left Column: Brand, Headlines & Offer Details */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -165,6 +165,7 @@ export default function HeroSection({
                 alt="FRENDO E-SCOOTY Prime B-1 Model"
                 fill
                 priority
+                fetchPriority="high"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 550px"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
