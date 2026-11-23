@@ -3,22 +3,30 @@ import { requireAuth } from '@/lib/auth';
 import { query } from '@/lib/db';
 import bcrypt from 'bcryptjs';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET(req: NextRequest) {
   const auth = await requireAuth(req);
   if (auth.error) {
     return NextResponse.json({ error: auth.error }, { status: auth.status });
   }
 
-  const rows = await query<any[]>(
-    'SELECT id, username, email, name, role FROM admins WHERE id = ? LIMIT 1',
-    [auth.session!.id]
-  );
+  try {
+    const rows = await query<any[]>(
+      'SELECT id, username, email, name, role FROM admins WHERE id = ? LIMIT 1',
+      [auth.session!.id]
+    );
 
-  if (!rows || rows.length === 0) {
-    return NextResponse.json({ error: 'Admin not found' }, { status: 404 });
+    if (!rows || rows.length === 0) {
+      return NextResponse.json({ error: 'Admin not found' }, { status: 404 });
+    }
+
+    return NextResponse.json({ user: rows[0] });
+  } catch (error: any) {
+    console.error('Fetch admin profile error:', error);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
-
-  return NextResponse.json({ user: rows[0] });
 }
 
 export async function PUT(req: NextRequest) {

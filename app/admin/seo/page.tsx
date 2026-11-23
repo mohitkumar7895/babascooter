@@ -38,7 +38,8 @@ export default function AdminSeoPage() {
         body: JSON.stringify(item),
       });
 
-      if (!res.ok) throw new Error('Failed to update SEO setting');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || `Failed to update SEO setting (${res.status})`);
 
       setSuccess(`SEO metadata saved for route "${item.page_route}"`);
       setTimeout(() => setSuccess(''), 3000);

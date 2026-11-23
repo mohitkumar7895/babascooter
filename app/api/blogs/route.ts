@@ -3,6 +3,9 @@ import { query } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 import { slugify } from '@/lib/validation';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
@@ -39,8 +42,12 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
+  const auth = await requireAuth(req);
+  if (auth.error) {
+    return NextResponse.json({ error: auth.error }, { status: auth.status });
+  }
+
   try {
-    await requireAuth(req);
     const body = await req.json();
 
     const title = (body.title || '').trim();
@@ -92,9 +99,6 @@ export async function POST(req: NextRequest) {
       message: 'Blog post created successfully',
     });
   } catch (err: any) {
-    if (err.message === 'Unauthorized') {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
     console.error('Error creating blog post:', err);
     return NextResponse.json({ error: err.message || 'Internal server error' }, { status: 500 });
   }

@@ -3,6 +3,9 @@ import { query } from '@/lib/db';
 import bcrypt from 'bcryptjs';
 import { createAdminToken, setAdminCookie } from '@/lib/auth';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function POST(req: NextRequest) {
   try {
     const { username, password } = await req.json();

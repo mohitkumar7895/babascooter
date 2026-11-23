@@ -44,7 +44,8 @@ export default function AdminSettingsPage() {
         body: JSON.stringify({ website: settings }),
       });
 
-      if (!res.ok) throw new Error('Failed to update general settings');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || `Failed to update general settings (${res.status})`);
 
       setSuccess('Website general settings updated successfully!');
       setTimeout(() => setSuccess(''), 3000);

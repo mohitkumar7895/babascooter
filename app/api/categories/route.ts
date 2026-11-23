@@ -3,6 +3,9 @@ import { query } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 import { slugify } from '@/lib/validation';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET() {
   try {
     const categories = await query<any[]>(`

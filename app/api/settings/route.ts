@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET() {
   try {
     const contactRows = await query<any[]>('SELECT * FROM contact_settings LIMIT 1');
@@ -34,38 +37,64 @@ export async function PUT(req: NextRequest) {
     const { contact, website } = body;
 
     if (contact) {
-      await query(
-        `UPDATE contact_settings SET
-          business_name = COALESCE(?, business_name),
-          brand_name = COALESCE(?, brand_name),
-          tagline = COALESCE(?, tagline),
-          address = COALESCE(?, address),
-          primary_phone = COALESCE(?, primary_phone),
-          whatsapp_number = COALESCE(?, whatsapp_number),
-          additional_phones = COALESCE(?, additional_phones),
-          email = COALESCE(?, email),
-          google_maps_url = COALESCE(?, google_maps_url),
-          google_maps_embed = COALESCE(?, google_maps_embed),
-          opening_hours = COALESCE(?, opening_hours)
-         WHERE id = 1`,
-        [
-          contact.business_name,
-          contact.brand_name,
-          contact.tagline,
-          contact.address,
-          contact.primary_phone,
-          contact.whatsapp_number,
-          contact.additional_phones
-            ? typeof contact.additional_phones === 'string'
-              ? contact.additional_phones
-              : JSON.stringify(contact.additional_phones)
-            : null,
-          contact.email,
-          contact.google_maps_url,
-          contact.google_maps_embed,
-          contact.opening_hours,
-        ]
-      );
+      const existingContact = await query<any[]>('SELECT id FROM contact_settings LIMIT 1');
+      const serializedAdditionalPhones =
+        contact.additional_phones !== undefined && contact.additional_phones !== null
+          ? typeof contact.additional_phones === 'string'
+            ? contact.additional_phones
+            : JSON.stringify(contact.additional_phones)
+          : null;
+
+      if (existingContact && existingContact.length > 0) {
+        await query(
+          `UPDATE contact_settings SET
+            business_name = COALESCE(?, business_name),
+            brand_name = COALESCE(?, brand_name),
+            tagline = COALESCE(?, tagline),
+            address = COALESCE(?, address),
+            primary_phone = COALESCE(?, primary_phone),
+            whatsapp_number = COALESCE(?, whatsapp_number),
+            additional_phones = COALESCE(?, additional_phones),
+            email = COALESCE(?, email),
+            google_maps_url = COALESCE(?, google_maps_url),
+            google_maps_embed = COALESCE(?, google_maps_embed),
+            opening_hours = COALESCE(?, opening_hours)
+           WHERE id = ?`,
+          [
+            contact.business_name ?? null,
+            contact.brand_name ?? null,
+            contact.tagline ?? null,
+            contact.address ?? null,
+            contact.primary_phone ?? null,
+            contact.whatsapp_number ?? null,
+            serializedAdditionalPhones,
+            contact.email ?? null,
+            contact.google_maps_url ?? null,
+            contact.google_maps_embed ?? null,
+            contact.opening_hours ?? null,
+            existingContact[0].id,
+          ]
+        );
+      } else {
+        await query(
+          `INSERT INTO contact_settings
+            (business_name, brand_name, tagline, address, primary_phone, whatsapp_number, additional_phones, email, google_maps_url, google_maps_embed, opening_hours)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          [
+            contact.business_name || 'BABA MARKETING',
+            contact.brand_name || 'FRENDO E-SCOOTY',
+            contact.tagline || 'Drive Green, Live Better!',
+            contact.address || '',
+            contact.primary_phone || '',
+            contact.whatsapp_number || '',
+            serializedAdditionalPhones,
+            contact.email || 'info@frendo.in',
+            contact.google_maps_url || '',
+            contact.google_maps_embed || '',
+            contact.opening_hours || '',
+          ]
+        );
+      }
     }
 
     if (website && typeof website === 'object') {
@@ -74,7 +103,7 @@ export async function PUT(req: NextRequest) {
           `INSERT INTO website_settings (setting_key, setting_value)
            VALUES (?, ?)
            ON DUPLICATE KEY UPDATE setting_value = VALUES(setting_value);`,
-          [key, String(value)]
+          [key, String(value ?? '')]
         );
       }
     }

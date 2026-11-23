@@ -3,6 +3,9 @@ import { query } from '@/lib/db';
 import { requireAuth } from '@/lib/auth';
 import { slugify } from '@/lib/validation';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET(req: NextRequest, { params }: { params: { slug: string } }) {
   try {
     const slug = params.slug;
@@ -64,12 +67,13 @@ export async function PUT(req: NextRequest, { params }: { params: { slug: string
     const isId = /^\d+$/.test(slug);
     const whereClause = isId ? 'id = ?' : 'slug = ?';
 
-    const pRows = await query<any[]>(`SELECT id FROM products WHERE ${whereClause} LIMIT 1`, [slug]);
+    const pRows = await query<any[]>(`SELECT * FROM products WHERE ${whereClause} LIMIT 1`, [slug]);
     if (!pRows || pRows.length === 0) {
       return NextResponse.json({ error: 'Product not found' }, { status: 404 });
     }
 
-    const productId = pRows[0].id;
+    const currentProduct = pRows[0];
+    const productId = currentProduct.id;
     const body = await req.json();
 
     const {
@@ -104,6 +108,12 @@ export async function PUT(req: NextRequest, { params }: { params: { slug: string
       }
     }
 
+    const nextCategoryId =
+      category_id !== undefined ? (category_id ? Number(category_id) : null) : currentProduct.category_id;
+    const nextPrice = price !== undefined ? (price ? Number(price) : null) : currentProduct.price;
+    const nextSpecialOffers =
+      special_offers !== undefined ? special_offers : currentProduct.special_offers;
+
     // Update Product Table
     await query(
       `UPDATE products SET
@@ -127,12 +137,12 @@ export async function PUT(req: NextRequest, { params }: { params: { slug: string
         name?.trim() || null,
         model_number?.trim() || null,
         finalSlug || null,
-        category_id !== undefined ? (category_id ? Number(category_id) : null) : null,
+        nextCategoryId ?? null,
         short_description !== undefined ? short_description : null,
         detailed_description !== undefined ? detailed_description : null,
-        price !== undefined ? (price ? Number(price) : null) : null,
+        nextPrice ?? null,
         price_label || null,
-        special_offers !== undefined ? special_offers : null,
+        nextSpecialOffers ?? null,
         availability || null,
         is_featured !== undefined ? Boolean(is_featured) : null,
         is_published !== undefined ? Boolean(is_published) : null,

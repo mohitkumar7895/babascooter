@@ -82,7 +82,8 @@ export default function AdminContactPage() {
         body: JSON.stringify(payload),
       });
 
-      if (!res.ok) throw new Error('Failed to update contact settings');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || `Failed to update contact settings (${res.status})`);
 
       setSuccess('Contact information updated dynamically across all website pages!');
       setTimeout(() => setSuccess(''), 4000);

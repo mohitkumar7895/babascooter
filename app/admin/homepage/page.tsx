@@ -34,7 +34,7 @@ export default function AdminHomepagePage() {
 
   const loadData = async () => {
     try {
-      const res = await fetch('/api/homepage');
+      const res = await fetch('/api/homepage?all=true', { cache: 'no-store' });
       const data = await res.json();
       if (data.sections) {
         setSections(data.sections);
@@ -151,7 +151,8 @@ export default function AdminHomepagePage() {
           },
         }),
       });
-      if (!res.ok) throw new Error('Failed to update hero section');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || `Failed to update hero section (${res.status})`);
       setSuccess('Hero section updated dynamically on the website!');
       setTimeout(() => setSuccess(''), 4000);
     } catch (err: any) {
@@ -172,7 +173,8 @@ export default function AdminHomepagePage() {
           banner: promoBanner,
         }),
       });
-      if (!res.ok) throw new Error('Failed to update banner');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || `Failed to update banner (${res.status})`);
       setSuccess('Promotional banner updated dynamically on the website!');
       setTimeout(() => setSuccess(''), 4000);
     } catch (err: any) {
@@ -183,6 +185,7 @@ export default function AdminHomepagePage() {
   };
 
   const handleToggleSection = async (section: HomepageSection) => {
+    setError('');
     try {
       const newVisible = !section.is_visible;
       const res = await fetch('/api/homepage', {
@@ -193,13 +196,14 @@ export default function AdminHomepagePage() {
           is_visible: newVisible,
         }),
       });
-      if (res.ok) {
-        setSections((prev) =>
-          prev.map((s) => (s.id === section.id ? { ...s, is_visible: newVisible } : s))
-        );
-      }
-    } catch (err) {
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || `Failed to update section (${res.status})`);
+      setSections((prev) =>
+        prev.map((s) => (s.id === section.id ? { ...s, is_visible: newVisible } : s))
+      );
+    } catch (err: any) {
       console.error('Error toggling section:', err);
+      setError(err.message || 'Failed to toggle section visibility');
     }
   };
 

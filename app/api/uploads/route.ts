@@ -4,6 +4,9 @@ import { saveUploadedFile } from '@/lib/upload';
 import { readdir, stat, unlink } from 'fs/promises';
 import path from 'path';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET(req: NextRequest) {
   const auth = await requireAuth(req);
   if (auth.error) {
