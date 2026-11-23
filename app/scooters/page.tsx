@@ -62,28 +62,28 @@ export default async function ScootersPage() {
   const { contact, categories, products } = await getCatalogueData();
 
   return (
-    <div className="min-h-screen bg-navy-950 py-10 sm:py-14 border-t border-amber-500/20 text-white">
+    <div className="min-h-screen bg-brand-50 py-10 sm:py-14 border-t border-brand-300 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-400 uppercase tracking-widest mb-2.5 font-serif">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-100 border border-brand-300 text-xs font-bold text-brand-800 uppercase tracking-widest mb-2.5 font-serif">
             FRENDO E-SCOOTY • 27 SHOWROOM SETS
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl font-black text-white tracking-tight">
+          <h1 className="font-serif text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
             EXPLORE ALL 27 ELECTRIC SCOOTY MODELS
           </h1>
 
-          <p className="mt-2 text-slate-300 text-xs sm:text-sm leading-relaxed">
-            Starting Price: <strong className="text-amber-400">₹15,000/- (All Taxes Included)</strong> • LFP Battery (50 KM to 300 KM) • Heavy-Duty Chassis • Front Disc Brake • Digital Meter • 5-Year Warranty.
+          <p className="mt-2 text-slate-700 text-xs sm:text-sm leading-relaxed">
+            Starting Price: <strong className="text-brand-800">₹15,000/- (All Taxes Included)</strong> • LFP Battery (50 KM to 300 KM) • Heavy-Duty Chassis • Front Disc Brake • Digital Meter • 5-Year Warranty.
           </p>
 
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-[11px] text-slate-300">
-            <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10">100% Copper Motor</span>
-            <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10">Central Locking & Remote</span>
-            <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10">5 Colours Available</span>
-            <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10">All-India Dealership Supply</span>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-[11px] text-slate-700">
+            <span className="px-2.5 py-1 rounded-md bg-brand-50 border border-brand-200">100% Copper Motor</span>
+            <span className="px-2.5 py-1 rounded-md bg-brand-50 border border-brand-200">Central Locking & Remote</span>
+            <span className="px-2.5 py-1 rounded-md bg-brand-50 border border-brand-200">5 Colours Available</span>
+            <span className="px-2.5 py-1 rounded-md bg-brand-50 border border-brand-200">All-India Dealership Supply</span>
           </div>
         </div>
 

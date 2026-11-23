@@ -16,7 +16,7 @@ export default function ProductLightbox({ images, productName }: LightboxProps) 
 
   if (!images || images.length === 0) {
     return (
-      <div className="h-80 bg-navy-900 rounded-2xl flex items-center justify-center border border-amber-500/20 text-slate-400 font-medium">
+      <div className="h-80 bg-brand-50 rounded-2xl flex items-center justify-center border border-brand-200 text-slate-500 font-medium">
         No images available
       </div>
     );
@@ -34,8 +34,8 @@ export default function ProductLightbox({ images, productName }: LightboxProps) 
 
   return (
     <div className="space-y-4">
-      {/* Main Image Viewport - Full Fill Edge-to-Edge, Zero Blank Margins */}
-      <div className="relative aspect-[4/3] w-full max-h-[580px] rounded-2xl bg-slate-950 border border-slate-800 shadow-xl overflow-hidden group">
+      {/* Main Image Viewport */}
+      <div className="relative aspect-[4/3] w-full max-h-[580px] rounded-2xl bg-slate-100 border-2 border-brand-200 shadow-lg overflow-hidden group">
         <div className="relative w-full h-full cursor-pointer" onClick={() => setModalOpen(true)}>
           <Image
             src={activeImage.image_url}
@@ -52,14 +52,14 @@ export default function ProductLightbox({ images, productName }: LightboxProps) 
         {/* Zoom trigger pill */}
         <button
           onClick={() => setModalOpen(true)}
-          className="absolute bottom-4 right-4 px-3 py-1.5 rounded-md bg-slate-900/80 backdrop-blur-sm text-xs font-semibold text-white flex items-center gap-1.5 hover:bg-slate-900 transition-colors shadow-sm"
+          className="absolute bottom-4 right-4 px-3 py-1.5 rounded-md bg-brand-800/95 backdrop-blur-sm text-xs font-semibold text-white flex items-center gap-1.5 hover:bg-brand-700 transition-colors shadow-sm"
         >
           <ZoomIn className="w-3.5 h-3.5 text-amber-400" />
           <span>Click to Zoom</span>
         </button>
 
         {/* Image Counter Badge */}
-        <div className="absolute top-4 left-4 px-2.5 py-1 rounded-md bg-slate-900/80 text-xs text-white font-mono shadow-sm">
+        <div className="absolute top-4 left-4 px-2.5 py-1 rounded-md bg-royal-800/90 text-xs text-white font-mono shadow-sm">
           {activeIndex + 1} / {images.length}
         </div>
 
@@ -71,7 +71,7 @@ export default function ProductLightbox({ images, productName }: LightboxProps) 
                 e.stopPropagation();
                 handlePrev();
               }}
-              className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/80 text-amber-400 border border-amber-500/30 shadow-md hover:bg-amber-500 hover:text-navy-950 transition-all opacity-0 group-hover:opacity-100"
+              className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-brand-800/90 text-amber-400 border border-amber-400 shadow-md hover:bg-amber-400 hover:text-brand-950 transition-all opacity-0 group-hover:opacity-100"
               aria-label="Previous image"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -81,7 +81,7 @@ export default function ProductLightbox({ images, productName }: LightboxProps) 
                 e.stopPropagation();
                 handleNext();
               }}
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/80 text-amber-400 border border-amber-500/30 shadow-md hover:bg-amber-500 hover:text-navy-950 transition-all opacity-0 group-hover:opacity-100"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-brand-800/90 text-amber-400 border border-amber-400 shadow-md hover:bg-amber-400 hover:text-brand-950 transition-all opacity-0 group-hover:opacity-100"
               aria-label="Next image"
             >
               <ChevronRight className="w-5 h-5" />
@@ -98,10 +98,10 @@ export default function ProductLightbox({ images, productName }: LightboxProps) 
             <button
               key={img.id || idx}
               onClick={() => setActiveIndex(idx)}
-              className={`relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-950 border-2 transition-all p-0 flex items-center justify-center ${
+              className={`relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 border-2 transition-all p-0 flex items-center justify-center ${
                 isActive
-                  ? 'border-amber-400 ring-2 ring-amber-400/40 shadow-glow'
-                  : 'border-slate-800 hover:border-slate-600 opacity-70 hover:opacity-100'
+                  ? 'border-brand-800 ring-2 ring-amber-400 shadow-md'
+                  : 'border-slate-200 hover:border-brand-600 opacity-75 hover:opacity-100'
               }`}
             >
               <div className="relative w-full h-full">

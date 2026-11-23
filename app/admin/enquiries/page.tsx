@@ -45,15 +45,15 @@ export default function AdminEnquiriesPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-black text-white tracking-tight">Customer Enquiries & Test Rides</h1>
-        <p className="text-xs text-slate-400 mt-1">
+        <h1 className="text-2xl font-black text-slate-900 tracking-tight">Customer Enquiries & Test Rides</h1>
+        <p className="text-xs text-slate-600 mt-1">
           Review leads submitted from the website test ride and contact forms.
         </p>
       </div>
 
-      <div className="rounded-2xl bg-navy-900 border border-white/10 overflow-hidden shadow-xl">
+      <div className="rounded-2xl bg-white border border-brand-200 overflow-hidden shadow-xl">
         {loading ? (
-          <div className="py-16 text-center text-slate-400 text-xs">Loading customer leads...</div>
+          <div className="py-16 text-center text-slate-600 text-xs">Loading customer leads...</div>
         ) : enquiries.length === 0 ? (
           <div className="py-16 text-center text-slate-500 text-xs">
             No customer enquiries submitted yet.
@@ -61,7 +61,7 @@ export default function AdminEnquiriesPage() {
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="bg-white/5 text-slate-400 uppercase tracking-wider font-semibold border-b border-white/10">
+              <thead className="bg-brand-50 text-slate-600 uppercase tracking-wider font-semibold border-b border-brand-200">
                 <tr>
                   <th className="py-3.5 px-4">Customer</th>
                   <th className="py-3.5 px-4">Phone / WhatsApp</th>
@@ -72,24 +72,24 @@ export default function AdminEnquiriesPage() {
                   <th className="py-3.5 px-4 text-right">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/5">
+              <tbody className="divide-y divide-slate-200">
                 {enquiries.map((enq) => (
-                  <tr key={enq.id} className="hover:bg-white/5 transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-white">
+                  <tr key={enq.id} className="hover:bg-brand-50 transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-slate-900">
                       {enq.customer_name}
                     </td>
 
-                    <td className="py-3.5 px-4 font-mono font-bold text-slate-300">
-                      <a href={`tel:${enq.customer_phone}`} className="hover:text-electric-400">
+                    <td className="py-3.5 px-4 font-mono font-bold text-slate-700">
+                      <a href={`tel:${enq.customer_phone}`} className="hover:text-brand-700">
                         {enq.customer_phone}
                       </a>
                     </td>
 
-                    <td className="py-3.5 px-4 text-slate-400">
+                    <td className="py-3.5 px-4 text-slate-600">
                       {enq.city || 'Faridabad'}
                     </td>
 
-                    <td className="py-3.5 px-4 text-slate-300 max-w-xs truncate">
+                    <td className="py-3.5 px-4 text-slate-700 max-w-xs truncate">
                       {enq.message || 'Book free test ride'}
                     </td>
 
@@ -101,10 +101,10 @@ export default function AdminEnquiriesPage() {
                       <span
                         className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
                           enq.status === 'New'
-                            ? 'bg-emerald-950 text-emerald-400 border border-emerald-500/30'
+                            ? 'bg-brand-100 text-brand-700 border border-brand-300'
                             : enq.status === 'Contacted'
-                            ? 'bg-blue-950 text-blue-400 border border-blue-500/30'
-                            : 'bg-white/5 text-slate-400'
+                            ? 'bg-royal-50 text-royal-800 border border-royal-200'
+                            : 'bg-brand-50 text-slate-600'
                         }`}
                       >
                         {enq.status}
@@ -115,11 +115,11 @@ export default function AdminEnquiriesPage() {
                       <select
                         value={enq.status}
                         onChange={(e) => handleUpdateStatus(enq.id, e.target.value as any)}
-                        className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[10px] text-white focus:outline-none focus:border-electric-500"
+                        className="px-2.5 py-1 rounded-lg bg-brand-50 border border-brand-200 text-[10px] text-slate-900 focus:outline-none focus:border-brand-700"
                       >
-                        <option value="New" className="bg-navy-900">New</option>
-                        <option value="Contacted" className="bg-navy-900">Contacted</option>
-                        <option value="Closed" className="bg-navy-900">Closed</option>
+                        <option value="New" className="bg-white text-slate-900">New</option>
+                        <option value="Contacted" className="bg-white text-slate-900">Contacted</option>
+                        <option value="Closed" className="bg-white text-slate-900">Closed</option>
                       </select>
                     </td>
                   </tr>

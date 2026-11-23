@@ -20,10 +20,10 @@ export default function PromotionalBanner({ banner, whatsappNumber = '9953564151
   const buttonLink = banner?.button_link || '/#dealership';
 
   return (
-    <section className="py-10 bg-navy-950 px-4 sm:px-6 lg:px-8 border-b border-white/5">
-      <div className="max-w-7xl mx-auto rounded-3xl bg-gradient-to-r from-amber-500/20 via-slate-900 to-navy-900 border border-amber-500/40 p-6 sm:p-10 relative overflow-hidden shadow-2xl gold-border-glow">
+    <section className="py-10 bg-white px-4 sm:px-6 lg:px-8 border-b border-brand-200">
+      <div className="max-w-7xl mx-auto rounded-3xl bg-gradient-to-r from-brand-800 via-brand-700 to-royal-800 border-2 border-amber-400 p-6 sm:p-10 relative overflow-hidden shadow-xl">
         <div className="relative z-10 max-w-3xl space-y-3.5">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-500/20 text-xs font-bold text-amber-300 uppercase tracking-widest font-serif">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-crimson-600 text-xs font-bold text-white uppercase tracking-widest font-serif shadow-sm">
             <Gift className="w-3.5 h-3.5 text-amber-400" />
             <span>Showroom & Dealer Special</span>
           </div>
@@ -32,16 +32,16 @@ export default function PromotionalBanner({ banner, whatsappNumber = '9953564151
             {title}
           </h2>
 
-          <p className="text-slate-200 text-xs sm:text-sm font-medium">{subtitle}</p>
+          <p className="text-white/90 text-xs sm:text-sm font-medium">{subtitle}</p>
 
-          <div className="p-3.5 rounded-xl bg-black/50 border border-amber-500/30 text-amber-300 font-semibold text-xs sm:text-sm">
+          <div className="p-3.5 rounded-xl bg-amber-400 text-brand-950 border border-amber-500 font-bold text-xs sm:text-sm shadow-sm">
             🎁 {offer}
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
             <Link
               href={buttonLink}
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-black text-xs uppercase tracking-wider transition-all text-center flex items-center justify-center gap-2 shadow-glow"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-black text-xs uppercase tracking-wider transition-all text-center flex items-center justify-center gap-2 shadow-glow-yellow"
             >
               <span>{buttonText}</span>
               <ArrowRight className="w-4 h-4" />
@@ -53,9 +53,9 @@ export default function PromotionalBanner({ banner, whatsappNumber = '9953564151
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white font-bold text-xs uppercase tracking-wider transition-all text-center flex items-center justify-center gap-2 border border-white/15"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white hover:bg-brand-50 text-brand-900 font-bold text-xs uppercase tracking-wider transition-all text-center flex items-center justify-center gap-2 shadow-sm"
             >
-              <MessageCircle className="w-4 h-4 text-amber-400" />
+              <MessageCircle className="w-4 h-4 text-brand-700" />
               <span>Claim Offer on WhatsApp</span>
             </a>
           </div>

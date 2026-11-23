@@ -39,23 +39,23 @@ export default async function LocationPage() {
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14044.254198285876!2d77.3182!3d28.3245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cd99f1c7d!2sBallabhgarh%2C+Faridabad%2C+Haryana+121004!5e0!3m2!1sen!2sin!4v1';
 
   return (
-    <div className="min-h-screen bg-navy-950 text-white py-12 sm:py-16 selection:bg-amber-500 selection:text-navy-950 relative overflow-hidden">
+    <div className="min-h-screen bg-brand-50 text-slate-900 py-12 sm:py-16 selection:bg-brand-800 selection:text-amber-400 relative overflow-hidden">
       {/* Glow Ambience */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-500/10 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-100 blur-[140px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-400 uppercase tracking-widest shadow-glow">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-100 border border-brand-300 text-xs font-bold text-brand-800 uppercase tracking-widest shadow-glow">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Ballabhgarh, Faridabad Showroom</span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl font-black text-white tracking-tight uppercase leading-tight">
+          <h1 className="font-serif text-3xl sm:text-5xl font-black text-slate-900 tracking-tight uppercase leading-tight">
             Find Our Showroom in <span className="text-gradient-gold">Ballabhgarh</span>
           </h1>
 
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
             Visit the authorized {businessName} showroom to experience all 27 FRENDO E-SCOOTY models in person.
             Free parking, full test-rides, and spot delivery available.
           </p>
@@ -65,27 +65,27 @@ export default async function LocationPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Details Column */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 rounded-3xl bg-navy-900/80 border border-amber-500/20 shadow-2xl backdrop-blur-md space-y-6">
+            <div className="p-8 rounded-3xl bg-white border border-brand-300 shadow-lg backdrop-blur-md space-y-6">
               <div>
-                <div className="text-xs uppercase font-bold text-amber-400 tracking-wider">
+                <div className="text-xs uppercase font-bold text-brand-800 tracking-wider">
                   Showroom Address
                 </div>
-                <div className="mt-2 text-base sm:text-lg font-serif font-bold text-white leading-relaxed flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-amber-400 shrink-0 mt-1" />
+                <div className="mt-2 text-base sm:text-lg font-serif font-bold text-slate-900 leading-relaxed flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-brand-800 shrink-0 mt-1" />
                   <span>{address}</span>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-white/10 space-y-3">
-                <div className="text-xs uppercase font-bold text-slate-400 tracking-wider">
+              <div className="pt-4 border-t border-brand-200 space-y-3">
+                <div className="text-xs uppercase font-bold text-slate-600 tracking-wider">
                   Direct Contact & Helpline
                 </div>
                 <div className="space-y-2">
                   <a
                     href={`tel:${primaryPhone}`}
-                    className="flex items-center gap-2.5 text-sm font-semibold text-white hover:text-amber-400 transition-colors"
+                    className="flex items-center gap-2.5 text-sm font-semibold text-slate-900 hover:text-brand-700 transition-colors"
                   >
-                    <Phone className="w-4 h-4 text-amber-400" />
+                    <Phone className="w-4 h-4 text-brand-800" />
                     <span>Call: {primaryPhone}</span>
                   </a>
 
@@ -95,7 +95,7 @@ export default async function LocationPage() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2.5 text-sm font-semibold text-amber-400 hover:text-amber-300 transition-colors"
+                    className="flex items-center gap-2.5 text-sm font-semibold text-brand-800 hover:text-brand-700 transition-colors"
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span>WhatsApp: +91 {whatsapp}</span>
@@ -103,12 +103,12 @@ export default async function LocationPage() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-white/10">
-                <div className="text-xs uppercase font-bold text-slate-400 tracking-wider mb-1.5">
+              <div className="pt-4 border-t border-brand-200">
+                <div className="text-xs uppercase font-bold text-slate-600 tracking-wider mb-1.5">
                   Showroom Timings
                 </div>
-                <div className="flex items-center gap-2 text-xs text-slate-300">
-                  <Clock className="w-4 h-4 text-amber-400 shrink-0" />
+                <div className="flex items-center gap-2 text-xs text-slate-700">
+                  <Clock className="w-4 h-4 text-brand-800 shrink-0" />
                   <span>{hours}</span>
                 </div>
               </div>
@@ -118,32 +118,32 @@ export default async function LocationPage() {
                   href={mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-navy-950 font-black text-xs uppercase tracking-wider shadow-glow hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-500 text-brand-950 font-black text-xs uppercase tracking-wider shadow-glow hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
                 >
-                  <Navigation className="w-4 h-4 fill-navy-950" />
+                  <Navigation className="w-4 h-4 fill-brand-950" />
                   <span>Open in Google Maps Navigation</span>
                 </a>
               </div>
             </div>
 
             {/* Visit Perks */}
-            <div className="p-6 rounded-2xl bg-navy-900/60 border border-amber-500/20 shadow-xl space-y-3">
-              <div className="text-xs font-serif font-bold text-amber-400 uppercase tracking-wider">Showroom Amenities</div>
-              <div className="grid grid-cols-2 gap-3 text-xs text-slate-300">
+            <div className="p-6 rounded-2xl bg-white border border-brand-300 shadow-xl space-y-3">
+              <div className="text-xs font-serif font-bold text-brand-800 uppercase tracking-wider">Showroom Amenities</div>
+              <div className="grid grid-cols-2 gap-3 text-xs text-slate-700">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-amber-400" />
+                  <CheckCircle2 className="w-4 h-4 text-brand-800" />
                   <span>Free Customer Parking</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-amber-400" />
+                  <CheckCircle2 className="w-4 h-4 text-brand-800" />
                   <span>Live Test Rides</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-amber-400" />
+                  <CheckCircle2 className="w-4 h-4 text-brand-800" />
                   <span>Spot Delivery Stock</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-amber-400" />
+                  <CheckCircle2 className="w-4 h-4 text-brand-800" />
                   <span>Technical Consultation</span>
                 </div>
               </div>
@@ -152,7 +152,7 @@ export default async function LocationPage() {
 
           {/* Map Column */}
           <div className="lg:col-span-7">
-            <div className="h-[480px] sm:h-[560px] rounded-3xl overflow-hidden border-2 border-amber-500/30 shadow-2xl relative bg-black">
+            <div className="h-[480px] sm:h-[560px] rounded-3xl overflow-hidden border-2 border-brand-300 shadow-lg relative bg-slate-100">
               <iframe
                 title="Baba Marketing Showroom Location"
                 src={mapsEmbed}

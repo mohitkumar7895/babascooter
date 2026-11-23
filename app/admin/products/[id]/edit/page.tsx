@@ -236,7 +236,7 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
 
   if (loading) {
     return (
-      <div className="py-20 text-center text-slate-400 text-sm">
+      <div className="py-20 text-center text-slate-600 text-sm">
         Loading scooter editor...
       </div>
     );
@@ -249,15 +249,15 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
         <div className="flex items-center gap-4">
           <Link
             href="/admin/products"
-            className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white"
+            className="p-2 rounded-xl bg-brand-50 hover:bg-brand-100 text-slate-700 hover:text-brand-800"
           >
             <ArrowLeft className="w-5 h-5" />
           </Link>
           <div>
-            <h1 className="text-2xl font-black text-white tracking-tight">
+            <h1 className="text-2xl font-black text-slate-900 tracking-tight">
               Edit {formData.name || 'Scooter Model'}
             </h1>
-            <div className="text-xs text-slate-400 font-mono mt-0.5">
+            <div className="text-xs text-slate-600 font-mono mt-0.5">
               SLUG: /scooters/{formData.slug}
             </div>
           </div>
@@ -267,7 +267,7 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
           <Link
             href={`/scooters/${formData.slug}`}
             target="_blank"
-            className="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-bold text-electric-400 flex items-center gap-1.5"
+            className="px-4 py-2 rounded-xl bg-brand-50 hover:bg-brand-100 text-xs font-bold text-brand-800 flex items-center gap-1.5"
           >
             <span>View Live Page</span>
             <ExternalLink className="w-3.5 h-3.5" />
@@ -276,30 +276,30 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
       </div>
 
       {error && (
-        <div className="p-4 rounded-xl bg-red-950/50 border border-red-500/30 text-xs text-red-300 flex items-center gap-2">
-          <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+        <div className="p-4 rounded-xl bg-crimson-50 border border-crimson-500/40 text-xs text-crimson-600 flex items-center gap-2">
+          <AlertCircle className="w-4 h-4 text-crimson-600 shrink-0" />
           <span>{error}</span>
         </div>
       )}
 
       {success && (
-        <div className="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-xs text-emerald-300 flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+        <div className="p-4 rounded-xl bg-brand-100 border border-brand-300 text-xs text-brand-700 flex items-center gap-2">
+          <CheckCircle2 className="w-4 h-4 text-brand-700 shrink-0" />
           <span>{success}</span>
         </div>
       )}
 
       {/* Product Image Gallery Management Section */}
-      <div className="p-6 rounded-2xl bg-navy-900 border border-white/10 space-y-5">
-        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+      <div className="p-6 rounded-2xl bg-white border border-brand-200 space-y-5">
+        <div className="flex items-center justify-between border-b border-brand-200 pb-4">
           <div>
-            <h2 className="text-base font-bold text-white">Product Image Gallery</h2>
-            <p className="text-xs text-slate-400">
+            <h2 className="text-base font-bold text-slate-900">Product Image Gallery</h2>
+            <p className="text-xs text-slate-600">
               Manage multi-angle photos (Minimum 4–5 images recommended: Studio, Poster, Cockpit, Wheels).
             </p>
           </div>
 
-          <label className="cursor-pointer px-4 py-2 rounded-xl bg-electric-500 text-navy-950 font-black text-xs shadow-glow hover:shadow-glow-lg transition-all flex items-center gap-1.5">
+          <label className="cursor-pointer px-4 py-2 rounded-xl bg-brand-800 text-white font-black text-xs shadow-glow hover:shadow-glow-lg transition-all flex items-center gap-1.5">
             <Upload className="w-4 h-4" />
             <span>{uploading ? 'Uploading...' : 'Upload Image'}</span>
             <input
@@ -317,17 +317,17 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
           {images.map((img) => (
             <div
               key={img.id}
-              className={`relative rounded-xl overflow-hidden bg-navy-950 border-2 p-2 flex flex-col items-center justify-between group ${
-                img.is_primary ? 'border-electric-500 shadow-glow' : 'border-white/10'
+              className={`relative rounded-xl overflow-hidden bg-brand-50 border-2 p-2 flex flex-col items-center justify-between group ${
+                img.is_primary ? 'border-electric-500 shadow-glow' : 'border-brand-200'
               }`}
             >
               {img.is_primary && (
-                <span className="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-full bg-electric-500 text-navy-950 text-[10px] font-black">
+                <span className="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-full bg-brand-800 text-white text-[10px] font-black">
                   PRIMARY
                 </span>
               )}
 
-              <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-slate-950">
+              <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-brand-50">
                 <Image
                   src={img.image_url}
                   alt={img.alt_text || 'Scooter image'}
@@ -337,24 +337,24 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
                 />
               </div>
 
-              <div className="w-full pt-2 flex items-center justify-between gap-1 border-t border-white/5 text-[10px]">
+              <div className="w-full pt-2 flex items-center justify-between gap-1 border-t border-brand-200 text-[10px]">
                 {!img.is_primary ? (
                   <button
                     type="button"
                     onClick={() => handleSetPrimary(img.id)}
-                    className="text-slate-400 hover:text-electric-400 font-bold flex items-center gap-1"
+                    className="text-slate-600 hover:text-brand-700 font-bold flex items-center gap-1"
                   >
                     <Star className="w-3 h-3" />
                     <span>Set Primary</span>
                   </button>
                 ) : (
-                  <span className="text-electric-400 font-bold">Main Cover</span>
+                  <span className="text-brand-800 font-bold">Main Cover</span>
                 )}
 
                 <button
                   type="button"
                   onClick={() => handleDeleteImage(img.id)}
-                  className="text-red-400 hover:text-red-300 p-1"
+                  className="text-crimson-600 hover:text-crimson-700 p-1"
                   title="Delete image"
                 >
                   <Trash2 className="w-3.5 h-3.5" />
@@ -368,132 +368,132 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
       {/* Main Details and Specifications Form */}
       <form onSubmit={handleSaveProduct} className="space-y-8">
         {/* General Model Information */}
-        <div className="p-6 rounded-2xl bg-navy-900 border border-white/10 space-y-4">
-          <h2 className="text-base font-bold text-white border-b border-white/10 pb-3">
+        <div className="p-6 rounded-2xl bg-white border border-brand-200 space-y-4">
+          <h2 className="text-base font-bold text-slate-900 border-b border-brand-200 pb-3">
             General Model Information
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Model Name *</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Model Name *</label>
               <input
                 type="text"
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Model Number / Code *</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Model Number / Code *</label>
               <input
                 type="text"
                 required
                 value={formData.model_number}
                 onChange={(e) => setFormData({ ...formData, model_number: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">URL Slug *</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">URL Slug *</label>
               <input
                 type="text"
                 required
                 value={formData.slug}
                 onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Category</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Category</label>
               <select
                 value={formData.category_id}
                 onChange={(e) => setFormData({ ...formData, category_id: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               >
-                <option value="" className="bg-navy-900">Select Category</option>
+                <option value="" className="bg-white text-slate-900">Select Category</option>
                 {categories.map((c) => (
-                  <option key={c.id} value={c.id} className="bg-navy-900">{c.name}</option>
+                  <option key={c.id} value={c.id} className="bg-white text-slate-900">{c.name}</option>
                 ))}
               </select>
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">Short Description</label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">Short Description</label>
             <input
               type="text"
               value={formData.short_description}
               onChange={(e) => setFormData({ ...formData, short_description: e.target.value })}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">Detailed Description</label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">Detailed Description</label>
             <textarea
               rows={4}
               value={formData.detailed_description}
               onChange={(e) => setFormData({ ...formData, detailed_description: e.target.value })}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Price (Optional)</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Price (Optional)</label>
               <input
                 type="number"
                 value={formData.price}
                 onChange={(e) => setFormData({ ...formData, price: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Price Label</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Price Label</label>
               <input
                 type="text"
                 value={formData.price_label}
                 onChange={(e) => setFormData({ ...formData, price_label: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Availability</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Availability</label>
               <select
                 value={formData.availability}
                 onChange={(e) => setFormData({ ...formData, availability: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               >
-                <option value="In Stock" className="bg-navy-900">In Stock</option>
-                <option value="Available on Order" className="bg-navy-900">Available on Order</option>
-                <option value="Coming Soon" className="bg-navy-900">Coming Soon</option>
+                <option value="In Stock" className="bg-white text-slate-900">In Stock</option>
+                <option value="Available on Order" className="bg-white text-slate-900">Available on Order</option>
+                <option value="Coming Soon" className="bg-white text-slate-900">Coming Soon</option>
               </select>
             </div>
           </div>
 
           <div className="flex items-center gap-6 pt-2">
-            <label className="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
+            <label className="flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
               <input
                 type="checkbox"
                 checked={formData.is_featured}
                 onChange={(e) => setFormData({ ...formData, is_featured: e.target.checked })}
-                className="rounded bg-white/5 border-white/20 text-electric-500 focus:ring-0"
+                className="rounded bg-brand-50 border-brand-200 text-electric-500 focus:ring-0"
               />
               <span>Featured on Homepage</span>
             </label>
 
-            <label className="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
+            <label className="flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
               <input
                 type="checkbox"
                 checked={formData.is_published}
                 onChange={(e) => setFormData({ ...formData, is_published: e.target.checked })}
-                className="rounded bg-white/5 border-white/20 text-electric-500 focus:ring-0"
+                className="rounded bg-brand-50 border-brand-200 text-electric-500 focus:ring-0"
               />
               <span>Published (Visible on Website)</span>
             </label>
@@ -501,99 +501,99 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
         </div>
 
         {/* Technical Specifications */}
-        <div className="p-6 rounded-2xl bg-navy-900 border border-white/10 space-y-4">
-          <h2 className="text-base font-bold text-white border-b border-white/10 pb-3">
+        <div className="p-6 rounded-2xl bg-white border border-brand-200 space-y-4">
+          <h2 className="text-base font-bold text-slate-900 border-b border-brand-200 pb-3">
             Technical Specifications
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Motor Power</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Motor Power</label>
               <input
                 type="text"
                 value={formData.motor_power}
                 onChange={(e) => setFormData({ ...formData, motor_power: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Battery Voltage</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Battery Voltage</label>
               <input
                 type="text"
                 value={formData.battery_voltage}
                 onChange={(e) => setFormData({ ...formData, battery_voltage: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Controller</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Controller</label>
               <input
                 type="text"
                 value={formData.controller}
                 onChange={(e) => setFormData({ ...formData, controller: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Front Tyre</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Front Tyre</label>
               <input
                 type="text"
                 value={formData.front_tyre}
                 onChange={(e) => setFormData({ ...formData, front_tyre: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Rear Tyre</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Rear Tyre</label>
               <input
                 type="text"
                 value={formData.rear_tyre}
                 onChange={(e) => setFormData({ ...formData, rear_tyre: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Brakes</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Brakes</label>
               <input
                 type="text"
                 value={formData.brakes}
                 onChange={(e) => setFormData({ ...formData, brakes: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Central Locking</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Central Locking</label>
               <input
                 type="text"
                 value={formData.central_locking}
                 onChange={(e) => setFormData({ ...formData, central_locking: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Digital Meter</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Digital Meter</label>
               <input
                 type="text"
                 value={formData.digital_meter}
                 onChange={(e) => setFormData({ ...formData, digital_meter: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">Reverse Gear</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Reverse Gear</label>
               <input
                 type="text"
                 value={formData.reverse_gear}
                 onChange={(e) => setFormData({ ...formData, reverse_gear: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-electric-500"
+                className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
               />
             </div>
           </div>
@@ -603,7 +603,7 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
         <div className="flex items-center justify-end gap-4">
           <Link
             href="/admin/products"
-            className="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-bold text-slate-300"
+            className="px-5 py-2.5 rounded-xl bg-brand-50 hover:bg-brand-100 text-xs font-bold text-slate-700"
           >
             Cancel
           </Link>
@@ -611,7 +611,7 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
           <button
             type="submit"
             disabled={saving}
-            className="px-8 py-3 rounded-xl bg-electric-500 text-navy-950 font-black text-xs shadow-glow hover:shadow-glow-lg transition-all flex items-center gap-2 disabled:opacity-50"
+            className="px-8 py-3 rounded-xl bg-brand-800 text-white font-black text-xs shadow-glow hover:shadow-glow-lg transition-all flex items-center gap-2 disabled:opacity-50"
           >
             <Save className="w-4 h-4" />
             <span>{saving ? 'Saving Changes...' : 'Save Product Changes'}</span>

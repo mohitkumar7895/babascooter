@@ -114,18 +114,18 @@ export default function AdminBlogsPage() {
       {/* Top Action Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-black text-white tracking-tight flex items-center gap-2">
-            <BookOpen className="w-6 h-6 text-emerald-400" />
+          <h1 className="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+            <BookOpen className="w-6 h-6 text-brand-700" />
             <span>Blog Articles & Guides</span>
           </h1>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-600 mt-1">
             Manage educational EV guides, battery maintenance tips, and showroom announcements
           </p>
         </div>
 
         <Link
           href="/admin/blogs/new"
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-navy-950 font-bold text-xs shadow-glow transition-all self-start sm:self-auto"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-800 hover:bg-brand-700 text-white font-bold text-xs shadow-glow transition-all self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" />
           <span>Write New Article</span>
@@ -134,14 +134,14 @@ export default function AdminBlogsPage() {
 
       {/* Notification Toast */}
       {actionMessage && (
-        <div className="p-3.5 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-xs text-emerald-300 flex items-center gap-2">
-          <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+        <div className="p-3.5 rounded-xl bg-brand-100 border border-brand-300 text-xs text-brand-700 flex items-center gap-2">
+          <Check className="w-4 h-4 text-brand-700 shrink-0" />
           <span>{actionMessage}</span>
         </div>
       )}
 
       {/* Search & Filter Toolbar */}
-      <div className="p-4 rounded-2xl bg-navy-900 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="p-4 rounded-2xl bg-white border border-brand-200 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="relative w-full sm:w-80">
           <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
@@ -149,7 +149,7 @@ export default function AdminBlogsPage() {
             placeholder="Search articles by title, excerpt..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+            className="w-full pl-9 pr-4 py-2 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-700"
           />
         </div>
 
@@ -157,27 +157,27 @@ export default function AdminBlogsPage() {
           <select
             value={filterCategory}
             onChange={(e) => setFilterCategory(e.target.value)}
-            className="px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300 focus:outline-none focus:border-emerald-500"
+            className="px-3 py-2 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-700 focus:outline-none focus:border-brand-700"
           >
-            <option value="all" className="bg-navy-950">All Categories</option>
+            <option value="all" className="bg-white text-slate-900">All Categories</option>
             {categories.map((c) => (
-              <option key={c} value={c} className="bg-navy-950">
+              <option key={c} value={c} className="bg-white text-slate-900">
                 {c}
               </option>
             ))}
           </select>
 
-          <div className="text-xs text-slate-400 whitespace-nowrap">
-            Total: <span className="font-bold text-white">{filtered.length}</span> articles
+          <div className="text-xs text-slate-600 whitespace-nowrap">
+            Total: <span className="font-bold text-slate-900">{filtered.length}</span> articles
           </div>
         </div>
       </div>
 
       {/* Table of Articles */}
-      <div className="rounded-2xl bg-navy-900 border border-white/10 overflow-hidden shadow-xl">
+      <div className="rounded-2xl bg-white border border-brand-200 overflow-hidden shadow-xl">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-white/5 text-slate-400 uppercase tracking-wider font-semibold border-b border-white/10">
+            <thead className="bg-brand-50 text-slate-600 uppercase tracking-wider font-semibold border-b border-brand-200">
               <tr>
                 <th className="py-3.5 px-4">Article</th>
                 <th className="py-3.5 px-4">Category</th>
@@ -188,26 +188,26 @@ export default function AdminBlogsPage() {
                 <th className="py-3.5 px-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/5">
+            <tbody className="divide-y divide-slate-200">
               {loading ? (
                 <tr>
-                  <td colSpan={7} className="py-12 text-center text-slate-400">
+                  <td colSpan={7} className="py-12 text-center text-slate-600">
                     Loading articles...
                   </td>
                 </tr>
               ) : filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="py-12 text-center text-slate-400">
+                  <td colSpan={7} className="py-12 text-center text-slate-600">
                     No articles found. Click "Write New Article" above to create one.
                   </td>
                 </tr>
               ) : (
                 filtered.map((b) => (
-                  <tr key={b.id} className="hover:bg-white/5 transition-colors">
+                  <tr key={b.id} className="hover:bg-brand-50 transition-colors">
                     {/* Article title & thumbnail */}
                     <td className="py-3.5 px-4">
                       <div className="flex items-center gap-3 max-w-sm">
-                        <div className="w-14 h-12 rounded-xl bg-slate-950 border border-white/10 relative shrink-0 overflow-hidden">
+                        <div className="w-14 h-12 rounded-xl bg-brand-50 border border-brand-200 relative shrink-0 overflow-hidden">
                           <Image
                             src={b.featured_image || '/images/products/b-1-s/main.png'}
                             alt={b.title}
@@ -217,7 +217,7 @@ export default function AdminBlogsPage() {
                           />
                         </div>
                         <div>
-                          <div className="font-bold text-white text-sm line-clamp-1">{b.title}</div>
+                          <div className="font-bold text-slate-900 text-sm line-clamp-1">{b.title}</div>
                           <div className="text-[10px] text-slate-500 font-mono truncate">/blog/{b.slug}</div>
                         </div>
                       </div>
@@ -225,23 +225,23 @@ export default function AdminBlogsPage() {
 
                     {/* Category */}
                     <td className="py-3.5 px-4">
-                      <span className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-emerald-400 font-semibold text-[10px]">
+                      <span className="px-2.5 py-1 rounded-md bg-brand-50 border border-brand-200 text-brand-700 font-semibold text-[10px]">
                         {b.category || 'EV Guide'}
                       </span>
                     </td>
 
                     {/* Author */}
-                    <td className="py-3.5 px-4 text-slate-300 font-medium whitespace-nowrap">
+                    <td className="py-3.5 px-4 text-slate-700 font-medium whitespace-nowrap">
                       {b.author || 'Admin'}
                     </td>
 
                     {/* Views */}
-                    <td className="py-3.5 px-4 text-slate-300 font-mono">
+                    <td className="py-3.5 px-4 text-slate-700 font-mono">
                       {b.views || 0}
                     </td>
 
                     {/* Published Date */}
-                    <td className="py-3.5 px-4 text-slate-400 whitespace-nowrap">
+                    <td className="py-3.5 px-4 text-slate-600 whitespace-nowrap">
                       {formatDate(b.published_at || b.created_at)}
                     </td>
 
@@ -251,8 +251,8 @@ export default function AdminBlogsPage() {
                         onClick={() => handleTogglePublish(b)}
                         className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold transition-all ${
                           b.is_published
-                            ? 'bg-emerald-950/80 border border-emerald-500/40 text-emerald-400'
-                            : 'bg-slate-800 border border-slate-700 text-slate-400'
+                            ? 'bg-brand-100 border border-brand-300 text-brand-700'
+                            : 'bg-slate-100 border border-slate-300 text-slate-600'
                         }`}
                         title="Click to toggle publish status"
                       >
@@ -277,7 +277,7 @@ export default function AdminBlogsPage() {
                           <Link
                             href={`/blog/${b.slug}`}
                             target="_blank"
-                            className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors"
+                            className="p-1.5 rounded-lg bg-brand-50 hover:bg-brand-100 text-slate-600 hover:text-brand-800 transition-colors"
                             title="View live article"
                           >
                             <ExternalLink className="w-3.5 h-3.5" />
@@ -286,7 +286,7 @@ export default function AdminBlogsPage() {
 
                         <Link
                           href={`/admin/blogs/${b.id}/edit`}
-                          className="p-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 transition-colors"
+                          className="p-1.5 rounded-lg bg-brand-100 hover:bg-brand-200 text-brand-700 transition-colors"
                           title="Edit article"
                         >
                           <Edit3 className="w-3.5 h-3.5" />
@@ -294,7 +294,7 @@ export default function AdminBlogsPage() {
 
                         <button
                           onClick={() => handleDelete(b.id, b.title)}
-                          className="p-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-400 transition-colors"
+                          className="p-1.5 rounded-lg bg-crimson-50 hover:bg-crimson-100 text-crimson-600 transition-colors"
                           title="Delete article"
                         >
                           <Trash2 className="w-3.5 h-3.5" />

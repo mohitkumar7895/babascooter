@@ -208,43 +208,43 @@ export default function AdminHomepagePage() {
   };
 
   if (loading) {
-    return <div className="py-20 text-center text-slate-400 text-sm">Loading homepage settings...</div>;
+    return <div className="py-20 text-center text-slate-600 text-sm">Loading homepage settings...</div>;
   }
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div>
-        <h1 className="text-2xl font-black text-white tracking-tight">Homepage & Banner Management</h1>
-        <p className="text-xs text-slate-400 mt-1">
+        <h1 className="text-2xl font-black text-slate-900 tracking-tight">Homepage & Banner Management</h1>
+        <p className="text-xs text-slate-600 mt-1">
           Control hero section headings, festival promotional banners, image uploads, and section visibility.
         </p>
       </div>
 
       {error && (
-        <div className="p-4 rounded-xl bg-red-950/50 border border-red-500/30 text-xs text-red-300 flex items-center gap-2">
-          <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+        <div className="p-4 rounded-xl bg-crimson-50 border border-crimson-500/40 text-xs text-crimson-600 flex items-center gap-2">
+          <AlertCircle className="w-4 h-4 text-crimson-600 shrink-0" />
           <span>{error}</span>
         </div>
       )}
 
       {success && (
-        <div className="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-xs text-emerald-300 flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+        <div className="p-4 rounded-xl bg-brand-100 border border-brand-300 text-xs text-brand-700 flex items-center gap-2">
+          <CheckCircle2 className="w-4 h-4 text-brand-700 shrink-0" />
           <span>{success}</span>
         </div>
       )}
 
       {/* Hero Section Form */}
-      <div className="p-6 rounded-2xl bg-navy-900 border border-white/10 space-y-4 shadow-xl">
-        <div className="flex items-center justify-between border-b border-white/10 pb-3">
-          <h2 className="text-base font-bold text-white flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-amber-400" />
+      <div className="p-6 rounded-2xl bg-white border border-brand-200 space-y-4 shadow-xl">
+        <div className="flex items-center justify-between border-b border-brand-200 pb-3">
+          <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-brand-800" />
             <span>Hero Section Content</span>
           </h2>
           <button
             onClick={handleSaveHero}
             disabled={saving}
-            className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold text-xs shadow-glow transition-all flex items-center gap-1.5"
+            className="px-4 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold text-xs shadow-glow transition-all flex items-center gap-1.5"
           >
             <Save className="w-3.5 h-3.5" />
             <span>Save Hero</span>
@@ -253,44 +253,44 @@ export default function AdminHomepagePage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">Hero Main Heading</label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">Hero Main Heading</label>
             <input
               type="text"
               value={heroTitle}
               onChange={(e) => setHeroTitle(e.target.value)}
               placeholder="e.g. DISCOVER YOUR FUTURE WITH FRENDO E-SCOOTY"
-              className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">Hero Top Tagline</label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">Hero Top Tagline</label>
             <input
               type="text"
               value={heroTagline}
               onChange={(e) => setHeroTagline(e.target.value)}
               placeholder="e.g. DRIVE GREEN, LIVE BETTER!"
-              className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-slate-300 mb-1.5">Hero Subtitle</label>
+          <label className="block text-xs font-semibold text-slate-700 mb-1.5">Hero Subtitle</label>
           <textarea
             rows={3}
             value={heroSubtitle}
             onChange={(e) => setHeroSubtitle(e.target.value)}
             placeholder="e.g. Welcome to FRENDO E-SCOOTY, an electric scooter brand offering multiple models..."
-            className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
+            className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
           />
         </div>
 
         {/* Hero Showcase Image Upload & Preview */}
-        <div className="pt-2 border-t border-white/5">
-          <label className="block text-xs font-semibold text-slate-300 mb-2">Hero Showcase Scooty Image</label>
+        <div className="pt-2 border-t border-brand-200">
+          <label className="block text-xs font-semibold text-slate-700 mb-2">Hero Showcase Scooty Image</label>
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <div className="relative w-36 h-28 rounded-xl bg-slate-950 border border-amber-500/30 overflow-hidden shrink-0 shadow">
+            <div className="relative w-36 h-28 rounded-xl bg-brand-50 border border-brand-300 overflow-hidden shrink-0 shadow">
               <Image
                 src={heroImage}
                 alt="Hero Showcase Preview"
@@ -305,10 +305,10 @@ export default function AdminHomepagePage() {
                 value={heroImage}
                 onChange={(e) => setHeroImage(e.target.value)}
                 placeholder="/models/set-1/main.jpg or /uploads/..."
-                className="w-full px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-white font-mono focus:outline-none focus:border-amber-400"
+                className="w-full px-3 py-2 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 font-mono focus:outline-none focus:border-brand-700"
               />
 
-              <label className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-semibold cursor-pointer transition-colors">
+              <label className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-brand-100 hover:bg-brand-200 text-brand-800 border border-brand-300 text-xs font-semibold cursor-pointer transition-colors">
                 <Upload className="w-3.5 h-3.5" />
                 <span>{uploading ? 'Uploading...' : 'Upload New Hero Photo'}</span>
                 <input
@@ -325,16 +325,16 @@ export default function AdminHomepagePage() {
       </div>
 
       {/* Promotional Banner Form */}
-      <div className="p-6 rounded-2xl bg-navy-900 border border-white/10 space-y-4 shadow-xl">
-        <div className="flex items-center justify-between border-b border-white/10 pb-3">
-          <h2 className="text-base font-bold text-white flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-amber-400" />
+      <div className="p-6 rounded-2xl bg-white border border-brand-200 space-y-4 shadow-xl">
+        <div className="flex items-center justify-between border-b border-brand-200 pb-3">
+          <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-brand-800" />
             <span>Festival & Promotional Banner</span>
           </h2>
           <button
             onClick={handleSavePromo}
             disabled={saving}
-            className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold text-xs shadow-glow transition-all flex items-center gap-1.5"
+            className="px-4 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold text-xs shadow-glow transition-all flex items-center gap-1.5"
           >
             <Save className="w-3.5 h-3.5" />
             <span>Save Banner</span>
@@ -343,64 +343,64 @@ export default function AdminHomepagePage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">Banner Title</label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">Banner Title</label>
             <input
               type="text"
               value={promoBanner.title}
               onChange={(e) => setPromoBanner({ ...promoBanner, title: e.target.value })}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">Subtitle</label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">Subtitle</label>
             <input
               type="text"
               value={promoBanner.subtitle}
               onChange={(e) => setPromoBanner({ ...promoBanner, subtitle: e.target.value })}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-slate-300 mb-1.5">Offer Highlight Text</label>
+          <label className="block text-xs font-semibold text-slate-700 mb-1.5">Offer Highlight Text</label>
           <input
             type="text"
             value={promoBanner.offer_text}
             onChange={(e) => setPromoBanner({ ...promoBanner, offer_text: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
+            className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
           />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">Button Text</label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">Button Text</label>
             <input
               type="text"
               value={promoBanner.button_text}
               onChange={(e) => setPromoBanner({ ...promoBanner, button_text: e.target.value })}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 mb-1.5">Button Link</label>
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">Button Link</label>
             <input
               type="text"
               value={promoBanner.button_link}
               onChange={(e) => setPromoBanner({ ...promoBanner, button_link: e.target.value })}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
             />
           </div>
         </div>
 
         {/* Banner Image Upload */}
         <div className="pt-2">
-          <label className="block text-xs font-semibold text-slate-300 mb-1.5">Banner Image</label>
+          <label className="block text-xs font-semibold text-slate-700 mb-1.5">Banner Image</label>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             {promoBanner.image_url ? (
-              <div className="relative w-32 h-20 rounded-xl overflow-hidden bg-black border border-white/10 shrink-0">
+              <div className="relative w-32 h-20 rounded-xl overflow-hidden bg-slate-100 border border-brand-200 shrink-0">
                 <Image
                   src={promoBanner.image_url}
                   alt="Banner preview"
@@ -409,15 +409,15 @@ export default function AdminHomepagePage() {
                 />
               </div>
             ) : (
-              <div className="w-32 h-20 rounded-xl bg-white/5 border border-dashed border-white/20 flex flex-col items-center justify-center text-slate-500 shrink-0">
+              <div className="w-32 h-20 rounded-xl bg-brand-50 border border-dashed border-brand-200 flex flex-col items-center justify-center text-slate-500 shrink-0">
                 <ImageIcon className="w-6 h-6 mb-1" />
                 <span className="text-[10px]">No Image</span>
               </div>
             )}
 
             <div className="space-y-2 flex-1 w-full">
-              <label className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs cursor-pointer transition-all border border-white/20">
-                <Upload className="w-3.5 h-3.5 text-amber-400" />
+              <label className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-100 hover:bg-brand-200 text-slate-900 font-bold text-xs cursor-pointer transition-all border border-brand-200">
+                <Upload className="w-3.5 h-3.5 text-brand-800" />
                 <span>{uploading ? 'Uploading...' : 'Upload New Banner Image'}</span>
                 <input
                   type="file"
@@ -427,7 +427,7 @@ export default function AdminHomepagePage() {
                   className="hidden"
                 />
               </label>
-              <div className="text-[11px] text-slate-400">
+              <div className="text-[11px] text-slate-600">
                 JPG, PNG or WebP. High resolution recommended (1200x500px).
               </div>
             </div>
@@ -435,12 +435,12 @@ export default function AdminHomepagePage() {
         </div>
 
         <div className="pt-2">
-          <label className="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
+          <label className="flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
             <input
               type="checkbox"
               checked={promoBanner.is_active}
               onChange={(e) => setPromoBanner({ ...promoBanner, is_active: e.target.checked })}
-              className="rounded bg-white/5 border-white/20 text-amber-500 focus:ring-0"
+              className="rounded bg-brand-50 border-brand-200 text-amber-500 focus:ring-0"
             />
             <span>Banner is Active (Visible on Homepage)</span>
           </label>
@@ -448,16 +448,16 @@ export default function AdminHomepagePage() {
       </div>
 
       {/* Homepage Sections Visibility */}
-      <div className="p-6 rounded-2xl bg-navy-900 border border-white/10 space-y-4 shadow-xl">
-        <h2 className="text-base font-bold text-white border-b border-white/10 pb-3">
+      <div className="p-6 rounded-2xl bg-white border border-brand-200 space-y-4 shadow-xl">
+        <h2 className="text-base font-bold text-slate-900 border-b border-brand-200 pb-3">
           Homepage Sections Visibility
         </h2>
 
-        <div className="divide-y divide-white/5">
+        <div className="divide-y divide-slate-200">
           {sections.map((sec) => (
             <div key={sec.id} className="py-3 flex items-center justify-between">
               <div>
-                <div className="text-sm font-bold text-white">{sec.title}</div>
+                <div className="text-sm font-bold text-slate-900">{sec.title}</div>
                 <div className="text-[10px] text-slate-500 font-mono">KEY: {sec.section_key}</div>
               </div>
 
@@ -466,8 +466,8 @@ export default function AdminHomepagePage() {
                 onClick={() => handleToggleSection(sec)}
                 className={`px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all ${
                   sec.is_visible
-                    ? 'bg-emerald-950 text-emerald-400 border border-emerald-500/40'
-                    : 'bg-white/5 text-slate-500'
+                    ? 'bg-brand-100 text-brand-700 border border-brand-300'
+                    : 'bg-brand-50 text-slate-500'
                 }`}
               >
                 {sec.is_visible ? (

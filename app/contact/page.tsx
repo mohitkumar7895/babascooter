@@ -53,96 +53,96 @@ export default async function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-navy-950 text-white py-10 sm:py-14 border-t border-amber-500/20">
+    <div className="min-h-screen bg-brand-50 text-slate-900 py-10 sm:py-14 border-t border-brand-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-400 uppercase tracking-widest mb-3 font-serif">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-brand-100 border border-brand-300 text-xs font-bold text-brand-800 uppercase tracking-widest mb-3 font-serif">
             Official Contact & B2B Desk
           </div>
-          <h1 className="font-serif text-3xl sm:text-5xl font-black text-white tracking-tight">
+          <h1 className="font-serif text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
             CONNECT WITH BABA MARKETING
           </h1>
-          <p className="mt-2 text-slate-300 text-xs sm:text-sm leading-relaxed">
-            Authorized Showroom & Distribution Hub for <strong className="text-amber-400">FRENDO E-SCOOTY</strong>. Connect with our dealership specialists or book a free test ride in Ballabhgarh, Faridabad.
+          <p className="mt-2 text-slate-700 text-xs sm:text-sm leading-relaxed">
+            Authorized Showroom & Distribution Hub for <strong className="text-brand-800">FRENDO E-SCOOTY</strong>. Connect with our dealership specialists or book a free test ride in Ballabhgarh, Faridabad.
           </p>
         </div>
 
         {/* Contact Information Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {/* Card 1: Direct Hotline */}
-          <div className="p-6 rounded-2xl bg-navy-900 border border-white/10 shadow-card flex flex-col justify-between space-y-3">
+          <div className="p-6 rounded-2xl bg-white border border-brand-200 shadow-card flex flex-col justify-between space-y-3">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center mb-3">
+              <div className="w-10 h-10 rounded-xl bg-brand-100 text-brand-800 border border-brand-300 flex items-center justify-center mb-3">
                 <Phone className="w-5 h-5" />
               </div>
-              <div className="font-serif text-xs uppercase tracking-wider text-amber-400 font-bold">Call Showroom</div>
-              <div className="text-lg font-black text-white mt-1">{primaryPhone}</div>
-              <p className="text-xs text-slate-400 mt-1">Direct phone assistance for retail and wholesale queries.</p>
+              <div className="font-serif text-xs uppercase tracking-wider text-brand-800 font-bold">Call Showroom</div>
+              <div className="text-lg font-black text-slate-900 mt-1">{primaryPhone}</div>
+              <p className="text-xs text-slate-600 mt-1">Direct phone assistance for retail and wholesale queries.</p>
             </div>
             <a
               href={`tel:${primaryPhone}`}
-              className="mt-3 block text-center py-2 rounded-xl bg-white/5 hover:bg-white/10 text-amber-400 font-bold text-xs"
+              className="mt-3 block text-center py-2 rounded-xl bg-brand-50 hover:bg-brand-100 text-brand-800 font-bold text-xs"
             >
               Call Now
             </a>
           </div>
 
           {/* Card 2: WhatsApp Chat */}
-          <div className="p-6 rounded-2xl bg-navy-900 border border-amber-500/30 shadow-card flex flex-col justify-between space-y-3">
+          <div className="p-6 rounded-2xl bg-white border border-brand-300 shadow-card flex flex-col justify-between space-y-3">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-amber-500 text-navy-950 flex items-center justify-center mb-3">
-                <MessageCircle className="w-5 h-5 fill-navy-950" />
+              <div className="w-10 h-10 rounded-xl bg-amber-400 text-brand-950 flex items-center justify-center mb-3">
+                <MessageCircle className="w-5 h-5 fill-brand-950" />
               </div>
-              <div className="font-serif text-xs uppercase tracking-wider text-amber-400 font-bold">WhatsApp Hotline</div>
-              <div className="text-lg font-black text-white mt-1">+91 {whatsapp}</div>
-              <p className="text-xs text-slate-400 mt-1">Instant replies, model photos, prices, and franchise details.</p>
+              <div className="font-serif text-xs uppercase tracking-wider text-brand-800 font-bold">WhatsApp Hotline</div>
+              <div className="text-lg font-black text-slate-900 mt-1">+91 {whatsapp}</div>
+              <p className="text-xs text-slate-600 mt-1">Instant replies, model photos, prices, and franchise details.</p>
             </div>
             <a
               href={`https://wa.me/91${whatsapp}?text=${encodeURIComponent('Hello Baba Marketing, I want to inquire about FRENDO E-SCOOTY.')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 block text-center py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold text-xs shadow-glow"
+              className="mt-3 block text-center py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold text-xs shadow-glow"
             >
               Chat on WhatsApp
             </a>
           </div>
 
           {/* Card 3: Showroom Location */}
-          <div className="p-6 rounded-2xl bg-navy-900 border border-white/10 shadow-card flex flex-col justify-between space-y-3">
+          <div className="p-6 rounded-2xl bg-white border border-brand-200 shadow-card flex flex-col justify-between space-y-3">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center mb-3">
+              <div className="w-10 h-10 rounded-xl bg-brand-100 text-brand-800 border border-brand-300 flex items-center justify-center mb-3">
                 <MapPin className="w-5 h-5" />
               </div>
-              <div className="font-serif text-xs uppercase tracking-wider text-amber-400 font-bold">Showroom Address</div>
-              <div className="text-xs font-semibold text-white mt-1 leading-relaxed">{address}</div>
-              <p className="text-[11px] text-slate-400 mt-1">Mon – Sat: 9 AM – 8 PM</p>
+              <div className="font-serif text-xs uppercase tracking-wider text-brand-800 font-bold">Showroom Address</div>
+              <div className="text-xs font-semibold text-slate-900 mt-1 leading-relaxed">{address}</div>
+              <p className="text-[11px] text-slate-600 mt-1">Mon – Sat: 9 AM – 8 PM</p>
             </div>
             <a
               href="https://maps.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 block text-center py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 font-bold text-xs"
+              className="mt-3 block text-center py-2 rounded-xl bg-brand-50 hover:bg-brand-100 text-slate-700 font-bold text-xs"
             >
               Get Directions
             </a>
           </div>
 
           {/* Card 4: Official Website */}
-          <div className="p-6 rounded-2xl bg-navy-900 border border-white/10 shadow-card flex flex-col justify-between space-y-3">
+          <div className="p-6 rounded-2xl bg-white border border-brand-200 shadow-card flex flex-col justify-between space-y-3">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center justify-center mb-3">
+              <div className="w-10 h-10 rounded-xl bg-brand-100 text-brand-800 border border-brand-300 flex items-center justify-center mb-3">
                 <Globe className="w-5 h-5" />
               </div>
-              <div className="font-serif text-xs uppercase tracking-wider text-amber-400 font-bold">Official Web Portal</div>
-              <div className="text-base font-bold text-white mt-1">www.frendo.in</div>
-              <p className="text-xs text-slate-400 mt-1">Visit our official brand portal for regular updates and announcements.</p>
+              <div className="font-serif text-xs uppercase tracking-wider text-brand-800 font-bold">Official Web Portal</div>
+              <div className="text-base font-bold text-slate-900 mt-1">www.frendo.in</div>
+              <p className="text-xs text-slate-600 mt-1">Visit our official brand portal for regular updates and announcements.</p>
             </div>
             <a
               href="https://www.frendo.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 block text-center py-2 rounded-xl bg-white/5 hover:bg-white/10 text-amber-400 font-bold text-xs"
+              className="mt-3 block text-center py-2 rounded-xl bg-brand-50 hover:bg-brand-100 text-brand-800 font-bold text-xs"
             >
               Visit Portal
             </a>
@@ -159,17 +159,17 @@ export default async function ContactPage() {
         {/* FAQs */}
         <div className="pt-6">
           <div className="text-center max-w-2xl mx-auto mb-8">
-            <h2 className="font-serif text-2xl sm:text-3xl font-extrabold text-white">
+            <h2 className="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900">
               FREQUENTLY ASKED QUESTIONS
             </h2>
-            <p className="mt-1 text-xs sm:text-sm text-slate-400">Everything you need to know about FRENDO E-SCOOTY</p>
+            <p className="mt-1 text-xs sm:text-sm text-slate-600">Everything you need to know about FRENDO E-SCOOTY</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
             {faqs.map((faq, i) => (
-              <div key={i} className="p-5 rounded-2xl bg-navy-900 border border-white/10 space-y-2">
-                <h3 className="font-bold text-sm text-white">{faq.q}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">{faq.a}</p>
+              <div key={i} className="p-5 rounded-2xl bg-white border border-brand-200 space-y-2">
+                <h3 className="font-bold text-sm text-slate-900">{faq.q}</h3>
+                <p className="text-xs text-slate-600 leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>

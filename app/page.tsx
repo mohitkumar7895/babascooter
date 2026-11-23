@@ -58,7 +58,7 @@ export default async function HomePage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-navy-950 overflow-x-hidden">
+    <div className="flex flex-col min-h-screen bg-white overflow-x-hidden">
       {/* 1. Hero Section - Dynamic from Admin or Luxury Gold Defaults */}
       <HeroSection
         primaryPhone={phone}

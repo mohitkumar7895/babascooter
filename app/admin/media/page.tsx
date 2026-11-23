@@ -154,64 +154,64 @@ export default function AdminMediaPage() {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-black text-white tracking-tight flex items-center gap-2">
-            <ImageIcon className="w-6 h-6 text-amber-400" />
+          <h1 className="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+            <ImageIcon className="w-6 h-6 text-brand-800" />
             <span>Media & Image Manager</span>
           </h1>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-600 mt-1">
             Upload images from your phone or PC, view public URLs, and use them in products, hero banners, or blogs.
           </p>
         </div>
 
         <button
           onClick={loadImages}
-          className="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-semibold flex items-center gap-2 transition-colors"
+          className="px-3.5 py-2 rounded-xl bg-brand-50 hover:bg-brand-100 text-slate-700 text-xs font-semibold flex items-center gap-2 transition-colors"
         >
-          <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin text-amber-400' : ''}`} />
+          <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin text-brand-800' : ''}`} />
           <span>Refresh</span>
         </button>
       </div>
 
       {error && (
-        <div className="p-4 rounded-xl bg-red-950/50 border border-red-500/30 text-xs text-red-300 flex items-center gap-2">
-          <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+        <div className="p-4 rounded-xl bg-crimson-50 border border-crimson-500/40 text-xs text-crimson-600 flex items-center gap-2">
+          <AlertCircle className="w-4 h-4 text-crimson-600 shrink-0" />
           <span>{error}</span>
         </div>
       )}
 
       {success && (
-        <div className="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-xs text-emerald-300 flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+        <div className="p-4 rounded-xl bg-brand-100 border border-brand-300 text-xs text-brand-700 flex items-center gap-2">
+          <CheckCircle2 className="w-4 h-4 text-brand-700 shrink-0" />
           <span>{success}</span>
         </div>
       )}
 
       {/* Upload Zone Card */}
-      <div className="p-6 rounded-2xl bg-navy-900 border border-amber-500/20 shadow-xl space-y-4">
-        <h2 className="text-sm font-bold text-white flex items-center gap-2 font-serif">
-          <Upload className="w-4 h-4 text-amber-400" />
+      <div className="p-6 rounded-2xl bg-white border border-brand-300 shadow-xl space-y-4">
+        <h2 className="text-sm font-bold text-slate-900 flex items-center gap-2 font-serif">
+          <Upload className="w-4 h-4 text-brand-800" />
           <span>Upload New Photos / Images</span>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
           <div className="sm:col-span-4">
-            <label className="block text-[11px] font-semibold text-slate-300 mb-1">Target Folder / Purpose</label>
+            <label className="block text-[11px] font-semibold text-slate-700 mb-1">Target Folder / Purpose</label>
             <select
               value={targetFolder}
               onChange={(e) => setTargetFolder(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-white focus:outline-none focus:border-amber-400"
+              className="w-full px-3 py-2 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 focus:outline-none focus:border-brand-700"
             >
-              <option value="products" className="bg-navy-950">Scooters & Products (/uploads/products/)</option>
-              <option value="banners" className="bg-navy-950">Homepage Banners (/uploads/banners/)</option>
-              <option value="blogs" className="bg-navy-950">Blog Post Covers (/uploads/blogs/)</option>
-              <option value="gallery" className="bg-navy-950">General Gallery (/uploads/gallery/)</option>
+              <option value="products" className="bg-white text-slate-900">Scooters & Products (/uploads/products/)</option>
+              <option value="banners" className="bg-white text-slate-900">Homepage Banners (/uploads/banners/)</option>
+              <option value="blogs" className="bg-white text-slate-900">Blog Post Covers (/uploads/blogs/)</option>
+              <option value="gallery" className="bg-white text-slate-900">General Gallery (/uploads/gallery/)</option>
             </select>
           </div>
 
           <div className="sm:col-span-8">
-            <label className="block text-[11px] font-semibold text-slate-300 mb-1">Select Images from Device</label>
-            <label className="flex items-center justify-center gap-3 px-4 py-3 rounded-xl border-2 border-dashed border-amber-500/30 hover:border-amber-400 bg-white/5 hover:bg-white/10 cursor-pointer transition-all text-xs font-semibold text-slate-200">
-              <Upload className={`w-4 h-4 text-amber-400 ${uploading ? 'animate-bounce' : ''}`} />
+            <label className="block text-[11px] font-semibold text-slate-700 mb-1">Select Images from Device</label>
+            <label className="flex items-center justify-center gap-3 px-4 py-3 rounded-xl border-2 border-dashed border-brand-300 hover:border-brand-700 bg-brand-50 hover:bg-brand-100 cursor-pointer transition-all text-xs font-semibold text-slate-800">
+              <Upload className={`w-4 h-4 text-brand-800 ${uploading ? 'animate-bounce' : ''}`} />
               <span>
                 {uploading
                   ? 'Uploading images to server, please wait...'
@@ -232,7 +232,7 @@ export default function AdminMediaPage() {
 
       {/* Filter Tabs & Image Gallery View */}
       <div className="space-y-4">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-white/10 pb-3">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-brand-200 pb-3">
           {/* Folder Filter Tabs */}
           <div className="flex items-center gap-1.5 overflow-x-auto max-w-full pb-1">
             {folders.map((f) => (
@@ -241,8 +241,8 @@ export default function AdminMediaPage() {
                 onClick={() => setActiveFolder(f)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap ${
                   activeFolder === f
-                    ? 'bg-amber-500 text-navy-950 font-black shadow-glow'
-                    : 'bg-white/5 text-slate-300 hover:bg-white/10'
+                    ? 'bg-amber-400 text-brand-950 font-black shadow-glow'
+                    : 'bg-brand-50 text-slate-700 hover:bg-brand-100'
                 }`}
               >
                 {f === 'all' ? 'All Images' : f}
@@ -250,18 +250,18 @@ export default function AdminMediaPage() {
             ))}
           </div>
 
-          <div className="text-xs text-slate-400">
-            Total Images: <strong className="text-white">{filteredImages.length}</strong>
+          <div className="text-xs text-slate-600">
+            Total Images: <strong className="text-slate-900">{filteredImages.length}</strong>
           </div>
         </div>
 
         {/* Gallery Grid */}
         {loading ? (
-          <div className="py-20 text-center text-slate-400 text-xs">Loading media files...</div>
+          <div className="py-20 text-center text-slate-600 text-xs">Loading media files...</div>
         ) : filteredImages.length === 0 ? (
-          <div className="py-16 text-center rounded-2xl bg-navy-900 border border-white/10 space-y-2">
+          <div className="py-16 text-center rounded-2xl bg-white border border-brand-200 space-y-2">
             <FolderOpen className="w-8 h-8 text-slate-600 mx-auto" />
-            <div className="text-sm font-bold text-slate-300">No images uploaded in this folder yet</div>
+            <div className="text-sm font-bold text-slate-700">No images uploaded in this folder yet</div>
             <div className="text-xs text-slate-500">Use the upload box above to add your first photo.</div>
           </div>
         ) : (
@@ -271,10 +271,10 @@ export default function AdminMediaPage() {
               return (
                 <div
                   key={img.url}
-                  className="rounded-2xl bg-navy-900 border border-white/10 hover:border-amber-500/40 overflow-hidden shadow-lg transition-all flex flex-col justify-between group"
+                  className="rounded-2xl bg-white border border-brand-200 hover:border-brand-700 overflow-hidden shadow-lg transition-all flex flex-col justify-between group"
                 >
                   {/* Thumbnail */}
-                  <div className="relative aspect-[4/3] w-full bg-slate-950 overflow-hidden">
+                  <div className="relative aspect-[4/3] w-full bg-brand-50 overflow-hidden">
                     <Image
                       src={img.url}
                       alt={img.filename}
@@ -284,7 +284,7 @@ export default function AdminMediaPage() {
                     />
 
                     {/* Folder Badge */}
-                    <div className="absolute top-2 left-2 px-2 py-0.5 rounded text-[9px] font-bold uppercase bg-black/80 backdrop-blur-sm text-amber-300 border border-amber-500/30">
+                    <div className="absolute top-2 left-2 px-2 py-0.5 rounded text-[9px] font-bold uppercase bg-black/80 backdrop-blur-sm text-amber-400 border border-brand-300">
                       {img.folder}
                     </div>
 
@@ -293,7 +293,7 @@ export default function AdminMediaPage() {
                       href={img.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute top-2 right-2 p-1.5 rounded-lg bg-black/80 text-white hover:text-amber-400 transition-colors opacity-0 group-hover:opacity-100"
+                      className="absolute top-2 right-2 p-1.5 rounded-lg bg-black/80 text-white hover:text-brand-700 transition-colors opacity-0 group-hover:opacity-100"
                       title="Open full image"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -303,23 +303,23 @@ export default function AdminMediaPage() {
                   {/* Info & Actions */}
                   <div className="p-3 space-y-2 flex-1 flex flex-col justify-between">
                     <div>
-                      <div className="text-[11px] font-bold text-white truncate" title={img.filename}>
+                      <div className="text-[11px] font-bold text-slate-900 truncate" title={img.filename}>
                         {img.filename}
                       </div>
-                      <div className="flex items-center justify-between text-[10px] text-slate-400 mt-1 font-mono">
+                      <div className="flex items-center justify-between text-[10px] text-slate-600 mt-1 font-mono">
                         <span>{formatSize(img.size)}</span>
                         <span>{formatDate(img.createdAt)}</span>
                       </div>
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="pt-2 border-t border-white/5 flex items-center gap-1.5">
+                    <div className="pt-2 border-t border-brand-200 flex items-center gap-1.5">
                       <button
                         onClick={() => handleCopy(img.url)}
                         className={`flex-1 py-1.5 px-2 rounded-lg text-[11px] font-bold transition-all flex items-center justify-center gap-1 ${
                           isCopied
-                            ? 'bg-emerald-500 text-navy-950'
-                            : 'bg-white/5 hover:bg-white/10 text-slate-200'
+                            ? 'bg-brand-800 text-white'
+                            : 'bg-brand-50 hover:bg-brand-100 text-slate-800'
                         }`}
                         title="Copy image URL"
                       >
@@ -330,7 +330,7 @@ export default function AdminMediaPage() {
                           </>
                         ) : (
                           <>
-                            <Copy className="w-3 h-3 text-amber-400" />
+                            <Copy className="w-3 h-3 text-brand-800" />
                             <span>Copy URL</span>
                           </>
                         )}
@@ -338,7 +338,7 @@ export default function AdminMediaPage() {
 
                       <button
                         onClick={() => handleDelete(img.url, img.filename)}
-                        className="p-1.5 rounded-lg bg-red-500/10 hover:bg-red-500 text-red-400 hover:text-white transition-colors"
+                        className="p-1.5 rounded-lg bg-crimson-50 hover:bg-red-500 text-crimson-600 hover:text-white transition-colors"
                         title="Delete image"
                       >
                         <Trash2 className="w-3.5 h-3.5" />

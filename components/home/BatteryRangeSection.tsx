@@ -59,25 +59,25 @@ export default function BatteryRangeSection() {
   const selectedColor = colors[selectedColorIdx];
 
   return (
-    <section id="battery-range" className="py-12 sm:py-16 bg-navy-900 text-white relative border-b border-white/5">
+    <section id="battery-range" className="py-12 sm:py-16 bg-brand-50 text-slate-900 relative border-b border-brand-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-400 uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-crimson-600 text-xs font-bold text-white uppercase tracking-widest mb-3 shadow-sm">
             <BatteryCharging className="w-3.5 h-3.5 text-amber-400" />
             <span>Advanced LFP Chemistry</span>
           </div>
 
-          <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-royal-800 tracking-tight">
             🔋 BATTERY OPTIONS & ⚡ RUNNING RANGE
           </h2>
 
-          <p className="mt-2 text-slate-300 text-xs sm:text-sm leading-relaxed">
-            We offer advanced <strong className="text-amber-400">LFP (Lithium Iron Phosphate)</strong> battery options with running range from <strong className="text-white">50 KM to 300 KM</strong> to meet every customer and delivery requirement.
+          <p className="mt-2 text-slate-600 text-xs sm:text-sm leading-relaxed">
+            We offer advanced <strong className="text-brand-800">LFP (Lithium Iron Phosphate)</strong> battery options with running range from <strong className="text-royal-800">50 KM to 300 KM</strong> to meet every customer and delivery requirement.
           </p>
 
-          <div className="mt-3 inline-block px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-xs font-black text-amber-300">
+          <div className="mt-3 inline-block px-4 py-1.5 rounded-full bg-amber-400 border border-amber-500 text-xs font-black text-crimson-600 shadow-sm">
             Battery Starting Price: ₹15,000/- (All Taxes Included)
           </div>
         </div>
@@ -91,26 +91,26 @@ export default function BatteryRangeSection() {
                 key={b.name}
                 type="button"
                 onClick={() => setSelectedBatteryIdx(idx)}
-                className={`p-4 rounded-2xl text-left transition-all flex flex-col justify-between border ${
+                className={`p-4 rounded-2xl text-left transition-all flex flex-col justify-between border-2 ${
                   isSelected
-                    ? 'bg-gradient-to-b from-amber-500/20 via-slate-900 to-slate-900 border-amber-500 shadow-glow scale-[1.02]'
-                    : 'bg-navy-950/80 border-white/10 hover:border-amber-500/40'
+                    ? 'bg-brand-800 text-white border-amber-400 shadow-glow scale-[1.02]'
+                    : 'bg-white text-slate-900 border-brand-200 hover:border-brand-700 shadow-sm'
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <Battery className={`w-5 h-5 ${isSelected ? 'text-amber-400' : 'text-slate-400'}`} />
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-amber-400 font-bold">
+                    <Battery className={`w-5 h-5 ${isSelected ? 'text-amber-400' : 'text-brand-700'}`} />
+                    <span className={`text-[10px] font-mono px-2 py-0.5 rounded font-bold ${isSelected ? 'bg-amber-400 text-brand-950' : 'bg-amber-400/30 text-brand-900'}`}>
                       Pack {idx + 1}
                     </span>
                   </div>
 
-                  <div className="font-extrabold text-sm text-white">{b.name}</div>
-                  <div className="text-xs font-bold text-amber-400 mt-0.5">{b.range}</div>
-                  <div className="text-[11px] text-slate-400 mt-1 line-clamp-2">{b.usage}</div>
+                  <div className={`font-extrabold text-sm ${isSelected ? 'text-white' : 'text-slate-900'}`}>{b.name}</div>
+                  <div className={`text-xs font-black mt-0.5 ${isSelected ? 'text-amber-400' : 'text-crimson-600'}`}>{b.range}</div>
+                  <div className={`text-[11px] mt-1 line-clamp-2 ${isSelected ? 'text-white/80' : 'text-slate-600'}`}>{b.usage}</div>
                 </div>
 
-                <div className="mt-3 pt-2.5 border-t border-white/10 text-[10px] text-slate-400 flex items-center justify-between">
+                <div className={`mt-3 pt-2.5 border-t text-[10px] flex items-center justify-between ${isSelected ? 'border-white/15 text-white/80' : 'border-slate-200 text-slate-500'}`}>
                   <span>Charge: {b.charging}</span>
                   {isSelected && <span className="font-bold text-amber-400">Selected</span>}
                 </div>
@@ -123,44 +123,44 @@ export default function BatteryRangeSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Left: Active Battery & Range Detail Card */}
-          <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-navy-950 border border-amber-500/30 space-y-6 flex flex-col justify-between gold-border-glow">
+          <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-white border-2 border-brand-200 space-y-6 flex flex-col justify-between shadow-card">
             <div className="space-y-3">
               <div className="flex items-center justify-between flex-wrap gap-2">
-                <span className="text-xs uppercase tracking-wider text-amber-400 font-bold font-serif">
+                <span className="text-xs uppercase tracking-wider text-brand-800 font-bold font-serif">
                   Selected Battery Configuration
                 </span>
-                <span className="px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-300">
+                <span className="px-3 py-1 rounded-full bg-brand-100 border border-brand-300 text-xs font-bold text-brand-800">
                   LFP Technology
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-black text-white">
-                {selectedBattery.name} — <span className="text-amber-400">{selectedBattery.range}</span>
+              <h3 className="text-2xl sm:text-3xl font-black text-royal-800">
+                {selectedBattery.name} — <span className="text-brand-700">{selectedBattery.range}</span>
               </h3>
 
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 {selectedBattery.usage}. Built with high-safety Lithium Iron Phosphate cells that eliminate thermal runaway risk and provide over 2,500 full charge-discharge cycles.
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10">
-                  <div className="text-[11px] text-slate-400">Running Range</div>
-                  <div className="text-base font-extrabold text-amber-400">{selectedBattery.range}</div>
+                <div className="p-3 rounded-xl bg-brand-50 border border-brand-200">
+                  <div className="text-[11px] text-slate-600 font-medium">Running Range</div>
+                  <div className="text-base font-extrabold text-brand-800">{selectedBattery.range}</div>
                 </div>
 
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10">
-                  <div className="text-[11px] text-slate-400">Starting Price</div>
-                  <div className="text-base font-extrabold text-white">₹15,000/-</div>
+                <div className="p-3 rounded-xl bg-amber-400/20 border border-amber-500/60">
+                  <div className="text-[11px] text-slate-700 font-medium">Starting Price</div>
+                  <div className="text-base font-black text-crimson-600">₹15,000/-</div>
                 </div>
 
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10 col-span-2 sm:col-span-1">
-                  <div className="text-[11px] text-slate-400">Full Charge Time</div>
-                  <div className="text-base font-extrabold text-white">{selectedBattery.charging}</div>
+                <div className="p-3 rounded-xl bg-royal-50 border border-royal-200 col-span-2 sm:col-span-1">
+                  <div className="text-[11px] text-slate-600 font-medium">Full Charge Time</div>
+                  <div className="text-base font-extrabold text-royal-800">{selectedBattery.charging}</div>
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300 flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
+              <div className="p-3 rounded-xl bg-brand-50 border border-brand-200 text-xs text-brand-900 font-medium flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-brand-700 shrink-0" />
                 <span>{selectedBattery.features}</span>
               </div>
             </div>
@@ -172,13 +172,13 @@ export default function BatteryRangeSection() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-black text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-brand-800 hover:bg-brand-700 text-white font-black text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-glow"
               >
                 <span>Enquire on WhatsApp</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-amber-400" />
               </a>
 
-              <span className="text-xs text-slate-400">
+              <span className="text-xs text-slate-500">
                 Range is certified for 50 KM up to 300 KM under standard riding conditions.
               </span>
             </div>
@@ -188,15 +188,15 @@ export default function BatteryRangeSection() {
           <div className="lg:col-span-5 space-y-5 flex flex-col justify-between">
             
             {/* Colour Selector Card */}
-            <div className="p-6 rounded-3xl bg-navy-950 border border-white/10 space-y-4">
+            <div className="p-6 rounded-3xl bg-white border-2 border-brand-200 space-y-4 shadow-card">
               <div className="flex items-center gap-2">
-                <Palette className="w-5 h-5 text-amber-400" />
-                <h3 className="font-serif text-base font-bold text-white uppercase tracking-wider">
+                <Palette className="w-5 h-5 text-brand-700" />
+                <h3 className="font-serif text-base font-bold text-royal-800 uppercase tracking-wider">
                   🎨 5 Attractive Colours Available
                 </h3>
               </div>
 
-              <p className="text-xs text-slate-300">
+              <p className="text-xs text-slate-600">
                 Choose from 5 attractive colours to match your style and preference. High-gloss & matte automotive UV coatings.
               </p>
 
@@ -209,8 +209,8 @@ export default function BatteryRangeSection() {
                       onClick={() => setSelectedColorIdx(idx)}
                       className={`relative w-10 h-10 rounded-full border-2 transition-all flex items-center justify-center ${
                         isColorActive
-                          ? 'border-amber-400 ring-2 ring-amber-400/40 scale-110'
-                          : 'border-slate-700 hover:scale-105'
+                          ? 'border-brand-800 ring-2 ring-amber-400 scale-110 shadow-md'
+                          : 'border-slate-300 hover:scale-105'
                       }`}
                       style={{ backgroundColor: c.hex }}
                       title={c.name}
@@ -224,32 +224,32 @@ export default function BatteryRangeSection() {
                 })}
               </div>
 
-              <div className="text-xs font-semibold text-amber-300">
-                Selected Shade: <span className="text-white font-bold">{selectedColor.name}</span>
+              <div className="text-xs font-semibold text-brand-800">
+                Selected Shade: <span className="text-slate-900 font-bold">{selectedColor.name}</span>
               </div>
             </div>
 
             {/* 🏆 5-Year Warranty Card */}
-            <div className="p-6 rounded-3xl bg-gradient-to-r from-amber-500/20 via-slate-900 to-navy-950 border border-amber-500/40 space-y-3 shadow-glow">
+            <div className="p-6 rounded-3xl bg-gradient-to-br from-crimson-600 to-crimson-700 text-white border-2 border-amber-400 space-y-3 shadow-lg">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-amber-500 text-navy-950 font-black flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-amber-400 text-brand-950 font-black flex items-center justify-center shadow">
                   <Award className="w-6 h-6" />
                 </div>
                 <div>
                   <h4 className="font-serif text-base font-extrabold text-white">
                     🏆 5-YEAR WARRANTY
                   </h4>
-                  <div className="text-xs text-amber-400 font-semibold">
+                  <div className="text-xs text-amber-300 font-bold">
                     Complete Peace of Mind
                   </div>
                 </div>
               </div>
 
-              <p className="text-xs text-slate-300 leading-relaxed">
-                FRENDO E-SCOOTY offers a comprehensive <strong className="text-white">5-Year Warranty</strong> as per applicable company warranty terms and conditions. Tested motor, copper electronics, robust frame, and LFP cells.
+              <p className="text-xs text-white/90 leading-relaxed">
+                FRENDO E-SCOOTY offers a comprehensive <strong className="text-amber-300">5-Year Warranty</strong> as per applicable company warranty terms and conditions. Tested motor, copper electronics, robust frame, and LFP cells.
               </p>
 
-              <div className="text-[11px] text-slate-400 flex items-center gap-2">
+              <div className="text-[11px] text-white/90 flex items-center gap-2 font-medium">
                 <Check className="w-3.5 h-3.5 text-amber-400" />
                 <span>Genuine OEM parts & service warranty coverage across India.</span>
               </div>
@@ -263,10 +263,10 @@ export default function BatteryRangeSection() {
         <div className="mt-10 text-center">
           <Link
             href="/batteries"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-400 border border-amber-500/30 hover:border-amber-400 font-bold text-xs uppercase tracking-wider transition-all shadow-glow hover:scale-105 active:scale-95"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-royal-800 hover:bg-royal-700 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:scale-105 active:scale-95"
           >
             <span>Explore Full LFP Battery Guide & 50–300 KM Specs</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 text-amber-400" />
           </Link>
         </div>
 

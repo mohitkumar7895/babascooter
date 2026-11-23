@@ -40,7 +40,7 @@ export default async function RootLayout({
   const contact = await getContactData();
 
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/logo.jpeg" sizes="any" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,7 +50,7 @@ export default async function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-navy-950 text-slate-100 antialiased selection:bg-amber-500 selection:text-navy-950">
+      <body className="min-h-screen flex flex-col bg-white text-slate-900 antialiased selection:bg-brand-800 selection:text-amber-400">
         <Header contact={contact} />
         <main className="flex-1">{children}</main>
         <Footer contact={contact} />

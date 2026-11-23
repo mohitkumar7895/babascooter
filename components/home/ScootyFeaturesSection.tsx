@@ -98,21 +98,21 @@ export default function ScootyFeaturesSection() {
   const displayedFeatures = expanded ? features : features.slice(0, 4);
 
   return (
-    <section id="features" className="py-12 sm:py-16 bg-navy-950 text-white relative border-b border-white/5">
+    <section id="features" className="py-12 sm:py-16 bg-white text-slate-900 relative border-b border-brand-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-400 uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-800 text-xs font-bold text-white uppercase tracking-widest mb-3 shadow-sm">
             <Zap className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
             <span>Built for Reliability</span>
           </div>
 
-          <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-royal-800 tracking-tight">
             🛵 ELECTRIC SCOOTY FEATURES
           </h2>
 
-          <p className="mt-2.5 text-slate-300 text-xs sm:text-sm leading-relaxed">
+          <p className="mt-2.5 text-slate-600 text-xs sm:text-sm leading-relaxed">
             Every FRENDO E-SCOOTY comes packed with high-end safety, intelligent electronics, pure copper propulsion, and durable heavy-duty construction.
           </p>
         </div>
@@ -129,36 +129,36 @@ export default function ScootyFeaturesSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3, delay: (idx % 4) * 0.05 }}
-                  className={`p-5 rounded-2xl transition-all duration-300 flex flex-col justify-between group ${
+                  className={`p-5 rounded-2xl transition-all duration-300 flex flex-col justify-between group shadow-card ${
                     feat.highlight
-                      ? 'bg-gradient-to-b from-amber-500/15 via-slate-900/90 to-slate-900 border border-amber-500/40 shadow-glow'
-                      : 'bg-slate-900/80 border border-white/10 hover:border-amber-500/30 hover:bg-slate-900'
+                      ? 'bg-amber-400/20 border-2 border-amber-500'
+                      : 'bg-brand-50/70 border border-brand-200 hover:border-brand-700 hover:bg-white'
                   }`}
                 >
                   <div>
                     <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-3.5 transition-transform group-hover:scale-110 ${
                       feat.highlight
-                        ? 'bg-amber-500 text-navy-950 font-black'
-                        : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
+                        ? 'bg-crimson-600 text-white font-black shadow-sm'
+                        : 'bg-brand-800 text-amber-400 shadow-sm'
                     }`}>
                       <Icon className="w-5 h-5" />
                     </div>
 
-                    <h3 className="font-bold text-sm sm:text-base text-white leading-snug">
+                    <h3 className="font-bold text-sm sm:text-base text-slate-900 leading-snug">
                       {feat.title}
                     </h3>
 
-                    <div className="text-[11px] font-semibold text-amber-400/90 mt-0.5">
+                    <div className={`text-[11px] font-bold mt-0.5 ${feat.highlight ? 'text-crimson-600' : 'text-brand-700'}`}>
                       {feat.subtitle}
                     </div>
 
-                    <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+                    <p className="text-xs text-slate-600 mt-2 leading-relaxed">
                       {feat.desc}
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-white/5 flex items-center gap-1.5 text-[11px] text-slate-400">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <div className="mt-4 pt-3 border-t border-brand-200/80 flex items-center gap-1.5 text-[11px] text-slate-600 font-medium">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-brand-700 shrink-0" />
                     <span>Standard on FRENDO Scooties</span>
                   </div>
                 </motion.div>
@@ -172,20 +172,20 @@ export default function ScootyFeaturesSection() {
           <button
             type="button"
             onClick={() => setExpanded(!expanded)}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-400 border border-amber-500/30 hover:border-amber-400 font-bold text-xs uppercase tracking-wider transition-all shadow-glow hover:scale-105 active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-800 hover:bg-brand-700 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-glow hover:scale-105 active:scale-95"
           >
             <span>
               {expanded ? 'Show Less (Show 4 Features)' : `View All ${features.length} Features & Specs`}
             </span>
-            {expanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+            {expanded ? <ChevronUp className="w-4 h-4 text-amber-400" /> : <ChevronDown className="w-4 h-4 text-amber-400" />}
           </button>
 
           <Link
             href="/features"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-amber-500/30 font-bold text-xs uppercase tracking-wider transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 border border-amber-500 font-black text-xs uppercase tracking-wider transition-all shadow-sm"
           >
             <span>Full Features Guide Page</span>
-            <ArrowRight className="w-4 h-4 text-amber-400" />
+            <ArrowRight className="w-4 h-4 text-brand-950" />
           </Link>
         </div>
 

@@ -163,41 +163,41 @@ export default async function BatteriesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-navy-950 text-white py-10 sm:py-16 border-t border-amber-500/20">
+    <div className="min-h-screen bg-brand-50 text-slate-900 py-10 sm:py-16 border-t border-brand-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-2 text-xs text-slate-400 mb-8 overflow-x-auto whitespace-nowrap">
-          <Link href="/" className="hover:text-amber-400 transition-colors">
+        <nav className="flex items-center gap-2 text-xs text-slate-600 mb-8 overflow-x-auto whitespace-nowrap">
+          <Link href="/" className="hover:text-brand-700 transition-colors">
             Home
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
-          <span className="text-amber-400 font-bold">LFP Batteries & Running Range</span>
+          <span className="text-brand-800 font-bold">LFP Batteries & Running Range</span>
         </nav>
 
         {/* Hero Header */}
         <div className="text-center max-w-4xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-400 uppercase tracking-widest mb-4 font-serif">
-            <BatteryCharging className="w-4 h-4 text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 border border-brand-300 text-xs font-bold text-brand-800 uppercase tracking-widest mb-4 font-serif">
+            <BatteryCharging className="w-4 h-4 text-brand-800" />
             <span>Next-Gen LFP Chemistry • 2500+ Cycles</span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          <h1 className="font-serif text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
             🔋 LFP BATTERY OPTIONS & ⚡ <span className="text-gradient-gold">50 TO 300 KM RANGE</span>
           </h1>
 
-          <p className="mt-3.5 text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
+          <p className="mt-3.5 text-slate-700 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
             FRENDO electric scooters feature military-grade Lithium Iron Phosphate (LFP) battery packs. Whether you travel 20 km daily or 200 km on commercial delivery routes, choose the exact battery capacity tailored to your lifestyle.
           </p>
 
-          <div className="mt-4 inline-block px-5 py-2 rounded-2xl bg-amber-500/20 border border-amber-500/40 text-amber-300 font-bold text-sm">
-            Battery Starting Price: <strong className="text-white font-mono text-base">₹15,000/-</strong> (All Taxes Included)
+          <div className="mt-4 inline-block px-5 py-2 rounded-2xl bg-brand-100 border border-brand-300 text-brand-800 font-bold text-sm">
+            Battery Starting Price: <strong className="text-slate-900 font-mono text-base">₹15,000/-</strong> (All Taxes Included)
           </div>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/scooters"
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-navy-950 font-black text-xs uppercase tracking-wider shadow-glow hover:scale-105 transition-all flex items-center gap-2"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-500 text-brand-950 font-black text-xs uppercase tracking-wider shadow-glow hover:scale-105 transition-all flex items-center gap-2"
             >
               <span>Explore Scooters Compatible with LFP Packs</span>
               <ArrowRight className="w-4 h-4" />
@@ -209,7 +209,7 @@ export default async function BatteriesPage() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-400 border border-amber-500/30 font-bold text-xs transition-all flex items-center gap-2"
+              className="px-6 py-3 rounded-xl bg-white hover:bg-brand-100 text-brand-800 border border-brand-300 font-bold text-xs transition-all flex items-center gap-2"
             >
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp: {whatsapp}</span>
@@ -224,8 +224,8 @@ export default async function BatteriesPage() {
               key={b.code}
               className={`p-6 sm:p-7 rounded-3xl transition-all duration-300 flex flex-col justify-between group ${
                 b.isPopular || b.isFlagship
-                  ? 'bg-gradient-to-b from-amber-500/15 via-slate-900 to-slate-900 border-2 border-amber-500/50 shadow-glow'
-                  : 'bg-navy-900/90 border border-white/10 hover:border-amber-500/40 hover:bg-slate-900'
+                  ? 'bg-gradient-to-b from-amber-400/25 via-brand-50 to-white border-2 border-brand-300 shadow-glow'
+                  : 'bg-white border border-brand-200 hover:border-brand-700 hover:bg-brand-50'
               }`}
             >
               <div>
@@ -233,51 +233,51 @@ export default async function BatteriesPage() {
                   <div
                     className={`w-12 h-12 rounded-2xl flex items-center justify-center ${
                       b.isPopular || b.isFlagship
-                        ? 'bg-amber-500 text-navy-950 font-black shadow-lg'
-                        : 'bg-amber-500/10 text-amber-400 border border-amber-500/30'
+                        ? 'bg-amber-400 text-brand-950 font-black shadow-lg'
+                        : 'bg-brand-100 text-brand-800 border border-brand-300'
                     }`}
                   >
                     <BatteryCharging className="w-6 h-6" />
                   </div>
 
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-amber-300 uppercase tracking-wider font-mono">
+                  <span className="px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-[10px] font-bold text-brand-800 uppercase tracking-wider font-mono">
                     {b.code}
                   </span>
                 </div>
 
-                <h2 className="font-serif text-xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                <h2 className="font-serif text-xl font-bold text-slate-900 group-hover:text-brand-800 transition-colors">
                   {b.name}
                 </h2>
 
-                <div className="mt-3 p-3.5 rounded-2xl bg-navy-950 border border-white/10 flex items-center justify-between">
+                <div className="mt-3 p-3.5 rounded-2xl bg-brand-50 border border-brand-200 flex items-center justify-between">
                   <div>
-                    <div className="text-[10px] text-slate-400 uppercase font-mono">Running Range</div>
-                    <div className="text-xl font-black text-amber-400 font-mono mt-0.5">{b.range}</div>
+                    <div className="text-[10px] text-slate-600 uppercase font-mono">Running Range</div>
+                    <div className="text-xl font-black text-brand-800 font-mono mt-0.5">{b.range}</div>
                   </div>
                   <div className="text-right">
-                    <div className="text-[10px] text-slate-400 uppercase font-mono">Charging</div>
-                    <div className="text-xs font-bold text-white mt-0.5">{b.charging}</div>
+                    <div className="text-[10px] text-slate-600 uppercase font-mono">Charging</div>
+                    <div className="text-xs font-bold text-slate-900 mt-0.5">{b.charging}</div>
                   </div>
                 </div>
 
-                <div className="mt-3 text-xs text-slate-300">
-                  <strong className="text-white">Best Suited For:</strong> {b.usage}
+                <div className="mt-3 text-xs text-slate-700">
+                  <strong className="text-slate-900">Best Suited For:</strong> {b.usage}
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-white/10 space-y-2">
+                <div className="mt-4 pt-4 border-t border-brand-200 space-y-2">
                   {b.features.map((feat) => (
-                    <div key={feat} className="flex items-start gap-2 text-xs text-slate-200">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
+                    <div key={feat} className="flex items-start gap-2 text-xs text-slate-800">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-brand-800 shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-brand-200 flex items-center justify-between">
                 <div>
-                  <div className="text-[10px] text-slate-400 font-mono">5-Year Warranty Support</div>
-                  <div className="text-xs font-bold text-amber-300">{b.cycles}</div>
+                  <div className="text-[10px] text-slate-600 font-mono">5-Year Warranty Support</div>
+                  <div className="text-xs font-bold text-brand-800">{b.cycles}</div>
                 </div>
 
                 <a
@@ -286,7 +286,7 @@ export default async function BatteriesPage() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-black text-xs uppercase tracking-wider transition-all shadow"
+                  className="px-4 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-black text-xs uppercase tracking-wider transition-all shadow"
                 >
                   Enquire
                 </a>
@@ -296,15 +296,15 @@ export default async function BatteriesPage() {
         </div>
 
         {/* Battery Chemistry Comparison Table */}
-        <div className="p-6 sm:p-10 rounded-3xl bg-navy-900 border border-amber-500/30 shadow-2xl mb-16 gold-border-glow">
+        <div className="p-6 sm:p-10 rounded-3xl bg-white border border-brand-300 shadow-lg mb-16 gold-border-glow">
           <div className="max-w-3xl mb-6">
-            <span className="px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-400 uppercase tracking-widest font-serif">
+            <span className="px-3 py-1 rounded-md bg-brand-100 border border-brand-300 text-xs font-bold text-brand-800 uppercase tracking-widest font-serif">
               Technical Comparison
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-extrabold text-white mt-2">
+            <h2 className="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
               Why FRENDO Uses LFP (Lithium Iron Phosphate)
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1">
+            <p className="text-xs sm:text-sm text-slate-700 mt-1">
               Compare LFP against outdated Lead-Acid and volatile NMC batteries in Indian tropical temperatures.
             </p>
           </div>
@@ -312,22 +312,22 @@ export default async function BatteriesPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
-                <tr className="border-b border-white/10 text-slate-400 uppercase font-mono">
+                <tr className="border-b border-brand-200 text-slate-600 uppercase font-mono">
                   <th className="py-3 px-4">Feature / Metric</th>
-                  <th className="py-3 px-4 text-amber-400 font-bold bg-amber-500/10 rounded-t-xl">
+                  <th className="py-3 px-4 text-brand-800 font-bold bg-brand-100 rounded-t-xl">
                     FRENDO LFP (Our Standard)
                   </th>
                   <th className="py-3 px-4">Old Lead-Acid / Graphene</th>
                   <th className="py-3 px-4">Generic NMC Battery</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/5 text-slate-300">
+              <tbody className="divide-y divide-slate-200 text-slate-700">
                 {chemistryComparison.map((row) => (
-                  <tr key={row.feature} className="hover:bg-white/5 transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-white">{row.feature}</td>
-                    <td className="py-3.5 px-4 text-amber-300 font-semibold bg-amber-500/5">{row.lfp}</td>
-                    <td className="py-3.5 px-4 text-slate-400">{row.leadAcid}</td>
-                    <td className="py-3.5 px-4 text-slate-400">{row.nmc}</td>
+                  <tr key={row.feature} className="hover:bg-brand-50 transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-slate-900">{row.feature}</td>
+                    <td className="py-3.5 px-4 text-brand-800 font-semibold bg-amber-500/5">{row.lfp}</td>
+                    <td className="py-3.5 px-4 text-slate-600">{row.leadAcid}</td>
+                    <td className="py-3.5 px-4 text-slate-600">{row.nmc}</td>
                   </tr>
                 ))}
               </tbody>
@@ -336,25 +336,25 @@ export default async function BatteriesPage() {
         </div>
 
         {/* Bottom CTA Card */}
-        <div className="text-center p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-amber-500/20 via-slate-900 to-amber-500/10 border border-amber-500/40">
-          <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-white">
+        <div className="text-center p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-amber-400/25 via-brand-50 to-brand-100/70 border border-brand-300">
+          <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-slate-900">
             Need Help Choosing the Right Battery Pack?
           </h2>
-          <p className="mt-2 text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
+          <p className="mt-2 text-xs sm:text-sm text-slate-700 max-w-xl mx-auto">
             Our EV experts at the Ballabhgarh showroom will analyze your daily running kilometers and suggest the perfect battery for maximum cost savings.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/scooters"
-              className="px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-black text-xs uppercase tracking-wider shadow-glow hover:scale-105 transition-all"
+              className="px-8 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-black text-xs uppercase tracking-wider shadow-glow hover:scale-105 transition-all"
             >
               Explore Compatible Scooters
             </Link>
 
             <Link
               href="/dealership"
-              className="px-8 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-bold text-xs uppercase tracking-wider border border-white/10 transition-all"
+              className="px-8 py-3.5 rounded-xl bg-brand-50 hover:bg-brand-100 text-slate-900 font-bold text-xs uppercase tracking-wider border border-brand-200 transition-all"
             >
               B2B Dealership Bulk Supply
             </Link>

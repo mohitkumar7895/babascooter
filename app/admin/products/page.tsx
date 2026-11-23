@@ -102,15 +102,15 @@ export default function AdminProductsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-black text-white tracking-tight">Product & Model Management</h1>
-          <p className="text-xs text-slate-400 mt-1">
+          <h1 className="text-2xl font-black text-slate-900 tracking-tight">Product & Model Management</h1>
+          <p className="text-xs text-slate-600 mt-1">
             Manage specifications, images, pricing, and visibility for all 20+ FRENDO models.
           </p>
         </div>
 
         <Link
           href="/admin/products/new"
-          className="px-5 py-2.5 rounded-xl bg-electric-500 text-navy-950 font-black text-xs shadow-glow hover:shadow-glow-lg transition-all flex items-center gap-2"
+          className="px-5 py-2.5 rounded-xl bg-brand-800 text-white font-black text-xs shadow-glow hover:shadow-glow-lg transition-all flex items-center gap-2"
         >
           <Plus className="w-4 h-4" />
           <span>Add New Scooter</span>
@@ -118,14 +118,14 @@ export default function AdminProductsPage() {
       </div>
 
       {actionMessage && (
-        <div className="p-3.5 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-xs text-emerald-300 flex items-center gap-2">
-          <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+        <div className="p-3.5 rounded-xl bg-brand-100 border border-brand-300 text-xs text-brand-700 flex items-center gap-2">
+          <Check className="w-4 h-4 text-brand-700 shrink-0" />
           <span>{actionMessage}</span>
         </div>
       )}
 
       {/* Search and Filters Toolbar */}
-      <div className="p-4 rounded-2xl bg-navy-900 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="p-4 rounded-2xl bg-white border border-brand-200 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="relative w-full sm:w-80">
           <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
@@ -133,20 +133,20 @@ export default function AdminProductsPage() {
             placeholder="Search model name or code..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-electric-500"
+            className="w-full pl-9 pr-4 py-2 rounded-xl bg-brand-50 border border-brand-200 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-700"
           />
         </div>
 
-        <div className="text-xs text-slate-400">
-          Total: <span className="font-bold text-white">{filtered.length}</span> models
+        <div className="text-xs text-slate-600">
+          Total: <span className="font-bold text-slate-900">{filtered.length}</span> models
         </div>
       </div>
 
       {/* Table of Products */}
-      <div className="rounded-2xl bg-navy-900 border border-white/10 overflow-hidden shadow-xl">
+      <div className="rounded-2xl bg-white border border-brand-200 overflow-hidden shadow-xl">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-white/5 text-slate-400 uppercase tracking-wider font-semibold border-b border-white/10">
+            <thead className="bg-brand-50 text-slate-600 uppercase tracking-wider font-semibold border-b border-brand-200">
               <tr>
                 <th className="py-3.5 px-4">Scooter</th>
                 <th className="py-3.5 px-4">Model Code</th>
@@ -156,12 +156,12 @@ export default function AdminProductsPage() {
                 <th className="py-3.5 px-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/5">
+            <tbody className="divide-y divide-slate-200">
               {filtered.map((p) => (
-                <tr key={p.id} className="hover:bg-white/5 transition-colors">
+                <tr key={p.id} className="hover:bg-brand-50 transition-colors">
                   <td className="py-3 px-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-14 h-12 rounded-xl bg-slate-950 border border-white/10 relative shrink-0 overflow-hidden">
+                      <div className="w-14 h-12 rounded-xl bg-brand-50 border border-brand-200 relative shrink-0 overflow-hidden">
                         <Image
                           src={p.primary_image || `/images/products/${p.slug}/main.png`}
                           alt={p.name}
@@ -171,24 +171,24 @@ export default function AdminProductsPage() {
                         />
                       </div>
                       <div>
-                        <div className="font-bold text-white text-sm">{p.name}</div>
+                        <div className="font-bold text-slate-900 text-sm">{p.name}</div>
                         <div className="text-[10px] text-slate-500 font-mono">/scooters/{p.slug}</div>
                       </div>
                     </div>
                   </td>
 
-                  <td className="py-3 px-4 font-mono font-bold text-slate-300">
+                  <td className="py-3 px-4 font-mono font-bold text-slate-700">
                     {p.model_number}
                   </td>
 
-                  <td className="py-3 px-4 text-slate-300">
+                  <td className="py-3 px-4 text-slate-700">
                     <div>{(p as any).motor_power?.split(' ')[0] || '1000W / 1500W'}</div>
                     <div className="text-[10px] text-slate-500 font-mono">
                       {(p as any).front_tyre || '12" Tyre'} / {(p as any).rear_tyre || '10" Tyre'}
                     </div>
                   </td>
 
-                  <td className="py-3 px-4 text-slate-400">
+                  <td className="py-3 px-4 text-slate-600">
                     {p.category_name || 'City Scooter'}
                   </td>
 
@@ -197,8 +197,8 @@ export default function AdminProductsPage() {
                       onClick={() => handleTogglePublish(p)}
                       className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold transition-all ${
                         p.is_published
-                          ? 'bg-emerald-950/80 text-emerald-400 border border-emerald-500/40 hover:bg-emerald-900'
-                          : 'bg-amber-950/80 text-amber-400 border border-amber-500/40 hover:bg-amber-900'
+                          ? 'bg-brand-100 text-brand-700 border border-brand-300 hover:bg-brand-200'
+                          : 'bg-amber-100 text-brand-800 border border-brand-300 hover:bg-amber-200'
                       }`}
                     >
                       {p.is_published ? (
@@ -220,7 +220,7 @@ export default function AdminProductsPage() {
                       <Link
                         href={`/scooters/${p.slug}`}
                         target="_blank"
-                        className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white"
+                        className="p-1.5 rounded-lg bg-brand-50 hover:bg-brand-100 text-slate-600 hover:text-brand-800"
                         title="View Live Page"
                       >
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -228,7 +228,7 @@ export default function AdminProductsPage() {
 
                       <Link
                         href={`/admin/products/${p.id}/edit`}
-                        className="p-1.5 rounded-lg bg-electric-500/10 hover:bg-electric-500 text-electric-400 hover:text-navy-950 transition-colors"
+                        className="p-1.5 rounded-lg bg-brand-100 hover:bg-brand-700 text-brand-800 hover:text-white transition-colors"
                         title="Edit Scooter"
                       >
                         <Edit3 className="w-3.5 h-3.5" />
@@ -236,7 +236,7 @@ export default function AdminProductsPage() {
 
                       <button
                         onClick={() => handleDelete(p.id, p.name)}
-                        className="p-1.5 rounded-lg bg-red-500/10 hover:bg-red-500 text-red-400 hover:text-white transition-colors"
+                        className="p-1.5 rounded-lg bg-crimson-50 hover:bg-red-500 text-crimson-600 hover:text-white transition-colors"
                         title="Delete Scooter"
                       >
                         <Trash2 className="w-3.5 h-3.5" />

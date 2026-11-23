@@ -159,7 +159,7 @@ export default async function ProductDetailPage({ params }: Props) {
   };
 
   return (
-    <div className="min-h-screen bg-navy-950 text-white py-8 sm:py-12 border-t border-amber-500/20">
+    <div className="min-h-screen bg-brand-50 text-slate-900 py-8 sm:py-12 border-t border-brand-300">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -167,16 +167,16 @@ export default async function ProductDetailPage({ params }: Props) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-2 text-xs text-slate-400 mb-6 overflow-x-auto whitespace-nowrap">
-          <Link href="/" className="hover:text-amber-400 transition-colors">
+        <nav className="flex items-center gap-2 text-xs text-slate-600 mb-6 overflow-x-auto whitespace-nowrap">
+          <Link href="/" className="hover:text-brand-700 transition-colors">
             Home
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
-          <Link href="/scooters" className="hover:text-amber-400 transition-colors">
+          <Link href="/scooters" className="hover:text-brand-700 transition-colors">
             Scooters
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
-          <span className="text-amber-400 font-bold">{product.name}</span>
+          <span className="text-brand-800 font-bold">{product.name}</span>
         </nav>
 
         {/* Main Product Showcase Section */}
@@ -191,78 +191,78 @@ export default async function ProductDetailPage({ params }: Props) {
             <div>
               {/* Category & Availability Badges */}
               <div className="flex items-center gap-2 mb-2">
-                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-navy-900 border border-white/10 text-amber-300 font-mono">
+                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-white border border-brand-200 text-brand-800 font-mono">
                   {product.category_name || 'Electric Scooty'}
                 </span>
-                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-500/15 border border-amber-500/30 text-amber-300 flex items-center gap-1.5">
+                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-brand-100 border border-brand-300 text-brand-800 flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                   {product.availability || 'Showroom In Stock'}
                 </span>
               </div>
 
               {/* Product Title */}
-              <h1 className="font-serif text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              <h1 className="font-serif text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 {product.name}
               </h1>
 
               {/* Model Number */}
-              <div className="mt-1 text-xs font-mono text-slate-400">
-                MODEL CODE: <span className="text-amber-400 font-bold">{product.model_number}</span>
+              <div className="mt-1 text-xs font-mono text-slate-600">
+                MODEL CODE: <span className="text-brand-800 font-bold">{product.model_number}</span>
               </div>
 
               {/* Price Card */}
-              <div className="mt-4 p-4 rounded-2xl bg-navy-900 border border-amber-500/30 shadow-xl flex items-center justify-between gold-border-glow">
+              <div className="mt-4 p-4 rounded-2xl bg-white border border-brand-300 shadow-xl flex items-center justify-between gold-border-glow">
                 <div>
-                  <div className="text-[10px] text-amber-400/90 uppercase tracking-widest font-serif font-bold">
+                  <div className="text-[10px] text-brand-800 uppercase tracking-widest font-serif font-bold">
                     Starting Showroom Price
                   </div>
-                  <div className="text-2xl sm:text-3xl font-black text-white mt-0.5">
+                  <div className="text-2xl sm:text-3xl font-black text-slate-900 mt-0.5">
                     {product.price ? `₹${product.price.toLocaleString('en-IN')}/-` : 'Starting ₹15,000/-'}
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs text-amber-400 font-bold">5-Year Warranty</div>
-                  <div className="text-[10px] text-slate-400">All Taxes Included</div>
+                  <div className="text-xs text-brand-800 font-bold">5-Year Warranty</div>
+                  <div className="text-[10px] text-slate-600">All Taxes Included</div>
                 </div>
               </div>
 
               {/* Short Description */}
-              <p className="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="mt-4 text-xs sm:text-sm text-slate-700 leading-relaxed">
                 {product.short_description}
               </p>
             </div>
 
             {/* Core Feature Badges */}
             <div className="grid grid-cols-2 gap-2.5 text-xs">
-              <div className="p-3 rounded-xl bg-navy-900 border border-white/10 flex items-center gap-2.5">
-                <Zap className="w-4 h-4 text-amber-400 shrink-0" />
+              <div className="p-3 rounded-xl bg-white border border-brand-200 flex items-center gap-2.5">
+                <Zap className="w-4 h-4 text-brand-800 shrink-0" />
                 <div>
-                  <div className="text-[10px] text-slate-400">Motor Power</div>
-                  <div className="font-bold text-white">{specs?.motor_power || '1000W / 1500W Copper'}</div>
+                  <div className="text-[10px] text-slate-600">Motor Power</div>
+                  <div className="font-bold text-slate-900">{specs?.motor_power || '1000W / 1500W Copper'}</div>
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-navy-900 border border-white/10 flex items-center gap-2.5">
-                <Battery className="w-4 h-4 text-amber-400 shrink-0" />
+              <div className="p-3 rounded-xl bg-white border border-brand-200 flex items-center gap-2.5">
+                <Battery className="w-4 h-4 text-brand-800 shrink-0" />
                 <div>
-                  <div className="text-[10px] text-slate-400">Battery & Range</div>
-                  <div className="font-bold text-white">{specs?.battery_voltage || 'LFP 60V (50–300 KM)'}</div>
+                  <div className="text-[10px] text-slate-600">Battery & Range</div>
+                  <div className="font-bold text-slate-900">{specs?.battery_voltage || 'LFP 60V (50–300 KM)'}</div>
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-navy-900 border border-white/10 flex items-center gap-2.5">
-                <Disc className="w-4 h-4 text-amber-400 shrink-0" />
+              <div className="p-3 rounded-xl bg-white border border-brand-200 flex items-center gap-2.5">
+                <Disc className="w-4 h-4 text-brand-800 shrink-0" />
                 <div>
-                  <div className="text-[10px] text-slate-400">Braking</div>
-                  <div className="font-bold text-white">{specs?.brakes || 'Front Disc Brake'}</div>
+                  <div className="text-[10px] text-slate-600">Braking</div>
+                  <div className="font-bold text-slate-900">{specs?.brakes || 'Front Disc Brake'}</div>
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-navy-900 border border-white/10 flex items-center gap-2.5">
-                <RotateCcw className="w-4 h-4 text-amber-400 shrink-0" />
+              <div className="p-3 rounded-xl bg-white border border-brand-200 flex items-center gap-2.5">
+                <RotateCcw className="w-4 h-4 text-brand-800 shrink-0" />
                 <div>
-                  <div className="text-[10px] text-slate-400">Reverse Assist</div>
-                  <div className="font-bold text-white">Reverse Gear Enabled</div>
+                  <div className="text-[10px] text-slate-600">Reverse Assist</div>
+                  <div className="font-bold text-slate-900">Reverse Gear Enabled</div>
                 </div>
               </div>
             </div>
@@ -273,26 +273,26 @@ export default async function ProductDetailPage({ params }: Props) {
                 href={`https://wa.me/91${whatsapp}?text=${encodeURIComponent(waMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-navy-950 font-black text-xs uppercase tracking-wider shadow-glow hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
+                className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-500 text-brand-950 font-black text-xs uppercase tracking-wider shadow-glow hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
               >
-                <MessageCircle className="w-4 h-4 fill-navy-950" />
+                <MessageCircle className="w-4 h-4 fill-brand-950" />
                 <span>Enquire on WhatsApp</span>
               </a>
 
               <a
                 href={`tel:${phone}`}
-                className="w-full py-3 px-6 rounded-xl bg-white/5 hover:bg-white/10 text-white font-bold text-xs uppercase tracking-wider border border-white/10 transition-all flex items-center justify-center gap-2"
+                className="w-full py-3 px-6 rounded-xl bg-brand-50 hover:bg-brand-100 text-slate-900 font-bold text-xs uppercase tracking-wider border border-brand-200 transition-all flex items-center justify-center gap-2"
               >
-                <Phone className="w-4 h-4 text-amber-400" />
+                <Phone className="w-4 h-4 text-brand-800" />
                 <span>Call Showroom ({phone})</span>
               </a>
             </div>
 
             {/* Showroom Visit Guarantee Box */}
-            <div className="p-3.5 rounded-xl bg-navy-900 border border-white/10 flex items-start gap-2.5 text-xs text-slate-300">
-              <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+            <div className="p-3.5 rounded-xl bg-white border border-brand-200 flex items-start gap-2.5 text-xs text-slate-700">
+              <MapPin className="w-4 h-4 text-brand-800 shrink-0 mt-0.5" />
               <div>
-                <span className="font-bold text-white">Showroom & Test Ride: </span>
+                <span className="font-bold text-slate-900">Showroom & Test Ride: </span>
                 <span>33 Futa Road, Kaili, Ballabhgarh, Faridabad. Open Mon – Sat (9 AM – 8 PM).</span>
               </div>
             </div>
@@ -300,104 +300,104 @@ export default async function ProductDetailPage({ params }: Props) {
         </div>
 
         {/* Detailed Technical Specifications Table */}
-        <div className="mt-12 pt-8 border-t border-white/10">
+        <div className="mt-12 pt-8 border-t border-brand-200">
           <div className="max-w-3xl mb-6">
-            <h2 className="font-serif text-xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-3">
-              <span className="w-2 h-5 rounded bg-amber-500" />
+            <h2 className="font-serif text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+              <span className="w-2 h-5 rounded bg-amber-400" />
               Technical Specifications & Features
             </h2>
-            <p className="mt-1 text-xs sm:text-sm text-slate-400">
+            <p className="mt-1 text-xs sm:text-sm text-slate-600">
               Official manufacturer specifications for {product.name} from FRENDO E-SCOOTY.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
             {/* Specs Table */}
-            <div className="rounded-2xl bg-navy-900 border border-white/10 overflow-hidden shadow-xl">
-              <div className="px-5 py-3.5 bg-white/5 border-b border-white/10 font-bold text-xs sm:text-sm text-white flex items-center gap-2 font-serif">
-                <Gauge className="w-4 h-4 text-amber-400" />
+            <div className="rounded-2xl bg-white border border-brand-200 overflow-hidden shadow-xl">
+              <div className="px-5 py-3.5 bg-brand-50 border-b border-brand-200 font-bold text-xs sm:text-sm text-slate-900 flex items-center gap-2 font-serif">
+                <Gauge className="w-4 h-4 text-brand-800" />
                 <span>Core Powertrain & Chassis</span>
               </div>
 
-              <div className="divide-y divide-white/5 text-xs">
+              <div className="divide-y divide-slate-200 text-xs">
                 <div className="px-5 py-3 flex items-center justify-between">
-                  <span className="text-slate-400">Model Code</span>
-                  <span className="text-white font-bold font-mono">{product.model_number}</span>
+                  <span className="text-slate-600">Model Code</span>
+                  <span className="text-slate-900 font-bold font-mono">{product.model_number}</span>
                 </div>
 
                 <div className="px-5 py-3 flex items-center justify-between">
-                  <span className="text-slate-400">Motor Power</span>
-                  <span className="text-amber-400 font-bold">{specs?.motor_power || '1000W / 1500W Copper'}</span>
+                  <span className="text-slate-600">Motor Power</span>
+                  <span className="text-brand-800 font-bold">{specs?.motor_power || '1000W / 1500W Copper'}</span>
                 </div>
 
                 <div className="px-5 py-3 flex items-center justify-between">
-                  <span className="text-slate-400">Battery Voltage</span>
-                  <span className="text-white font-bold">{specs?.battery_voltage || '48V / 60V / 72V (LFP)'}</span>
+                  <span className="text-slate-600">Battery Voltage</span>
+                  <span className="text-slate-900 font-bold">{specs?.battery_voltage || '48V / 60V / 72V (LFP)'}</span>
                 </div>
 
                 <div className="px-5 py-3 flex items-center justify-between">
-                  <span className="text-slate-400">Controller</span>
-                  <span className="text-white font-bold">{specs?.controller || 'Multi-Stage Intelligent Vector'}</span>
+                  <span className="text-slate-600">Controller</span>
+                  <span className="text-slate-900 font-bold">{specs?.controller || 'Multi-Stage Intelligent Vector'}</span>
                 </div>
 
                 <div className="px-5 py-3 flex items-center justify-between">
-                  <span className="text-slate-400">Front Tyre</span>
-                  <span className="text-white font-bold">{specs?.front_tyre || '90/90-12 Tubeless'}</span>
+                  <span className="text-slate-600">Front Tyre</span>
+                  <span className="text-slate-900 font-bold">{specs?.front_tyre || '90/90-12 Tubeless'}</span>
                 </div>
 
                 <div className="px-5 py-3 flex items-center justify-between">
-                  <span className="text-slate-400">Rear Tyre</span>
-                  <span className="text-white font-bold">{specs?.rear_tyre || '90/90-10 Tubeless'}</span>
+                  <span className="text-slate-600">Rear Tyre</span>
+                  <span className="text-slate-900 font-bold">{specs?.rear_tyre || '90/90-10 Tubeless'}</span>
                 </div>
 
                 <div className="px-5 py-3 flex items-center justify-between">
-                  <span className="text-slate-400">Braking System</span>
-                  <span className="text-white font-bold">{specs?.brakes || 'Front Hydraulic Disc'}</span>
+                  <span className="text-slate-600">Braking System</span>
+                  <span className="text-slate-900 font-bold">{specs?.brakes || 'Front Hydraulic Disc'}</span>
                 </div>
 
                 <div className="px-5 py-3 flex items-center justify-between">
-                  <span className="text-slate-400">Central Locking</span>
-                  <span className="text-amber-400 font-bold">{specs?.central_locking || 'Yes (Keyless + Alarm)'}</span>
+                  <span className="text-slate-600">Central Locking</span>
+                  <span className="text-brand-800 font-bold">{specs?.central_locking || 'Yes (Keyless + Alarm)'}</span>
                 </div>
 
                 <div className="px-5 py-3 flex items-center justify-between">
-                  <span className="text-slate-400">Digital Speedometer</span>
-                  <span className="text-amber-400 font-bold">{specs?.digital_meter || 'Yes (LCD Console)'}</span>
+                  <span className="text-slate-600">Digital Speedometer</span>
+                  <span className="text-brand-800 font-bold">{specs?.digital_meter || 'Yes (LCD Console)'}</span>
                 </div>
 
                 <div className="px-5 py-3 flex items-center justify-between">
-                  <span className="text-slate-400">Reverse Gear</span>
-                  <span className="text-amber-400 font-bold">{specs?.reverse_gear || 'Yes (Parking Assist)'}</span>
+                  <span className="text-slate-600">Reverse Gear</span>
+                  <span className="text-brand-800 font-bold">{specs?.reverse_gear || 'Yes (Parking Assist)'}</span>
                 </div>
 
                 <div className="px-5 py-3 flex items-center justify-between">
-                  <span className="text-slate-400">Warranty</span>
-                  <span className="text-amber-400 font-bold">5-Year Warranty</span>
+                  <span className="text-slate-600">Warranty</span>
+                  <span className="text-brand-800 font-bold">5-Year Warranty</span>
                 </div>
               </div>
             </div>
 
             {/* Standard Features Checklist */}
             <div className="space-y-4">
-              <div className="p-5 rounded-2xl bg-navy-900 border border-white/10 space-y-2.5">
-                <h3 className="font-serif text-sm font-bold text-white flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-amber-400" />
+              <div className="p-5 rounded-2xl bg-white border border-brand-200 space-y-2.5">
+                <h3 className="font-serif text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-brand-800" />
                   <span>Model Overview</span>
                 </h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-slate-700 leading-relaxed">
                   {product.detailed_description || product.short_description}
                 </p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-navy-900 border border-white/10 space-y-3">
-                <h3 className="font-serif text-sm font-bold text-white flex items-center gap-2">
-                  <Award className="w-4 h-4 text-amber-400" />
+              <div className="p-5 rounded-2xl bg-white border border-brand-200 space-y-3">
+                <h3 className="font-serif text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Award className="w-4 h-4 text-brand-800" />
                   <span>Standard Features & Equipment</span>
                 </h3>
-                <div className="space-y-2 text-xs text-slate-300">
+                <div className="space-y-2 text-xs text-slate-700">
                   {otherSpecsList.map((item) => (
                     <div key={item} className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-brand-800 shrink-0" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -409,8 +409,8 @@ export default async function ProductDetailPage({ params }: Props) {
 
         {/* Related Scooters */}
         {related && related.length > 0 && (
-          <div className="mt-14 pt-10 border-t border-white/10">
-            <h2 className="font-serif text-xl sm:text-2xl font-bold text-white mb-6">
+          <div className="mt-14 pt-10 border-t border-brand-200">
+            <h2 className="font-serif text-xl sm:text-2xl font-bold text-slate-900 mb-6">
               More FRENDO Electric Models
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

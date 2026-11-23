@@ -69,17 +69,17 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   ];
 
   return (
-    <div className="min-h-screen bg-navy-950 text-slate-100 flex">
-      {/* Sidebar for Desktop */}
-      <aside className="hidden lg:flex flex-col w-64 bg-navy-900 border-r border-white/10 shrink-0">
+    <div className="min-h-screen bg-brand-50 text-slate-900 flex">
+      {/* Sidebar for Desktop — FRENDO Eco Forest Green */}
+      <aside className="hidden lg:flex flex-col w-64 bg-brand-800 text-white border-r-2 border-amber-400 shrink-0 shadow-xl">
         {/* Brand Header */}
-        <div className="p-6 border-b border-white/10 flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-electric-500 flex items-center justify-center text-navy-950 font-black shadow-glow">
-            <Zap className="w-5 h-5 fill-navy-950" />
+        <div className="p-6 border-b border-white/15 flex items-center gap-3">
+          <div className="w-9 h-9 rounded-xl bg-amber-400 flex items-center justify-center text-brand-950 font-black shadow-md">
+            <Zap className="w-5 h-5 fill-brand-950" />
           </div>
           <div>
             <div className="font-black text-white text-base tracking-tight leading-none">BABA MARKETING</div>
-            <div className="text-[10px] text-electric-400 font-bold tracking-wider uppercase mt-1">
+            <div className="text-[10px] text-amber-400 font-bold tracking-wider uppercase mt-1">
               FRENDO ADMIN
             </div>
           </div>
@@ -96,11 +96,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 href={item.href}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition-all ${
                   isActive
-                    ? 'bg-electric-500 text-navy-950 shadow-glow font-black'
-                    : 'text-slate-300 hover:text-white hover:bg-white/5'
+                    ? 'bg-amber-400 text-brand-950 shadow-md font-black'
+                    : 'text-white/90 hover:text-amber-300 hover:bg-white/10'
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isActive ? 'text-navy-950' : 'text-slate-400'}`} />
+                <Icon className={`w-4 h-4 ${isActive ? 'text-brand-950' : 'text-amber-400/90'}`} />
                 <span>{item.name}</span>
               </Link>
             );
@@ -108,21 +108,21 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </nav>
 
         {/* View Live Site & Logout */}
-        <div className="p-4 border-t border-white/10 space-y-2">
+        <div className="p-4 border-t border-white/15 space-y-2">
           <Link
             href="/"
             target="_blank"
-            className="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-semibold text-slate-300 transition-colors"
+            className="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold text-white transition-colors"
           >
             <span className="flex items-center gap-2">
-              <ExternalLink className="w-3.5 h-3.5 text-electric-400" />
+              <ExternalLink className="w-3.5 h-3.5 text-amber-400" />
               <span>View Live Website</span>
             </span>
           </Link>
 
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-bold text-red-400 hover:bg-red-500/10 transition-colors text-left"
+            className="w-full flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-bold text-amber-300 hover:bg-crimson-600 hover:text-white transition-colors text-left"
           >
             <LogOut className="w-3.5 h-3.5" />
             <span>Sign Out</span>
@@ -133,15 +133,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Top Navbar */}
-        <header className="h-16 bg-navy-900 border-b border-white/10 px-4 sm:px-8 flex items-center justify-between sticky top-0 z-30">
+        <header className="h-16 bg-white border-b-2 border-brand-200 px-4 sm:px-8 flex items-center justify-between sticky top-0 z-30 shadow-sm">
           <div className="flex items-center gap-3">
             <button
               onClick={() => setSidebarOpen(true)}
-              className="lg:hidden p-2 rounded-lg bg-white/5 text-white"
+              className="lg:hidden p-2 rounded-lg bg-brand-800 text-white"
             >
               <Menu className="w-5 h-5" />
             </button>
-            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest hidden sm:inline">
+            <span className="text-xs font-bold text-brand-800 uppercase tracking-widest hidden sm:inline">
               Baba Marketing Admin Console
             </span>
           </div>
@@ -150,19 +150,19 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <Link
               href="/"
               target="_blank"
-              className="hidden sm:flex items-center gap-1.5 text-xs text-electric-400 hover:text-white font-semibold"
+              className="hidden sm:flex items-center gap-1.5 text-xs text-brand-800 hover:text-brand-600 font-bold"
             >
               <span>View Website</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </Link>
 
-            <div className="flex items-center gap-2.5 pl-4 border-l border-white/10">
-              <div className="w-8 h-8 rounded-full bg-electric-500/20 border border-electric-500/40 text-electric-400 font-bold text-xs flex items-center justify-center">
+            <div className="flex items-center gap-2.5 pl-4 border-l border-brand-200">
+              <div className="w-8 h-8 rounded-full bg-brand-800 border-2 border-amber-400 text-amber-400 font-bold text-xs flex items-center justify-center">
                 {adminUser?.username?.substring(0, 2).toUpperCase() || 'AD'}
               </div>
               <div className="text-left hidden sm:block">
-                <div className="text-xs font-bold text-white">{adminUser?.name || 'Administrator'}</div>
-                <div className="text-[10px] text-slate-400">{adminUser?.email || 'admin@babamarketing.in'}</div>
+                <div className="text-xs font-bold text-slate-900">{adminUser?.name || 'Administrator'}</div>
+                <div className="text-[10px] text-slate-500">{adminUser?.email || 'admin@babamarketing.in'}</div>
               </div>
             </div>
           </div>
@@ -175,16 +175,16 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Mobile Sidebar Drawer */}
       {sidebarOpen && (
         <div className="fixed inset-0 z-50 lg:hidden flex">
-          <div className="fixed inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setSidebarOpen(false)} />
-          <div className="relative w-64 bg-navy-900 h-full flex flex-col z-10 border-r border-white/10">
-            <div className="p-4 border-b border-white/10 flex items-center justify-between">
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm cursor-pointer" onClick={() => setSidebarOpen(false)} />
+          <div className="relative w-64 bg-brand-800 text-white h-full flex flex-col z-10 border-r-2 border-amber-400">
+            <div className="p-4 border-b border-white/15 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-electric-500 flex items-center justify-center text-navy-950 font-bold">
-                  <Zap className="w-4 h-4 fill-navy-950" />
+                <div className="w-8 h-8 rounded-lg bg-amber-400 flex items-center justify-center text-brand-950 font-bold">
+                  <Zap className="w-4 h-4 fill-brand-950" />
                 </div>
                 <span className="font-bold text-white text-sm">BABA MARKETING</span>
               </div>
-              <button onClick={() => setSidebarOpen(false)} className="p-1 text-slate-400 hover:text-white">
+              <button onClick={() => setSidebarOpen(false)} className="p-1 text-white/80 hover:text-amber-400">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -199,7 +199,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                     href={item.href}
                     onClick={() => setSidebarOpen(false)}
                     className={`flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold ${
-                      isActive ? 'bg-electric-500 text-navy-950 font-black' : 'text-slate-300 hover:bg-white/5'
+                      isActive ? 'bg-amber-400 text-brand-950 font-black' : 'text-white/90 hover:bg-white/10'
                     }`}
                   >
                     <Icon className="w-4 h-4" />
@@ -209,10 +209,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               })}
             </nav>
 
-            <div className="p-4 border-t border-white/10 space-y-2">
+            <div className="p-4 border-t border-white/15 space-y-2">
               <button
                 onClick={handleLogout}
-                className="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold text-red-400"
+                className="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold text-amber-300 hover:bg-crimson-600 hover:text-white"
               >
                 <LogOut className="w-4 h-4" />
                 <span>Sign Out</span>

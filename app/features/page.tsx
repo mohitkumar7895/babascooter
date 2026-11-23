@@ -182,37 +182,37 @@ export default async function FeaturesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-navy-950 text-white py-10 sm:py-16 border-t border-amber-500/20">
+    <div className="min-h-screen bg-brand-50 text-slate-900 py-10 sm:py-16 border-t border-brand-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-2 text-xs text-slate-400 mb-8 overflow-x-auto whitespace-nowrap">
-          <Link href="/" className="hover:text-amber-400 transition-colors">
+        <nav className="flex items-center gap-2 text-xs text-slate-600 mb-8 overflow-x-auto whitespace-nowrap">
+          <Link href="/" className="hover:text-brand-700 transition-colors">
             Home
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
-          <span className="text-amber-400 font-bold">Scooty Features & Specs</span>
+          <span className="text-brand-800 font-bold">Scooty Features & Specs</span>
         </nav>
 
         {/* Hero Header */}
         <div className="text-center max-w-4xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-400 uppercase tracking-widest mb-4 font-serif">
-            <Sparkles className="w-4 h-4 text-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 border border-brand-300 text-xs font-bold text-brand-800 uppercase tracking-widest mb-4 font-serif">
+            <Sparkles className="w-4 h-4 text-brand-800" />
             <span>Standard Across All FRENDO Models</span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          <h1 className="font-serif text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
             🛵 FRENDO ELECTRIC SCOOTY <span className="text-gradient-gold">CORE FEATURES</span>
           </h1>
 
-          <p className="mt-3.5 text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
+          <p className="mt-3.5 text-slate-700 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
             From our entry ₹15,000/- models to our 300 KM hyper-range scooters, every FRENDO vehicle is engineered with pure copper motor, front hydraulic disc brake, heavy-duty chassis, and 5-Year warranty.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/scooters"
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-navy-950 font-black text-xs uppercase tracking-wider shadow-glow hover:scale-105 transition-all flex items-center gap-2"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-500 text-brand-950 font-black text-xs uppercase tracking-wider shadow-glow hover:scale-105 transition-all flex items-center gap-2"
             >
               <span>Explore 27 Models with These Features</span>
               <ArrowRight className="w-4 h-4" />
@@ -224,7 +224,7 @@ export default async function FeaturesPage() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-amber-400 border border-amber-500/30 font-bold text-xs transition-all flex items-center gap-2"
+              className="px-6 py-3 rounded-xl bg-white hover:bg-brand-100 text-brand-800 border border-brand-300 font-bold text-xs transition-all flex items-center gap-2"
             >
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp: {whatsapp}</span>
@@ -241,8 +241,8 @@ export default async function FeaturesPage() {
                 key={feat.title}
                 className={`p-6 sm:p-7 rounded-3xl transition-all duration-300 flex flex-col justify-between group ${
                   feat.heroHighlight
-                    ? 'bg-gradient-to-b from-amber-500/15 via-slate-900 to-slate-900 border-2 border-amber-500/50 shadow-glow'
-                    : 'bg-navy-900/90 border border-white/10 hover:border-amber-500/40 hover:bg-slate-900'
+                    ? 'bg-gradient-to-b from-amber-400/25 via-brand-50 to-white border-2 border-brand-300 shadow-glow'
+                    : 'bg-white border border-brand-200 hover:border-brand-700 hover:bg-brand-50'
                 }`}
               >
                 <div>
@@ -250,43 +250,43 @@ export default async function FeaturesPage() {
                     <div
                       className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 ${
                         feat.heroHighlight
-                          ? 'bg-amber-500 text-navy-950 font-black shadow-lg'
-                          : 'bg-amber-500/10 text-amber-400 border border-amber-500/30'
+                          ? 'bg-amber-400 text-brand-950 font-black shadow-lg'
+                          : 'bg-brand-100 text-brand-800 border border-brand-300'
                       }`}
                     >
                       <Icon className="w-6 h-6" />
                     </div>
 
-                    <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-amber-300 uppercase tracking-wider font-mono">
+                    <span className="px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-[10px] font-bold text-brand-800 uppercase tracking-wider font-mono">
                       {feat.badge}
                     </span>
                   </div>
 
-                  <h2 className="font-serif text-lg sm:text-xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                  <h2 className="font-serif text-lg sm:text-xl font-bold text-slate-900 group-hover:text-brand-800 transition-colors">
                     {feat.title}
                   </h2>
 
-                  <div className="text-xs font-semibold text-amber-400/90 mt-1">
+                  <div className="text-xs font-semibold text-brand-800 mt-1">
                     {feat.subtitle}
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-300 mt-3 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-700 mt-3 leading-relaxed">
                     {feat.desc}
                   </p>
 
-                  <div className="mt-4 pt-4 border-t border-white/10 space-y-2">
+                  <div className="mt-4 pt-4 border-t border-brand-200 space-y-2">
                     {feat.highlights.map((h) => (
-                      <div key={h} className="flex items-start gap-2 text-xs text-slate-200">
-                        <Check className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
+                      <div key={h} className="flex items-start gap-2 text-xs text-slate-800">
+                        <Check className="w-3.5 h-3.5 text-brand-800 shrink-0 mt-0.5" />
                         <span>{h}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400 font-mono">
+                <div className="mt-6 pt-4 border-t border-brand-200 flex items-center justify-between text-xs text-slate-600 font-mono">
                   <span>Standard Equipment</span>
-                  <span className="text-amber-400 font-bold">100% OEM Tested</span>
+                  <span className="text-brand-800 font-bold">100% OEM Tested</span>
                 </div>
               </div>
             );
@@ -294,66 +294,66 @@ export default async function FeaturesPage() {
         </div>
 
         {/* Feature Comparison / Specs Summary Box */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-navy-900 border border-amber-500/30 shadow-2xl mb-16 gold-border-glow">
+        <div className="p-8 sm:p-10 rounded-3xl bg-white border border-brand-300 shadow-lg mb-16 gold-border-glow">
           <div className="max-w-3xl mb-8">
-            <span className="px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-400 uppercase tracking-widest font-serif">
+            <span className="px-3 py-1 rounded-md bg-brand-100 border border-brand-300 text-xs font-bold text-brand-800 uppercase tracking-widest font-serif">
               Engineering Excellence
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-extrabold text-white mt-2">
+            <h2 className="font-serif text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
               Why Indian Riders Prefer FRENDO Features
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1">
+            <p className="text-xs sm:text-sm text-slate-700 mt-1">
               Engineered from the ground up for Indian roads, weather conditions, and everyday savings.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-4 rounded-2xl bg-navy-950 border border-white/10">
-              <div className="text-2xl font-black text-amber-400 font-mono">15p – 20p</div>
-              <div className="text-xs font-bold text-white mt-1">Per Kilometer Cost</div>
-              <div className="text-[11px] text-slate-400 mt-0.5">Save over ₹40,000 every year compared to petrol.</div>
+            <div className="p-4 rounded-2xl bg-brand-50 border border-brand-200">
+              <div className="text-2xl font-black text-brand-800 font-mono">15p – 20p</div>
+              <div className="text-xs font-bold text-slate-900 mt-1">Per Kilometer Cost</div>
+              <div className="text-[11px] text-slate-600 mt-0.5">Save over ₹40,000 every year compared to petrol.</div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-navy-950 border border-white/10">
-              <div className="text-2xl font-black text-amber-400 font-mono">100% Copper</div>
-              <div className="text-xs font-bold text-white mt-1">Motor & Wiring Harness</div>
-              <div className="text-[11px] text-slate-400 mt-0.5">Zero aluminum degradation, low heat, long lifetime.</div>
+            <div className="p-4 rounded-2xl bg-brand-50 border border-brand-200">
+              <div className="text-2xl font-black text-brand-800 font-mono">100% Copper</div>
+              <div className="text-xs font-bold text-slate-900 mt-1">Motor & Wiring Harness</div>
+              <div className="text-[11px] text-slate-600 mt-0.5">Zero aluminum degradation, low heat, long lifetime.</div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-navy-950 border border-white/10">
-              <div className="text-2xl font-black text-amber-400 font-mono">5-Year</div>
-              <div className="text-xs font-bold text-white mt-1">Warranty Backing</div>
-              <div className="text-[11px] text-slate-400 mt-0.5">Official company terms, reliable parts availability.</div>
+            <div className="p-4 rounded-2xl bg-brand-50 border border-brand-200">
+              <div className="text-2xl font-black text-brand-800 font-mono">5-Year</div>
+              <div className="text-xs font-bold text-slate-900 mt-1">Warranty Backing</div>
+              <div className="text-[11px] text-slate-600 mt-0.5">Official company terms, reliable parts availability.</div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-navy-950 border border-white/10">
-              <div className="text-2xl font-black text-amber-400 font-mono">50 – 300 KM</div>
-              <div className="text-xs font-bold text-white mt-1">Running Range Flexibility</div>
-              <div className="text-[11px] text-slate-400 mt-0.5">5 distinct LFP battery configurations to choose from.</div>
+            <div className="p-4 rounded-2xl bg-brand-50 border border-brand-200">
+              <div className="text-2xl font-black text-brand-800 font-mono">50 – 300 KM</div>
+              <div className="text-xs font-bold text-slate-900 mt-1">Running Range Flexibility</div>
+              <div className="text-[11px] text-slate-600 mt-0.5">5 distinct LFP battery configurations to choose from.</div>
             </div>
           </div>
         </div>
 
         {/* Bottom CTA Card */}
-        <div className="text-center p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-amber-500/20 via-slate-900 to-amber-500/10 border border-amber-500/40">
-          <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-white">
+        <div className="text-center p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-amber-400/25 via-brand-50 to-brand-100/70 border border-brand-300">
+          <h2 className="font-serif text-2xl sm:text-4xl font-extrabold text-slate-900">
             Experience FRENDO Features with a Free Test Ride
           </h2>
-          <p className="mt-2 text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
+          <p className="mt-2 text-xs sm:text-sm text-slate-700 max-w-xl mx-auto">
             Visit our Ballabhgarh showroom to test the pickup speed, hydraulic brakes, and comfort in person.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/scooters"
-              className="px-8 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-black text-xs uppercase tracking-wider shadow-glow hover:scale-105 transition-all"
+              className="px-8 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-black text-xs uppercase tracking-wider shadow-glow hover:scale-105 transition-all"
             >
               Browse All 27 Models
             </Link>
 
             <Link
               href="/contact"
-              className="px-8 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-bold text-xs uppercase tracking-wider border border-white/10 transition-all"
+              className="px-8 py-3.5 rounded-xl bg-brand-50 hover:bg-brand-100 text-slate-900 font-bold text-xs uppercase tracking-wider border border-brand-200 transition-all"
             >
               Showroom Directions & Contact
             </Link>
