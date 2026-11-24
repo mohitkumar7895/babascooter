@@ -6,6 +6,23 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Phone, MapPin, Mail, Clock, ShieldCheck, ChevronRight, Award, Zap, Globe } from 'lucide-react';
 import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
+import { FacebookIcon, InstagramIcon, YouTubeIcon } from '@/components/icons/SocialIcons';
+
+const DEFAULT_SOCIAL_LINKS = {
+  facebook: 'https://www.facebook.com/profile.php?id=61596413717222',
+  instagram: 'https://www.instagram.com/babamarketingfrendo?gwpx=NTFkMHdrcnI3NDQ1',
+  youtube: 'https://www.youtube.com/@BabaMarketing-ev-frendo',
+};
+
+function resolveSocialUrl(value: string | undefined, fallback: string, placeholderHost: string): string {
+  const trimmed = (value || '').trim();
+  if (!trimmed) return fallback;
+  const normalized = trimmed.replace(/\/+$/, '').toLowerCase();
+  if (normalized === `https://${placeholderHost}` || normalized === `http://${placeholderHost}` || normalized === `https://www.${placeholderHost}`) {
+    return fallback;
+  }
+  return trimmed;
+}
 
 interface FooterProps {
   contact?: {
@@ -20,13 +37,22 @@ interface FooterProps {
     opening_hours?: string;
     google_maps_url?: string;
   };
+  socialLinks?: {
+    facebook?: string;
+    instagram?: string;
+    youtube?: string;
+  };
 }
 
-export default function Footer({ contact }: FooterProps) {
+export default function Footer({ contact, socialLinks }: FooterProps) {
   const pathname = usePathname();
   if (pathname.startsWith('/admin')) {
     return null;
   }
+
+  const facebookUrl = resolveSocialUrl(socialLinks?.facebook, DEFAULT_SOCIAL_LINKS.facebook, 'facebook.com');
+  const instagramUrl = resolveSocialUrl(socialLinks?.instagram, DEFAULT_SOCIAL_LINKS.instagram, 'instagram.com');
+  const youtubeUrl = resolveSocialUrl(socialLinks?.youtube, DEFAULT_SOCIAL_LINKS.youtube, 'youtube.com');
 
   const businessName = contact?.business_name || 'BABA MARKETING';
   const brandName = contact?.brand_name || 'FRENDO E-SCOOTY';
@@ -94,6 +120,47 @@ export default function Footer({ contact }: FooterProps) {
               <span className="px-2.5 py-1 rounded-md bg-white/15 border border-white/25 text-[11px] font-bold text-white">
                 40 + 20 FREE Offer
               </span>
+            </div>
+
+            {/* Social Media Links */}
+            <div className="pt-2 space-y-2">
+              <div className="text-[11px] font-serif uppercase tracking-wider text-amber-400 font-bold">
+                Follow Us • सोशल मीडिया से जुड़ें
+              </div>
+              <div className="flex flex-wrap items-center gap-2.5">
+                <a
+                  href={facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Baba Marketing FRENDO on Facebook"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-[#1877F2] hover:bg-[#1465cc] text-white text-xs font-bold shadow-sm hover:scale-105 transition-all"
+                >
+                  <FacebookIcon className="w-4 h-4" />
+                  <span>Facebook</span>
+                </a>
+
+                <a
+                  href={instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Baba Marketing FRENDO on Instagram"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] hover:opacity-95 text-white text-xs font-bold shadow-sm hover:scale-105 transition-all"
+                >
+                  <InstagramIcon className="w-4 h-4" />
+                  <span>Instagram</span>
+                </a>
+
+                <a
+                  href={youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Subscribe to Baba Marketing FRENDO on YouTube"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-[#FF0000] hover:bg-[#d90000] text-white text-xs font-bold shadow-sm hover:scale-105 transition-all"
+                >
+                  <YouTubeIcon className="w-4 h-4" />
+                  <span>YouTube</span>
+                </a>
+              </div>
             </div>
           </div>
 

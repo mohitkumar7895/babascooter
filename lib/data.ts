@@ -20,3 +20,29 @@ const fetchContactFromDb = unstable_cache(
 export const getCachedContact = cache(async (): Promise<ContactSettings | null> => {
   return await fetchContactFromDb();
 });
+
+const fetchWebsiteSettingsFromDb = unstable_cache(
+  async (): Promise<Record<string, string>> => {
+    try {
+      const rows = await query<{ setting_key: string; setting_value: string }[]>(
+        'SELECT setting_key, setting_value FROM website_settings'
+      );
+      const map: Record<string, string> = {};
+      if (Array.isArray(rows)) {
+        rows.forEach((r) => {
+          map[r.setting_key] = r.setting_value;
+        });
+      }
+      return map;
+    } catch (err) {
+      console.error('Failed to load website settings:', err);
+      return {};
+    }
+  },
+  ['website-settings'],
+  { revalidate: 120, tags: ['settings'] }
+);
+
+export const getCachedWebsiteSettings = cache(async (): Promise<Record<string, string>> => {
+  return await fetchWebsiteSettingsFromDb();
+});

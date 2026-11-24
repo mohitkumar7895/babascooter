@@ -4,7 +4,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppFloating from '@/components/layout/WhatsAppFloating';
 import NavigationProgress from '@/components/layout/NavigationProgress';
-import { getCachedContact } from '@/lib/data';
+import { getCachedContact, getCachedWebsiteSettings } from '@/lib/data';
 import { ContactSettings } from '@/types';
 
 export const metadata: Metadata = {
@@ -38,7 +38,16 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const contact = await getContactData();
+  const [contact, websiteSettings] = await Promise.all([
+    getContactData(),
+    getCachedWebsiteSettings(),
+  ]);
+
+  const socialLinks = {
+    facebook: websiteSettings.social_facebook,
+    instagram: websiteSettings.social_instagram,
+    youtube: websiteSettings.social_youtube,
+  };
 
   return (
     <html lang="en" className="scroll-smooth">
@@ -55,7 +64,7 @@ export default async function RootLayout({
         <NavigationProgress />
         <Header contact={contact} />
         <main className="flex-1">{children}</main>
-        <Footer contact={contact} />
+        <Footer contact={contact} socialLinks={socialLinks} />
         <WhatsAppFloating
           whatsapp={contact?.whatsapp_number || '9953564151'}
           phone={contact?.primary_phone || '9953564151'}

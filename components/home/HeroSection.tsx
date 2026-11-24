@@ -84,62 +84,99 @@ export default function HeroSection({
               {displaySubtitle}
             </p>
 
-            {/* 4 Pillars Official Rate Card & Warranty Badges */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
-              <div className="p-3 rounded-xl bg-amber-400/25 border-2 border-amber-500 text-left hover:shadow-md transition-all">
+            {/* Official 3-Tier Rate Card Strip */}
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-1">
+              <div className="p-2.5 sm:p-3 rounded-xl bg-amber-400/25 border-2 border-amber-500 text-left hover:shadow-md transition-all">
                 <Zap className="w-4 h-4 text-brand-800 mb-1" />
                 <div className="text-[10px] text-brand-900 font-bold uppercase leading-tight">Electric Scooter</div>
-                <div className="text-sm font-black text-crimson-600 mt-0.5">₹11,000/-</div>
-                <div className="text-[10px] text-brand-900 font-bold">से शुरू (Starting)</div>
+                <div className="text-sm sm:text-base font-black text-crimson-600 mt-0.5">₹11,000/-</div>
+                <div className="text-[10px] text-brand-900 font-bold">से शुरू</div>
               </div>
 
-              <div className="p-3 rounded-xl bg-amber-400/20 border-2 border-brand-700/30 text-left hover:border-brand-700 transition-colors shadow-sm">
+              <div className="p-2.5 sm:p-3 rounded-xl bg-amber-400/20 border-2 border-brand-700/30 text-left hover:border-brand-700 transition-colors shadow-sm">
                 <Sparkles className="w-4 h-4 text-brand-800 mb-1" />
-                <div className="text-[10px] text-brand-900 font-bold uppercase leading-tight">Single Light Model</div>
-                <div className="text-sm font-black text-crimson-600 mt-0.5">₹15,000/-</div>
-                <div className="text-[10px] text-slate-700 font-bold">से शुरू (Starting)</div>
+                <div className="text-[10px] text-brand-900 font-bold uppercase leading-tight">Single Light</div>
+                <div className="text-sm sm:text-base font-black text-crimson-600 mt-0.5">₹15,000/-</div>
+                <div className="text-[10px] text-slate-700 font-bold">से शुरू</div>
               </div>
 
-              <div className="p-3 rounded-xl bg-amber-400/20 border-2 border-royal-700/30 text-left hover:border-royal-700 transition-colors shadow-sm">
+              <div className="p-2.5 sm:p-3 rounded-xl bg-amber-400/20 border-2 border-royal-700/30 text-left hover:border-royal-700 transition-colors shadow-sm">
                 <BatteryCharging className="w-4 h-4 text-royal-800 mb-1" />
-                <div className="text-[10px] text-royal-800 font-bold uppercase leading-tight">Battery Starting</div>
-                <div className="text-sm font-black text-crimson-600 mt-0.5">₹15,000/-</div>
+                <div className="text-[10px] text-royal-800 font-bold uppercase leading-tight">Battery Pack</div>
+                <div className="text-sm sm:text-base font-black text-crimson-600 mt-0.5">₹15,000/-</div>
                 <div className="text-[10px] text-slate-700 font-bold">LFP 50–300 KM</div>
               </div>
+            </div>
 
-              <div className="p-3 rounded-xl bg-crimson-50 border-2 border-crimson-500/40 text-left hover:border-crimson-600 transition-colors shadow-sm">
-                <Award className="w-4 h-4 text-crimson-600 mb-1" />
-                <div className="text-[10px] text-crimson-700 font-bold uppercase leading-tight">Company Backed</div>
-                <div className="text-sm font-black text-crimson-600 mt-0.5">60 Months</div>
-                <div className="text-[10px] text-slate-700 font-bold">5-Year Warranty</div>
+            {/* BIG Highlight Cards: 40 + 20 FREE Distributor Offer + 60 Months Warranty */}
+            <div className="grid grid-cols-1 sm:grid-cols-12 gap-3.5 pt-1">
+              {/* 1. Prominent 40 + 20 FREE Distributor Offer Highlight */}
+              <Link
+                href="/dealership"
+                className="sm:col-span-7 group relative overflow-hidden rounded-2xl bg-gradient-to-br from-amber-400 via-amber-300 to-amber-400 border-2 border-crimson-600 p-4 sm:p-5 text-left shadow-glow-yellow hover:shadow-xl hover:scale-[1.02] active:scale-[0.99] transition-all flex flex-col justify-between gap-2.5"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-crimson-600 text-white text-[10px] sm:text-[11px] font-black uppercase tracking-wider shadow-sm">
+                    <Briefcase className="w-3 h-3 text-amber-300" />
+                    <span>Special Distributor Offer</span>
+                  </span>
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-brand-800 group-hover:bg-brand-700 text-white text-[10px] font-black uppercase tracking-wider transition-colors shadow-sm">
+                    <span>View Offer</span>
+                    <ArrowRight className="w-3 h-3 text-amber-400 group-hover:translate-x-0.5 transition-transform" />
+                  </span>
+                </div>
+
+                <div>
+                  <div className="font-serif text-2xl sm:text-3xl font-black tracking-tight leading-none">
+                    <span className="text-brand-950">40 + 20 </span>
+                    <span className="text-crimson-600">FREE</span>
+                  </div>
+                  <div className="text-xs sm:text-sm font-black text-brand-950 mt-1.5">
+                    40 स्कूटर खरीदें और 20 स्कूटर बिल्कुल FREE पाएँ!
+                  </div>
+                </div>
+              </Link>
+
+              {/* 2. Prominent Company Backed 60 Months / 5-Year Warranty Highlight */}
+              <div className="sm:col-span-5 relative overflow-hidden rounded-2xl bg-gradient-to-br from-crimson-600 via-crimson-700 to-brand-950 border-2 border-amber-400 p-4 sm:p-5 text-left shadow-xl flex flex-col justify-between gap-2.5">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/15 border border-amber-400/50 text-amber-300 text-[10px] font-black uppercase tracking-wider">
+                    <ShieldCheck className="w-3 h-3 text-amber-400" />
+                    <span>Company Backed</span>
+                  </span>
+                  <div className="w-9 h-9 rounded-full bg-amber-400 text-crimson-700 flex items-center justify-center shadow-md shrink-0">
+                    <Award className="w-5 h-5" />
+                  </div>
+                </div>
+
+                <div>
+                  <div className="font-serif text-2xl sm:text-3xl font-black text-amber-400 tracking-tight leading-none">
+                    60 MONTHS
+                  </div>
+                  <div className="inline-block mt-2 px-2.5 py-1 rounded-lg bg-amber-400 text-brand-950 text-[11px] font-black uppercase tracking-wider shadow-sm">
+                    5-Year Official Warranty
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
-              <Link
-                href="/dealership"
-                className="w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-black text-xs uppercase tracking-wider transition-all shadow-glow-yellow hover:scale-105 active:scale-95 flex items-center justify-center gap-2 border-2 border-brand-800/15"
-              >
-                <Briefcase className="w-4 h-4 fill-brand-950" />
-                <span>40 + 20 FREE Distributor Offer</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-1">
               <Link
                 href="/scooters"
                 className="w-full sm:w-auto px-6 py-3 sm:py-3.5 rounded-xl bg-royal-800 hover:bg-royal-700 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm"
               >
                 <span>Explore 27 Models</span>
+                <ArrowRight className="w-4 h-4 text-amber-400" />
               </Link>
 
               <a
                 href={`https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(
-                  'Hello Baba Marketing, I am interested in FRENDO E-SCOOTY models and B2B Dealership.'
+                  'Hello Baba Marketing, I am interested in FRENDO E-SCOOTY models and 40 + 20 FREE B2B Dealership.'
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-5 py-3 sm:py-3.5 rounded-xl bg-brand-800 hover:bg-brand-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-sm"
+                className="w-full sm:w-auto px-6 py-3 sm:py-3.5 rounded-xl bg-brand-800 hover:bg-brand-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-sm"
               >
                 <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                 <span>WhatsApp: {whatsappNumber}</span>

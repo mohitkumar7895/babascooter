@@ -10,9 +10,9 @@ export default function AdminSettingsPage() {
     footer_text: '© 2026 Baba Marketing – FRENDO Electric Scooty. All Rights Reserved.',
     logo_text: 'BABA MARKETING',
     sub_logo_text: 'FRENDO ELECTRIC SCOOTY',
-    social_facebook: 'https://facebook.com',
-    social_instagram: 'https://instagram.com',
-    social_youtube: 'https://youtube.com',
+    social_facebook: 'https://www.facebook.com/profile.php?id=61596413717222',
+    social_instagram: 'https://www.instagram.com/babamarketingfrendo?gwpx=NTFkMHdrcnI3NDQ1',
+    social_youtube: 'https://www.youtube.com/@BabaMarketing-ev-frendo',
   });
 
   const [loading, setLoading] = useState(true);
