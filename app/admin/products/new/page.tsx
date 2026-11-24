@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Save, Upload, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { Category } from '@/types';
+import { uploadAdminImage } from '@/lib/clientUpload';
 
 export default function NewProductPage() {
   const router = useRouter();
@@ -57,17 +58,8 @@ export default function NewProductPage() {
     setUploading(true);
     setError('');
 
-    const body = new FormData();
-    body.append('file', file);
-    body.append('folder', 'products');
-
     try {
-      const res = await fetch('/api/uploads', {
-        method: 'POST',
-        body,
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Upload failed');
+      const data = await uploadAdminImage(file, 'products');
       setUploadedImageUrl(data.url);
     } catch (err: any) {
       setError(err.message || 'Image upload failed');

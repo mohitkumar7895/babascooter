@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { uploadAdminImage } from '@/lib/clientUpload';
 import {
   Upload,
   Image as ImageIcon,
@@ -63,25 +64,25 @@ export default function AdminMediaPage() {
 
     try {
       let uploadCount = 0;
+      const errors: string[] = [];
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
-        const body = new FormData();
-        body.append('file', file);
-        body.append('folder', targetFolder);
-
-        const res = await fetch('/api/uploads', {
-          method: 'POST',
-          body,
-        });
-
-        if (res.ok) {
+        try {
+          await uploadAdminImage(file, targetFolder);
           uploadCount++;
+        } catch (fileErr: any) {
+          errors.push(`${file.name}: ${fileErr.message || 'Upload failed'}`);
         }
       }
 
-      setSuccess(`Successfully uploaded ${uploadCount} image(s) to "${targetFolder}" folder!`);
-      setTimeout(() => setSuccess(''), 4000);
-      await loadImages();
+      if (errors.length > 0) {
+        setError(errors.join(' • '));
+      }
+      if (uploadCount > 0) {
+        setSuccess(`Successfully uploaded ${uploadCount} image(s) to "${targetFolder}" folder!`);
+        setTimeout(() => setSuccess(''), 4000);
+        await loadImages();
+      }
     } catch (err: any) {
       setError(err.message || 'Upload failed');
     } finally {

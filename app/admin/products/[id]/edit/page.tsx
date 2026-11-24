@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { uploadAdminImage } from '@/lib/clientUpload';
 import {
   ArrowLeft,
   Save,
@@ -163,18 +164,9 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
     setUploading(true);
     setError('');
 
-    const body = new FormData();
-    body.append('file', file);
-    body.append('folder', 'products');
-
     try {
       // 1. Upload file
-      const upRes = await fetch('/api/uploads', {
-        method: 'POST',
-        body,
-      });
-      const upData = await upRes.json();
-      if (!upRes.ok) throw new Error(upData.error || 'Upload failed');
+      const upData = await uploadAdminImage(file, 'products');
 
       // 2. Attach image to product
       const addRes = await fetch(`/api/products/${productId}/images`, {

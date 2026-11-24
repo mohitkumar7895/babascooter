@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Save, CheckCircle2, AlertCircle, Sparkles, Eye, EyeOff, Upload, Image as ImageIcon } from 'lucide-react';
 import { HomepageSection, Banner } from '@/types';
+import { uploadAdminImage } from '@/lib/clientUpload';
 
 export default function AdminHomepagePage() {
   const [sections, setSections] = useState<HomepageSection[]>([]);
@@ -85,17 +86,8 @@ export default function AdminHomepagePage() {
     setUploading(true);
     setError('');
 
-    const body = new FormData();
-    body.append('file', file);
-    body.append('folder', 'banners');
-
     try {
-      const res = await fetch('/api/uploads', {
-        method: 'POST',
-        body,
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Upload failed');
+      const data = await uploadAdminImage(file, 'banners');
       setPromoBanner((prev) => ({ ...prev, image_url: data.url }));
       setSuccess('Banner image uploaded successfully!');
       setTimeout(() => setSuccess(''), 3000);
@@ -113,17 +105,8 @@ export default function AdminHomepagePage() {
     setUploading(true);
     setError('');
 
-    const body = new FormData();
-    body.append('file', file);
-    body.append('folder', 'banners');
-
     try {
-      const res = await fetch('/api/uploads', {
-        method: 'POST',
-        body,
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Upload failed');
+      const data = await uploadAdminImage(file, 'banners');
       setHeroImage(data.url);
       setSuccess('Hero showcase image uploaded successfully! Click "Save Hero" to apply.');
       setTimeout(() => setSuccess(''), 4000);

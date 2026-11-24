@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { uploadAdminImage } from '@/lib/clientUpload';
 import {
   ArrowLeft,
   Save,
@@ -80,17 +81,7 @@ export default function EditBlogPage({ params }: Props) {
     setError('');
 
     try {
-      const data = new FormData();
-      data.append('file', file);
-
-      const res = await fetch('/api/uploads', {
-        method: 'POST',
-        body: data,
-      });
-
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.error || 'Upload failed');
-
+      const json = await uploadAdminImage(file, 'blogs');
       setFormData((prev) => ({ ...prev, featured_image: json.url }));
     } catch (err: any) {
       setError(err.message || 'Failed to upload image');
