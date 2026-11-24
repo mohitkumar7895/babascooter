@@ -4,7 +4,8 @@ import Image from 'next/image';
 import { query } from '@/lib/db';
 import { ContactSettings } from '@/types';
 import { getSeoMetadata } from '@/lib/seo';
-import { Zap, ShieldCheck, Award, Users, BatteryCharging, ArrowRight, MessageCircle, Sparkles, CheckCircle2, Phone } from 'lucide-react';
+import { Zap, ShieldCheck, Award, Users, BatteryCharging, ArrowRight, Sparkles, CheckCircle2, Phone } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 export const revalidate = 300;
 
@@ -129,7 +130,7 @@ export default async function AboutPage() {
                   rel="noopener noreferrer"
                   className="px-6 py-3.5 rounded-xl bg-brand-100 hover:bg-white/15 text-slate-900 font-bold text-xs border border-brand-200 transition-all flex items-center gap-2"
                 >
-                  <MessageCircle className="w-4 h-4 text-brand-700" />
+                  <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                   <span>WhatsApp Enquiry ({whatsapp})</span>
                 </a>
               </div>
@@ -223,7 +224,7 @@ export default async function AboutPage() {
               rel="noopener noreferrer"
               className="px-5 py-3 rounded-xl bg-brand-100 hover:bg-brand-200 text-slate-900 font-bold text-xs border border-brand-200 flex items-center gap-2 transition-all"
             >
-              <MessageCircle className="w-4 h-4 text-brand-700" />
+              <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
               <span>WhatsApp Us</span>
             </a>
           </div>

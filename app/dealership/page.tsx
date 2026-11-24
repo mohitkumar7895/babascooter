@@ -21,12 +21,12 @@ import {
   CheckCircle2,
   ArrowRight,
   Phone,
-  MessageCircle,
   Sparkles,
   ChevronRight,
   TrendingUp,
   MapPin,
 } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 export default function DealershipPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -191,7 +191,7 @@ export default function DealershipPage() {
                 rel="noopener noreferrer"
                 className="px-6 py-3.5 rounded-xl bg-brand-800 hover:bg-brand-700 text-white font-bold text-xs transition-all flex items-center gap-2 shadow-sm"
               >
-                <MessageCircle className="w-4 h-4 text-amber-400" />
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                 <span>WhatsApp Hotline: 9953564151</span>
               </a>
             </div>
@@ -327,7 +327,7 @@ export default function DealershipPage() {
                 <span>Direct Hotline: <strong className="text-slate-900">9953564151</strong></span>
               </div>
               <div className="flex items-center gap-2.5">
-                <MessageCircle className="w-4 h-4 text-brand-800 shrink-0" />
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366] shrink-0" />
                 <span>WhatsApp: <strong className="text-slate-900">9953564151</strong></span>
               </div>
             </div>
@@ -428,7 +428,7 @@ export default function DealershipPage() {
                   type="submit"
                   className="w-full py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-black text-xs uppercase tracking-wider transition-all shadow-glow flex items-center justify-center gap-2 mt-2"
                 >
-                  <MessageCircle className="w-4 h-4 fill-brand-950" />
+                  <WhatsAppIcon className="w-4 h-4 text-brand-950" />
                   <span>Submit Application on WhatsApp</span>
                 </button>
               </form>

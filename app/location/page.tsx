@@ -2,7 +2,8 @@ import React from 'react';
 import { query } from '@/lib/db';
 import { ContactSettings } from '@/types';
 import { getSeoMetadata } from '@/lib/seo';
-import { MapPin, Phone, MessageCircle, Clock, Navigation, CheckCircle2, Sparkles } from 'lucide-react';
+import { MapPin, Phone, Clock, Navigation, CheckCircle2, Sparkles } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 export const revalidate = 300;
 
@@ -97,7 +98,7 @@ export default async function LocationPage() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2.5 text-sm font-semibold text-brand-800 hover:text-brand-700 transition-colors"
                   >
-                    <MessageCircle className="w-4 h-4" />
+                    <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                     <span>WhatsApp: +91 {whatsapp}</span>
                   </a>
                 </div>

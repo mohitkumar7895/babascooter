@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
-  MessageCircle,
   Phone,
   ShieldCheck,
   Zap,
@@ -14,9 +13,9 @@ import {
   Gauge,
   Sparkles,
   Briefcase,
-  CheckCircle2,
   Award,
 } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 interface HeroSectionProps {
   primaryPhone?: string;
@@ -142,25 +141,18 @@ export default function HeroSection({
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-5 py-3 sm:py-3.5 rounded-xl bg-brand-800 hover:bg-brand-700 text-white font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-sm"
               >
-                <MessageCircle className="w-4 h-4 text-amber-400" />
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                 <span>WhatsApp: {whatsappNumber}</span>
               </a>
             </div>
-
-            {/* Official Website & Dealership Tag */}
-            <div className="pt-1 text-xs text-slate-600 flex flex-wrap items-center justify-center lg:justify-start gap-2">
-              <CheckCircle2 className="w-4 h-4 text-brand-700 shrink-0" />
-              <span>Official Website: <strong className="text-brand-800">www.frendo.in</strong> • B2B Dealerships Open Across India</span>
-            </div>
-
           </motion.div>
 
-          {/* Right Column: High-Res Flagship Vehicle Stage */}
+          {/* Right Column: High-Res Flagship Vehicle Stage (Desktop Only) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:col-span-5 relative flex flex-col items-center justify-center w-full"
+            className="hidden lg:flex lg:col-span-5 relative flex-col items-center justify-center w-full"
           >
             {/* Showroom Vehicle Stage Box */}
             <div className="relative w-full aspect-[4/3] max-w-lg rounded-3xl overflow-hidden bg-white border-2 border-brand-800/25 shadow-xl flex items-center justify-center gold-border-glow group">

@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, MessageCircle, Eye, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Eye, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 import modelsCatalog from '@/public/models/models_catalog.json';
 
 interface ModelItem {
@@ -192,11 +193,11 @@ export default function ModelsGallerySection() {
                       href={`https://wa.me/919953564151?text=${encodeURIComponent(waMsg)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 transition-all flex items-center justify-center shrink-0 border border-amber-500 shadow-sm"
+                      className="p-2 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white transition-all flex items-center justify-center shrink-0 border border-[#1ebe5d] shadow-sm"
                       title="Enquire on WhatsApp"
                       aria-label="Enquire on WhatsApp"
                     >
-                      <MessageCircle className="w-4 h-4 fill-brand-950" />
+                      <WhatsAppIcon className="w-4 h-4" />
                     </a>
                   </div>
                 </div>
@@ -347,9 +348,9 @@ export default function ModelsGallerySection() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-navy-950 font-black text-xs uppercase tracking-wider transition-all shadow-glow flex items-center gap-2"
+                className="px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white font-black text-xs uppercase tracking-wider transition-all shadow-glow flex items-center gap-2"
               >
-                <MessageCircle className="w-4 h-4 fill-navy-950" />
+                <WhatsAppIcon className="w-4 h-4" />
                 <span>Enquire on WhatsApp</span>
               </a>
             </div>

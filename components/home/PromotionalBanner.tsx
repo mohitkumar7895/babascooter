@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { MessageCircle, ArrowRight, Gift, Award, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Gift, Award, CheckCircle2 } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 import { Banner } from '@/types';
 
 interface PromoBannerProps {
@@ -103,7 +104,7 @@ export default function PromotionalBanner({ banner, whatsappNumber = '9953564151
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white hover:bg-brand-50 text-brand-900 font-bold text-xs uppercase tracking-wider transition-all text-center flex items-center justify-center gap-2 shadow-sm"
               >
-                <MessageCircle className="w-4 h-4 text-brand-700" />
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                 <span>Claim Offer on WhatsApp</span>
               </a>
             </div>

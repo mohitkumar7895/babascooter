@@ -9,12 +9,12 @@ import {
   Clock,
   User,
   ArrowLeft,
-  MessageCircle,
   Phone,
   ChevronRight,
   BookOpen,
   Sparkles,
 } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 interface Props {
   params: { slug: string };
@@ -298,7 +298,7 @@ export default async function BlogPostPage({ params }: Props) {
               rel="noopener noreferrer"
               className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-brand-950 font-bold text-xs flex items-center justify-center gap-2 shadow-glow hover:scale-105 transition-all"
             >
-              <MessageCircle className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4" />
               <span>Share on WhatsApp</span>
             </a>
 

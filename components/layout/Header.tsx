@@ -8,7 +8,6 @@ import {
   Menu,
   X,
   Phone,
-  MessageCircle,
   Shield,
   Briefcase,
   Zap,
@@ -17,6 +16,7 @@ import {
   MapPin,
   ChevronRight,
 } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 interface HeaderProps {
   contact?: {
@@ -101,7 +101,7 @@ export default function Header({ contact }: HeaderProps) {
               rel="noopener noreferrer"
               className="flex items-center gap-1 hover:text-amber-300 text-amber-400 transition-colors font-bold"
             >
-              <MessageCircle className="w-3.5 h-3.5" />
+              <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
               <span className="hidden sm:inline">WhatsApp:</span>
               <span>{whatsapp}</span>
             </a>
@@ -185,10 +185,10 @@ export default function Header({ contact }: HeaderProps) {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 sm:p-2.5 rounded-xl bg-amber-400 text-brand-950 text-xs font-bold shadow"
+                className="p-2 sm:p-2.5 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white text-xs font-bold shadow border border-white/30 transition-colors"
                 aria-label="WhatsApp Contact"
               >
-                <MessageCircle className="w-4 h-4 fill-brand-950" />
+                <WhatsAppIcon className="w-5 h-5" />
               </a>
 
               <button

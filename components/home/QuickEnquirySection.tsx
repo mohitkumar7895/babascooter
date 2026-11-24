@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Send, CheckCircle2, AlertCircle, Phone, MapPin, MessageCircle, Sparkles } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Phone, MapPin, Sparkles } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 interface QuickEnquiryProps {
   primaryPhone?: string;
@@ -95,7 +96,7 @@ export default function QuickEnquirySection({
               </div>
 
               <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-brand-200 shadow-sm">
-                <MessageCircle className="w-4 h-4 text-brand-700 shrink-0" />
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366] shrink-0" />
                 <div>
                   <div className="text-[10px] uppercase font-serif font-bold text-brand-800 tracking-wider">Direct WhatsApp Enquiry</div>
                   <a

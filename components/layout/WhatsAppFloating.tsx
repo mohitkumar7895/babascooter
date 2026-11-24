@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { usePathname } from 'next/navigation';
-import { MessageCircle, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 interface FloatingProps {
   whatsapp?: string;
@@ -35,7 +36,7 @@ export default function WhatsAppFloating({ whatsapp = '9953564151', phone = '995
         href={`https://wa.me/91${whatsapp}?text=${encodeURIComponent(defaultMsg)}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-brand-800 hover:bg-brand-700 text-white border-2 border-amber-400 font-bold shadow-xl hover:scale-105 active:scale-95 transition-all group"
+        className="relative flex items-center gap-2.5 p-3 sm:px-4 sm:py-3 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white border-2 border-white font-bold shadow-xl hover:scale-105 active:scale-95 transition-all group"
         title="Chat on WhatsApp"
         aria-label="Chat on WhatsApp"
       >
@@ -43,8 +44,8 @@ export default function WhatsAppFloating({ whatsapp = '9953564151', phone = '995
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-amber-400"></span>
         </span>
-        <MessageCircle className="w-5 h-5 text-amber-400 fill-amber-400" />
-        <span className="hidden sm:inline text-xs font-black uppercase tracking-wider text-amber-400">
+        <WhatsAppIcon className="w-6 h-6 text-white" />
+        <span className="hidden sm:inline text-xs font-black uppercase tracking-wider text-white">
           Dealership Hotline
         </span>
       </a>

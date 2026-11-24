@@ -8,7 +8,6 @@ import { Product, ProductImage, ProductSpecification } from '@/types';
 import ProductLightbox from '@/components/gallery/ProductLightbox';
 import ProductCard from '@/components/products/ProductCard';
 import {
-  MessageCircle,
   Phone,
   Zap,
   Disc,
@@ -23,6 +22,7 @@ import {
   Sparkles,
   Award,
 } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 interface Props {
   params: { slug: string };
@@ -275,9 +275,9 @@ export default async function ProductDetailPage({ params }: Props) {
                 href={`https://wa.me/91${whatsapp}?text=${encodeURIComponent(waMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-500 text-brand-950 font-black text-xs uppercase tracking-wider shadow-glow hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
+                className="w-full py-3.5 px-6 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white font-black text-xs uppercase tracking-wider shadow-glow hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
               >
-                <MessageCircle className="w-4 h-4 fill-brand-950" />
+                <WhatsAppIcon className="w-4 h-4" />
                 <span>Enquire on WhatsApp</span>
               </a>
 

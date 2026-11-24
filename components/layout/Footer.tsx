@@ -4,7 +4,8 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Phone, MessageCircle, MapPin, Mail, Clock, ShieldCheck, ChevronRight, Award, Zap, Globe } from 'lucide-react';
+import { Phone, MapPin, Mail, Clock, ShieldCheck, ChevronRight, Award, Zap, Globe } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 interface FooterProps {
   contact?: {
@@ -140,7 +141,7 @@ export default function Footer({ contact }: FooterProps) {
               </div>
 
               <div className="flex items-center gap-2">
-                <MessageCircle className="w-4 h-4 text-amber-400 shrink-0" />
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366] shrink-0" />
                 <a
                   href={`https://wa.me/91${whatsapp}?text=${encodeURIComponent(
                     'Hello Baba Marketing, I want to enquire about FRENDO E-SCOOTY models and Dealership.'

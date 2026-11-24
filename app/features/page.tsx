@@ -15,13 +15,13 @@ import {
   Award,
   CheckCircle2,
   ArrowRight,
-  MessageCircle,
   Phone,
   Sparkles,
   ChevronRight,
   Sliders,
   Check,
 } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 import { getCachedContact } from '@/lib/data';
 
 export const metadata = {
@@ -221,7 +221,7 @@ export default async function FeaturesPage() {
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-xl bg-white hover:bg-brand-100 text-brand-800 border border-brand-300 font-bold text-xs transition-all flex items-center gap-2"
             >
-              <MessageCircle className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
               <span>WhatsApp: {whatsapp}</span>
             </a>
           </div>

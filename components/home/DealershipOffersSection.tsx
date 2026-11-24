@@ -21,9 +21,9 @@ import {
   CheckCircle2,
   ArrowRight,
   Phone,
-  MessageCircle,
   Sparkles,
 } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 export default function DealershipOffersSection() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -347,7 +347,7 @@ export default function DealershipOffersSection() {
                 type="submit"
                 className="w-full py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 font-black text-xs uppercase tracking-wider transition-all shadow-glow-yellow flex items-center justify-center gap-2 border border-amber-500"
               >
-                <MessageCircle className="w-4 h-4 fill-brand-950" />
+                <WhatsAppIcon className="w-4 h-4 text-brand-950" />
                 <span>Submit & Connect on WhatsApp</span>
               </button>
             </form>

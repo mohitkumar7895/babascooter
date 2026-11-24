@@ -3,7 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { MessageCircle, ArrowRight, Zap, Shield, RotateCcw, Disc, Eye } from 'lucide-react';
+import { ArrowRight, Zap, Shield, RotateCcw, Disc, Eye } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 import { Product } from '@/types';
 import { getProductRate } from '@/lib/pricing';
 
@@ -101,11 +102,11 @@ export default function ProductCard({ product, whatsappNumber = '9953564151' }: 
             href={`https://wa.me/91${whatsappNumber}?text=${encodeURIComponent(waMessage)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-brand-950 transition-all flex items-center justify-center shrink-0 shadow-sm border border-amber-500"
+            className="p-2 rounded-xl bg-[#25D366] hover:bg-[#1ebe5d] text-white transition-all flex items-center justify-center shrink-0 shadow-sm border border-[#1ebe5d]"
             title="Enquire on WhatsApp"
             aria-label="Enquire on WhatsApp"
           >
-            <MessageCircle className="w-4 h-4 fill-brand-950" />
+            <WhatsAppIcon className="w-4 h-4" />
           </a>
         </div>
       </div>

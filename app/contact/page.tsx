@@ -4,7 +4,8 @@ import { ContactSettings } from '@/types';
 import { getSeoMetadata } from '@/lib/seo';
 import { getCachedContact } from '@/lib/data';
 import QuickEnquirySection from '@/components/home/QuickEnquirySection';
-import { Phone, MessageCircle, MapPin, Mail, Clock, Globe, Briefcase, Award } from 'lucide-react';
+import { Phone, MapPin, Mail, Clock, Globe, Briefcase, Award } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 export const revalidate = 300;
 
@@ -87,8 +88,8 @@ export default async function ContactPage() {
           {/* Card 2: WhatsApp Chat */}
           <div className="p-6 rounded-2xl bg-white border border-brand-300 shadow-card flex flex-col justify-between space-y-3">
             <div>
-              <div className="w-10 h-10 rounded-xl bg-amber-400 text-brand-950 flex items-center justify-center mb-3">
-                <MessageCircle className="w-5 h-5 fill-brand-950" />
+              <div className="w-10 h-10 rounded-xl bg-[#25D366] text-white flex items-center justify-center mb-3 shadow-sm">
+                <WhatsAppIcon className="w-5 h-5" />
               </div>
               <div className="font-serif text-xs uppercase tracking-wider text-brand-800 font-bold">WhatsApp Hotline</div>
               <div className="text-lg font-black text-slate-900 mt-1">+91 {whatsapp}</div>

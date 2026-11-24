@@ -4,7 +4,8 @@ import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BlogPost } from '@/types';
-import { Search, Calendar, Clock, User, ArrowRight, BookOpen, MessageCircle, Sparkles } from 'lucide-react';
+import { Search, Calendar, Clock, User, ArrowRight, BookOpen, Sparkles } from 'lucide-react';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
 
 interface Props {
   initialBlogs: BlogPost[];
@@ -284,7 +285,7 @@ export default function BlogListingClient({ initialBlogs }: Props) {
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-6 py-3 rounded-xl bg-brand-100 hover:bg-brand-200 border border-brand-200 text-slate-900 font-bold text-xs flex items-center justify-center gap-2 transition-all"
           >
-            <MessageCircle className="w-4 h-4 text-brand-700" />
+            <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
             <span>Book Free Test Ride</span>
           </a>
         </div>
