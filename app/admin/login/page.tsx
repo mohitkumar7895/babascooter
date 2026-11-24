@@ -8,7 +8,7 @@ import { Lock, User, AlertCircle, ArrowRight } from 'lucide-react';
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [username, setUsername] = useState('admin');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -89,7 +89,7 @@ export default function AdminLoginPage() {
                   required
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  placeholder="admin"
+                  placeholder="Enter username or email"
                   className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-brand-700 transition-colors"
                 />
               </div>
@@ -125,12 +125,6 @@ export default function AdminLoginPage() {
               )}
             </button>
           </form>
-
-          {/* Quick Help */}
-          <div className="pt-4 border-t border-slate-200 text-center text-xs text-slate-500 space-y-1">
-            <div>Default Admin Login: <span className="font-mono font-bold text-slate-800">admin</span></div>
-            <div>Password: <span className="font-mono font-bold text-slate-800">Admin@Baba2026</span></div>
-          </div>
         </div>
 
         <div className="text-center">
