@@ -14,7 +14,7 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, whatsappNumber = '9953564151' }: ProductCardProps) {
-  const primaryImg = product.primary_image || `/models/set-${product.id}/main.jpg`;
+  const primaryImg = product.primary_image || '';
   const specs = product.specifications;
 
   const motor = specs?.motor_power || (product as any).motor_power || '1000W / 1500W Copper Motor';
@@ -42,14 +42,25 @@ export default function ProductCard({ product, whatsappNumber = '9953564151' }: 
           href={`/scooters/${product.slug}`}
           className="relative block aspect-[4/3] w-full overflow-hidden bg-slate-100 cursor-pointer"
         >
-          <Image
-            src={primaryImg}
-            alt={product.name}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
-            priority={false}
-          />
+          {primaryImg ? (
+            <Image
+              src={primaryImg}
+              alt={product.name}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+              priority={false}
+            />
+          ) : (
+            <Image
+              src="/logo.jpeg"
+              alt={product.name}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-contain p-8 opacity-80 bg-brand-50"
+              priority={false}
+            />
+          )}
         </Link>
       </div>
 

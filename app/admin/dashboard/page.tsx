@@ -33,8 +33,8 @@ export default function AdminDashboardPage() {
     async function loadData() {
       try {
         const [prodRes, enqRes] = await Promise.all([
-          fetch('/api/products?all=true'),
-          fetch('/api/enquiry'),
+          fetch('/api/products?all=true', { cache: 'no-store' }),
+          fetch('/api/enquiry', { cache: 'no-store' }),
         ]);
 
         const prodData = await prodRes.json();
@@ -233,11 +233,11 @@ export default function AdminDashboardPage() {
                 <div className="flex items-center gap-3">
                   <div className="w-14 h-12 rounded-xl bg-brand-50 border border-brand-200 overflow-hidden relative shrink-0">
                     <Image
-                      src={p.primary_image || `/images/products/${p.slug}/main.png`}
+                      src={p.primary_image || '/logo.jpeg'}
                       alt={p.name}
                       fill
                       sizes="56px"
-                      className="object-cover object-center"
+                      className={p.primary_image ? 'object-cover object-center' : 'object-contain p-1.5'}
                     />
                   </div>
                   <div>

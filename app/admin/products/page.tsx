@@ -27,7 +27,7 @@ export default function AdminProductsPage() {
 
   const loadProducts = async () => {
     try {
-      const res = await fetch('/api/products?all=true');
+      const res = await fetch('/api/products?all=true', { cache: 'no-store' });
       const data = await res.json();
       if (data.products) setProducts(data.products);
     } catch (err) {
@@ -163,11 +163,11 @@ export default function AdminProductsPage() {
                     <div className="flex items-center gap-3">
                       <div className="w-14 h-12 rounded-xl bg-brand-50 border border-brand-200 relative shrink-0 overflow-hidden">
                         <Image
-                          src={p.primary_image || `/images/products/${p.slug}/main.png`}
+                          src={p.primary_image || '/logo.jpeg'}
                           alt={p.name}
                           fill
                           sizes="56px"
-                          className="object-cover object-center"
+                          className={p.primary_image ? 'object-cover object-center' : 'object-contain p-1.5'}
                         />
                       </div>
                       <div>

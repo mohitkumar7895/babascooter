@@ -50,7 +50,10 @@ export async function GET(req: NextRequest, { params }: { params: { slug: string
     // Also get primary image convenience
     product.primary_image = images && images.length > 0 ? images[0].image_url : null;
 
-    return NextResponse.json({ success: true, product });
+    return NextResponse.json(
+      { success: true, product },
+      { headers: { 'Cache-Control': 'no-store, max-age=0' } }
+    );
   } catch (error: any) {
     console.error('Error fetching single product:', error);
     return NextResponse.json({ error: 'Failed to fetch product' }, { status: 500 });
@@ -210,17 +213,18 @@ export async function DELETE(req: NextRequest, { params }: { params: { slug: str
     const isId = /^\d+$/.test(slug);
     const whereClause = isId ? 'id = ?' : 'slug = ?';
 
-    const pRows = await query<any[]>(`SELECT id FROM products WHERE ${whereClause} LIMIT 1`, [slug]);
+    const pRows = await query<any[]>(`SELECT id, slug FROM products WHERE ${whereClause} LIMIT 1`, [slug]);
     if (!pRows || pRows.length === 0) {
       return NextResponse.json({ error: 'Product not found' }, { status: 404 });
     }
 
     const productId = pRows[0].id;
+    const deletedSlug = pRows[0].slug;
 
     // Delete product (cascade will delete specs and images)
     await query('DELETE FROM products WHERE id = ?', [productId]);
 
-    revalidatePublicSite(['/', '/scooters']);
+    revalidatePublicSite(['/', '/scooters', `/scooters/${deletedSlug}`]);
     return NextResponse.json({ success: true, message: 'Product deleted successfully' });
   } catch (error: any) {
     console.error('Error deleting product:', error);

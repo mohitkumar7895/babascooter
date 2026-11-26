@@ -28,7 +28,8 @@ interface Props {
   params: { slug: string };
 }
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export async function generateMetadata({ params }: Props) {
   const slug = params.slug;
@@ -95,7 +96,7 @@ async function getProductDetailData(slug: string) {
          LEFT JOIN categories c ON p.category_id = c.id
          LEFT JOIN product_specifications ps ON p.id = ps.product_id
          WHERE p.id != ? AND p.is_published = TRUE
-         ORDER BY (p.category_id = ?) DESC, p.sort_order ASC
+         ORDER BY (p.category_id = ?) DESC, p.sort_order ASC, p.id DESC
          LIMIT 4`,
         [product.id, product.category_id || 0]
       ),

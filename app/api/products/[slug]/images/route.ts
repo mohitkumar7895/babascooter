@@ -17,7 +17,7 @@ export async function POST(req: NextRequest, { params }: { params: { slug: strin
     const isId = /^\d+$/.test(slug);
     const whereClause = isId ? 'id = ?' : 'slug = ?';
 
-    const pRows = await query<any[]>(`SELECT id, name FROM products WHERE ${whereClause} LIMIT 1`, [slug]);
+    const pRows = await query<any[]>(`SELECT id, name, slug FROM products WHERE ${whereClause} LIMIT 1`, [slug]);
     if (!pRows || pRows.length === 0) {
       return NextResponse.json({ error: 'Product not found' }, { status: 404 });
     }
@@ -45,7 +45,7 @@ export async function POST(req: NextRequest, { params }: { params: { slug: strin
       ]
     );
 
-    revalidatePublicSite(['/', '/scooters']);
+    revalidatePublicSite(['/', '/scooters', `/scooters/${product.slug}`]);
     return NextResponse.json({
       success: true,
       message: 'Image added successfully',
@@ -68,7 +68,7 @@ export async function PUT(req: NextRequest, { params }: { params: { slug: string
     const isId = /^\d+$/.test(slug);
     const whereClause = isId ? 'id = ?' : 'slug = ?';
 
-    const pRows = await query<any[]>(`SELECT id FROM products WHERE ${whereClause} LIMIT 1`, [slug]);
+    const pRows = await query<any[]>(`SELECT id, slug FROM products WHERE ${whereClause} LIMIT 1`, [slug]);
     if (!pRows || pRows.length === 0) {
       return NextResponse.json({ error: 'Product not found' }, { status: 404 });
     }
@@ -104,7 +104,7 @@ export async function PUT(req: NextRequest, { params }: { params: { slug: string
       ]);
     }
 
-    revalidatePublicSite(['/', '/scooters']);
+    revalidatePublicSite(['/', '/scooters', `/scooters/${product.slug}`]);
     return NextResponse.json({ success: true, message: 'Image updated successfully' });
   } catch (error: any) {
     console.error('Error updating image:', error);

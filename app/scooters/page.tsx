@@ -5,7 +5,8 @@ import { getSeoMetadata } from '@/lib/seo';
 import { getCachedContact } from '@/lib/data';
 import ScootersCatalogueClient from './ScootersCatalogueClient';
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export async function generateMetadata() {
   return await getSeoMetadata('/scooters');
@@ -43,7 +44,7 @@ async function getCatalogueData() {
       LEFT JOIN categories c ON p.category_id = c.id
       LEFT JOIN product_specifications ps ON p.id = ps.product_id
       WHERE p.is_published = TRUE
-      ORDER BY p.sort_order ASC, p.id ASC
+      ORDER BY p.sort_order ASC, p.id DESC
     `),
     ]);
 
@@ -68,11 +69,11 @@ export default async function ScootersPage() {
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-100 border border-brand-300 text-xs font-bold text-brand-800 uppercase tracking-widest mb-2.5 font-serif">
-            FRENDO E-SCOOTY • 27 SHOWROOM SETS
+            FRENDO E-SCOOTY • {products.length} SHOWROOM MODELS
           </div>
 
           <h1 className="font-serif text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
-            EXPLORE ALL 27 ELECTRIC SCOOTY MODELS
+            EXPLORE ALL {products.length} ELECTRIC SCOOTY MODELS
           </h1>
 
           <p className="mt-2 text-slate-700 text-xs sm:text-sm leading-relaxed">

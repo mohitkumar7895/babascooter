@@ -63,11 +63,14 @@ export async function GET(req: NextRequest) {
       params.push(term, term, term);
     }
 
-    sql += ' ORDER BY p.sort_order ASC, p.id ASC';
+    sql += ' ORDER BY p.sort_order ASC, p.id DESC';
 
     const products = await query<any[]>(sql, params);
 
-    return NextResponse.json({ success: true, products, count: products.length });
+    return NextResponse.json(
+      { success: true, products, count: products.length },
+      { headers: { 'Cache-Control': 'no-store, max-age=0' } }
+    );
   } catch (error: any) {
     console.error('Error fetching products:', error);
     return NextResponse.json({ error: 'Failed to fetch products' }, { status: 500 });
@@ -105,7 +108,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Name and model number are required' }, { status: 400 });
     }
 
-    const finalSlug = customSlug ? slugify(customSlug) : slugify(name);
+    let finalSlug = customSlug ? slugify(customSlug) : slugify(name);
+    if (!finalSlug) {
+      finalSlug = slugify(model_number) || `scooty-${Date.now()}`;
+    }
 
     // Check slug uniqueness
     const existing = await query<any[]>('SELECT id FROM products WHERE slug = ?', [finalSlug]);

@@ -7,11 +7,12 @@ import ModelsGallerySection from '@/components/home/ModelsGallerySection';
 import DealershipOffersSection from '@/components/home/DealershipOffersSection';
 import PromotionalBanner from '@/components/home/PromotionalBanner';
 import QuickEnquirySection from '@/components/home/QuickEnquirySection';
-import { Banner, ContactSettings, HomepageSection } from '@/types';
+import { Banner, Category, ContactSettings, HomepageSection, Product, ProductImage } from '@/types';
 import { getSeoMetadata } from '@/lib/seo';
 import { getCachedContact } from '@/lib/data';
 
-export const revalidate = 60; // Fast ISR cache, instantly purged on admin updates
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export async function generateMetadata() {
   return await getSeoMetadata('/');
@@ -19,11 +20,59 @@ export async function generateMetadata() {
 
 async function getHomePageData() {
   try {
-    const [contact, banners, sections] = await Promise.all([
+    const [contact, banners, sections, categories, products, allImages] = await Promise.all([
       getCachedContact(),
       query<Banner[]>('SELECT * FROM banners WHERE is_active = TRUE ORDER BY sort_order ASC'),
       query<HomepageSection[]>('SELECT * FROM homepage_sections WHERE is_visible = TRUE'),
+      query<Category[]>(
+        `SELECT c.*, COUNT(p.id) AS product_count
+         FROM categories c
+         LEFT JOIN products p ON c.id = p.category_id AND p.is_published = TRUE
+         GROUP BY c.id
+         ORDER BY c.sort_order ASC, c.id ASC`
+      ),
+      query<Product[]>(
+        `SELECT
+          p.*,
+          c.name AS category_name,
+          c.slug AS category_slug,
+          ps.motor_power,
+          ps.battery_voltage,
+          ps.controller,
+          ps.front_tyre,
+          ps.rear_tyre,
+          ps.brakes,
+          ps.central_locking,
+          ps.digital_meter,
+          ps.reverse_gear
+         FROM products p
+         LEFT JOIN categories c ON p.category_id = c.id
+         LEFT JOIN product_specifications ps ON p.id = ps.product_id
+         WHERE p.is_published = TRUE
+         ORDER BY p.sort_order ASC, p.id DESC`
+      ),
+      query<ProductImage[]>(
+        `SELECT id, product_id, image_url, alt_text, is_primary, sort_order
+         FROM product_images
+         ORDER BY is_primary DESC, sort_order ASC, id ASC`
+      ),
     ]);
+
+    const imagesByProduct = new Map<number, ProductImage[]>();
+    for (const img of allImages || []) {
+      const list = imagesByProduct.get(img.product_id) || [];
+      list.push(img);
+      imagesByProduct.set(img.product_id, list);
+    }
+
+    const hydratedProducts: Product[] = (products || []).map((p) => {
+      const imgs = imagesByProduct.get(p.id) || [];
+      return {
+        ...p,
+        images: imgs,
+        primary_image: imgs[0]?.image_url || undefined,
+      };
+    });
 
     const promoBanner = banners.find((b) => b.banner_type === 'promo') || banners[0] || null;
     const heroSection = sections.find((s) => s.section_key === 'hero');
@@ -33,6 +82,9 @@ async function getHomePageData() {
       promoBanner,
       heroSection,
       sections,
+      categories: categories || [],
+      products: hydratedProducts,
+      dbLoaded: true,
     };
   } catch (err) {
     console.error('Error fetching homepage data:', err);
@@ -41,12 +93,15 @@ async function getHomePageData() {
       promoBanner: null,
       heroSection: null,
       sections: [],
+      categories: [],
+      products: [],
+      dbLoaded: false,
     };
   }
 }
 
 export default async function HomePage() {
-  const { contact, promoBanner, heroSection } = await getHomePageData();
+  const { contact, promoBanner, heroSection, categories, products, dbLoaded } = await getHomePageData();
 
   const phone = contact?.primary_phone || '9953564151';
   const whatsapp = contact?.whatsapp_number || '9953564151';
@@ -70,8 +125,13 @@ export default async function HomePage() {
         heroImage={heroContent?.hero_image || '/models/set-1/main.jpg'}
       />
 
-      {/* 2. Real Showroom Sets Showcase (27 Models from public/models) */}
-      <ModelsGallerySection />
+      {/* 2. Live Showroom Scooter Models Showcase from Database */}
+      <ModelsGallerySection
+        products={products}
+        categories={categories}
+        whatsappNumber={whatsapp}
+        dbLoaded={dbLoaded}
+      />
 
       {/* 3. Official FRENDO Rate Card & 40 + 20 FREE Special Distributor Offer Banner */}
       <PromotionalBanner

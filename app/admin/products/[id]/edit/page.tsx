@@ -59,8 +59,8 @@ export default function EditProductPage({ params }: { params: { id: string } }) 
   const loadProduct = async () => {
     try {
       const [pRes, cRes] = await Promise.all([
-        fetch(`/api/products/${productId}`),
-        fetch('/api/categories'),
+        fetch(`/api/products/${productId}`, { cache: 'no-store' }),
+        fetch('/api/categories', { cache: 'no-store' }),
       ]);
 
       const pData = await pRes.json();

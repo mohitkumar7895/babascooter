@@ -40,7 +40,8 @@ export default function ScootersCatalogueClient({ initialProducts, categories, w
       .sort((a, b) => {
         if (sortBy === 'name') return a.name.localeCompare(b.name);
         if (sortBy === 'featured') return (b.is_featured ? 1 : 0) - (a.is_featured ? 1 : 0);
-        return a.sort_order - b.sort_order;
+        if (a.sort_order !== b.sort_order) return a.sort_order - b.sort_order;
+        return b.id - a.id;
       });
   }, [initialProducts, selectedCategory, searchTerm, sortBy]);
 
@@ -99,7 +100,7 @@ export default function ScootersCatalogueClient({ initialProducts, categories, w
               : 'bg-white text-slate-700 border border-brand-200 hover:border-brand-700'
           }`}
         >
-          All 27 Models ({initialProducts.length})
+          All Models ({initialProducts.length})
         </button>
         {categories.map((c) => (
           <button
